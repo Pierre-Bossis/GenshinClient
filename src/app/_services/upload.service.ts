@@ -9,15 +9,11 @@ export class UploadService {
 
   constructor(private client:HttpClient) { }
 
-  upload(fileToUpload : File){
+  upload(fileToUpload : File,fileToUpload2?:File){
     let formData : FormData = new FormData()
-    formData.append('myfile', fileToUpload, fileToUpload.name)
+    formData.append('Icone', fileToUpload, fileToUpload.name)
+    if(fileToUpload2 != null)
+      formData.append('Image',fileToUpload2,fileToUpload2.name)
     return formData
   }
-
-  //   byteArrayToImageUrl(byteArray: Uint8Array): string {
-  //     //transformer en base64 DEPUIS LE BACK
-  //   const blob = new Blob([byteArray], { type: 'image/jpeg' });
-  //   return URL.createObjectURL(blob);
-  // }
 }

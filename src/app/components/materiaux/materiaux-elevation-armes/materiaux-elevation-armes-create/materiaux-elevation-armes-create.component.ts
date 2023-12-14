@@ -5,11 +5,11 @@ import { Observable } from 'rxjs';
   import { MateriauxElevationArmesService } from 'src/app/_services/materiaux-elevation-armes.service';
 
   @Component({
-    selector: 'app-create',
-    templateUrl: './create.component.html',
-    styleUrls: ['./create.component.css']
+    selector: 'app-materiaux-elevation-armes-create',
+    templateUrl: './materiaux-elevation-armes-create.component.html',
+    styleUrls: ['./materiaux-elevation-armes-create.component.css']
   })
-  export class CreateComponent {
+  export class MateriauxElevationArmesCreateComponent {
     myFile? : File
     myFormGroup! : FormGroup
 
@@ -18,7 +18,6 @@ import { Observable } from 'rxjs';
     ngOnInit() {
       this.myFormGroup = this.formBuilder.group({
         nom: ['', Validators.required],
-        icone: [''],
         source: ['', Validators.required],
         rarete: ['', Validators.required]
       })
@@ -31,7 +30,6 @@ import { Observable } from 'rxjs';
     onSubmit() {
       if(this.myFile)    
         this.matService.create(this.myFile,this.myFormGroup.value)
-        this.route.navigate(["home"])
     }
 
   }

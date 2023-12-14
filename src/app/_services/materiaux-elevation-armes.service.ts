@@ -11,7 +11,7 @@ import { UploadService } from './upload.service';
 })
 export class MateriauxElevationArmesService {
   private url: string = environment.apiurl
-  constructor(private client: HttpClient, private router: Router, private upload: UploadService) { }
+  constructor(private client: HttpClient, private upload: UploadService, private route:Router) { }
 
   getAll(): Observable<MateriauxElevationArmes[]> {
     return this.client.get<MateriauxElevationArmes[]>(this.url + "materiauxelevationarmes")
@@ -29,9 +29,9 @@ export class MateriauxElevationArmesService {
     newMat.append('Rarete',mat.rarete.toString())
     
     this.client.post(this.url+'materiauxelevationarmes/create', newMat).subscribe({
-      //  next: () => this.router.navigate(["home"]),
+      next: () => this.route.navigate(["materiaux-elevation-armes/liste"]),
       error: (err) => console.error('Error creating MateriauxElevationArmes:', err)
-    });
-  };
+    })
+  }
   
 }

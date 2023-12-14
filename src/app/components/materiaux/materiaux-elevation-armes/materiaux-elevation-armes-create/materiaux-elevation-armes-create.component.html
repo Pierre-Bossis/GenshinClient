@@ -9,8 +9,15 @@
   <p>
     Source : <input type="text" formControlName="source">
   </p>
-  <p>
-    Rareté : <input type="text" formControlName="rarete">
-  </p>
+  <div class="form-group">
+    <label for="exampleSelect3" class="form-label mt-4">Rareté</label>
+    <select class="form-select" id="exampleSelect3" formControlName="rarete">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+  </div>
   <button type="submit">Valider</button>
 </form>

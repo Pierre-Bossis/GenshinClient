@@ -1,0 +1,57 @@
+<h4>Ajouter un matériaux d'elevation d'armes</h4>
+<form [formGroup]="armesFormGroup" (ngSubmit)="onSubmit()">
+  <p>
+    Nom : <input type="text" formControlName="nom">
+  </p>
+    <div class="form-group">
+        <label for="exampleSelect1" class="form-label mt-4">Type d'arme</label>
+        <select class="form-select" id="exampleSelect1" formControlName="typeArme">
+          <option>Epée</option>
+          <option>Claymore</option>
+          <option>Arc</option>
+          <option>Lance</option>
+          <option>Catalyseur</option>
+        </select>
+      </div>
+  <p>
+    Description : <input type="text" formControlName="description">
+  </p>
+  <p>
+    Icone : <input type="file" (change)="loadIcone($event)">
+  </p>
+  <p>
+    Image : <input type="file" (change)="loadImage($event)">
+  </p>
+  <div class="form-group">
+    <label for="exampleSelect2" class="form-label mt-4">Statistique principale</label>
+    <select class="form-select" id="exampleSelect2" formControlName="nomStatPrincipale">
+      <option>ATQ %</option>
+      <option>Defense %</option>
+      <option>Degats physique %</option>
+      <option>Taux Critique %</option>
+      <option>Degats Critique %</option>
+      <option>Recharge Energie %</option>
+      <option>Maitrîse Elementaire</option>
+    </select>
+  </div>
+  <p>
+    Valeur de la stat principale : <input type="number" formControlName="valeurStatPrincipale">
+  </p>
+  <p>
+    Effet passif : <input type="text" formControlName="effetPassif">
+  </p>
+  <p>
+    Attaque de base : <input type="number" formControlName="atqBase">
+  </p>
+  <div class="form-group">
+    <label for="exampleSelect3" class="form-label mt-4">Rareté</label>
+    <select class="form-select" id="exampleSelect3" formControlName="rarete">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+  </div>
+  <button type="submit">Valider</button>
+</form>

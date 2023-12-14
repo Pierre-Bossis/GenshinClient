@@ -4,11 +4,11 @@ import { MateriauxElevationArmes } from 'src/app/_models/materiaux-elevation-arm
 import { MateriauxElevationArmesService } from 'src/app/_services/materiaux-elevation-armes.service';
 
 @Component({
-  selector: 'app-details',
-  templateUrl: './details.component.html',
-  styleUrls: ['./details.component.css']
+  selector: 'app-materiaux-elevation-armes-details',
+  templateUrl: './materiaux-elevation-armes-details.component.html',
+  styleUrls: ['./materiaux-elevation-armes-details.component.css']
 })
-export class DetailsComponent implements OnInit {
+export class MateriauxElevationArmesDetailsComponent implements OnInit {
   materiauxName: string | null = null
   materiaux!:MateriauxElevationArmes
   constructor(private matService: MateriauxElevationArmesService, private route: ActivatedRoute) { }

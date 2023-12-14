@@ -5,21 +5,27 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CreateComponent } from './components/materiaux/materiaux-elevation-armes/create/create.component';
 import { HomeComponent } from './components/home/home.component';
-import { DetailsComponent } from './components/materiaux/materiaux-elevation-armes/details/details.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { MateriauxElevationArmesListeComponent } from './components/materiaux/materiaux-elevation-armes/materiaux-elevation-armes-liste/materiaux-elevation-armes-liste.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MateriauxElevationArmesDetailsComponent } from './components/materiaux/materiaux-elevation-armes/materiaux-elevation-armes-details/materiaux-elevation-armes-details.component';
+import { MateriauxElevationArmesCreateComponent } from './components/materiaux/materiaux-elevation-armes/materiaux-elevation-armes-create/materiaux-elevation-armes-create.component';
+import { ArmesCreateComponent } from './components/armes/armes-create/armes-create.component';
+import { ArmesDetailsComponent } from './components/armes/armes-details/armes-details.component';
+import { ArmesListeComponent } from './components/armes/armes-liste/armes-liste.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CreateComponent,
+    MateriauxElevationArmesCreateComponent,
     HomeComponent,
-    DetailsComponent,
+    MateriauxElevationArmesDetailsComponent,
     NavbarComponent,
-    MateriauxElevationArmesListeComponent
+    MateriauxElevationArmesListeComponent,
+    ArmesCreateComponent,
+    ArmesDetailsComponent,
+    ArmesListeComponent
   ],
   imports: [
     BrowserModule,
