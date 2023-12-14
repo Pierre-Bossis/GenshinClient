@@ -9,6 +9,8 @@ import { CreateComponent } from './components/materiaux/materiaux-elevation-arme
 import { HomeComponent } from './components/home/home.component';
 import { DetailsComponent } from './components/materiaux/materiaux-elevation-armes/details/details.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
+import { MateriauxElevationArmesListeComponent } from './components/materiaux/materiaux-elevation-armes/materiaux-elevation-armes-liste/materiaux-elevation-armes-liste.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -16,14 +18,16 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
     CreateComponent,
     HomeComponent,
     DetailsComponent,
-    NavbarComponent
+    NavbarComponent,
+    MateriauxElevationArmesListeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,11 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { CreateComponent } from './components/materiaux/materiaux-elevation-armes/create/create.component';
 import { DetailsComponent } from './components/materiaux/materiaux-elevation-armes/details/details.component';
+import { MateriauxElevationArmesListeComponent } from './components/materiaux/materiaux-elevation-armes/materiaux-elevation-armes-liste/materiaux-elevation-armes-liste.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'home', pathMatch:'full'},
   {path: 'home', component: HomeComponent},
   {path : 'materiaux-elevation-armes/create', component : CreateComponent},
+  {path : 'materiaux-elevation-armes/liste', component : MateriauxElevationArmesListeComponent},
   {path : 'materiaux-elevation-armes/:name', component : DetailsComponent}
 ];
 
