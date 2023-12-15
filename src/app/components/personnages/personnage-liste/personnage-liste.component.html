@@ -1,0 +1,14 @@
+<div class="row justify-content-end">
+    <div class="col-1">
+      <button class="btn btn-outline-success" routerLink="/personnages/create"><b class="buttonCreate">+</b></button>
+    </div>
+  </div>
+  
+  <!-- faire des cards !! puis go details et faire les arme id etc en menu déroulant dans le create -->
+<div class="row" *ngIf="personnages">
+    <div class="col-1" *ngFor="let personnage of personnages">
+        <td><img [src]="'data:image/jpeg;base64,' + personnage.portrait" alt="{{personnage.nom}}" width="35" height="34" /></td>
+        <td><span class="star">{{personnage.rarete | star }}</span></td>
+        <td><button (click)="goDetails(personnage.nom)" class="btn btn-info">Détails</button></td>
+    </div>
+</div>

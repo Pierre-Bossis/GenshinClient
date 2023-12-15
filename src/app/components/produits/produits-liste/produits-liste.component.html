@@ -1,3 +1,9 @@
+<div class="row justify-content-end">
+  <div class="col-1">
+    <button class="btn btn-outline-success" routerLink="/produits/create"><b class="buttonCreate">+</b></button>
+  </div>
+</div>
+
 <table class="table">
     <thead>
       <tr>
@@ -13,7 +19,7 @@
         <th scope="row">{{i+1}}</th>
         <td>{{produit.nom}}</td>
         <td><img [src]="'data:image/jpeg;base64,' + produit.icone" alt="{{produit.nom}}" width="35" height="34"/></td>
-        <td>{{produit.rarete | star }}</td>
+        <td><span class="star">{{produit.rarete| star}}</span></td>
         <td>{{produit.source}}</td>
       </tr>
     </tbody>

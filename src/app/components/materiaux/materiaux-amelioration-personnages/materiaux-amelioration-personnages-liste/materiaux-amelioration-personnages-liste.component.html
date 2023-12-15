@@ -1,0 +1,26 @@
+<div class="row justify-content-end">
+    <div class="col-1">
+      <button class="btn btn-outline-success" routerLink="/materiaux-amelioration-personnages/create"><b class="buttonCreate">+</b></button>
+    </div>
+  </div>
+  
+  <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Numéro</th>
+          <th scope="col">Nom</th>
+          <th scope="col">Icone</th>
+          <th scope="col">Rareté</th>
+          <th scope="col">Source</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let materiaux of materiauxListe; let i = index">
+          <th scope="row">{{i+1}}</th>
+          <td>{{materiaux.nom}}</td>
+          <td><img [src]="'data:image/jpeg;base64,' + materiaux.icone" alt="{{materiaux.nom}}" width="35" height="34"/></td>
+          <td><span class="star">{{materiaux.rarete | star }}</span></td>
+          <td>{{materiaux.source}}</td>
+        </tr>
+      </tbody>
+    </table>

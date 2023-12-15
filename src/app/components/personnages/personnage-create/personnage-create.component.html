@@ -1,0 +1,74 @@
+<h4>Ajouter un personnage</h4>
+
+<form [formGroup]="personnagesFormGroup" (ngSubmit)="onSubmit()">
+    <p>
+        Nom : <input type="text" formControlName="nom">
+    </p>
+    <div class="form-group">
+        <label for="oeilDivin" class="form-label mt-4">Oeil Divin</label>
+        <select class="form-select" id="oeilDivin" formControlName="oeilDivin">
+            <option>Pyro</option>
+            <option>Anemo</option>
+            <option>Electro</option>
+            <option>Hydro</option>
+            <option>Dendro</option>
+            <option>Cryo</option>
+            <option>Geo</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="exampleSelect1" class="form-label mt-4">Type d'arme</label>
+        <select class="form-select" id="exampleSelect1" formControlName="typeArme">
+            <option>Epée</option>
+            <option>Claymore</option>
+            <option>Arc</option>
+            <option>Lance</option>
+            <option>Catalyseur</option>
+        </select>
+    </div>
+    <p>
+        Lore : <input type="text" formControlName="lore">
+    </p>
+    <div class="form-group">
+        <label for="nationalite" class="form-label mt-4">Nationalité</label>
+        <select class="form-select" id="nationalite" formControlName="nationalite">
+            <option>Mondstat</option>
+            <option>Liyue</option>
+            <option>Inazuma</option>
+            <option>Sumeru</option>
+            <option>Fontaine</option>
+            <option>Natlan</option>
+            <option>Snezhnaya</option>
+        </select>
+    </div>
+    <p>
+        Trailer Youtube : <input type="text" formControlName="trailerYT">
+    </p>
+    <p>
+        Date de sortie : <input type="date" formControlName="dateSortie">
+    </p>
+    <!-- menu déroulant avec propositions existante !! -->
+    <p>
+        Arme signature(optionnel) : <input type="text" formControlName="armeId">
+    </p>
+    <p>
+        Matériaux d'elevation : <input type="text" formControlName="materiauxAmeliorationPersonnageId">
+    </p>
+    <p>
+        Produit d'elevation : <input type="text" formControlName="produitId">
+    </p>
+    <div class="form-group">
+        <label for="exampleSelect3" class="form-label mt-4">Rareté</label>
+        <select class="form-select" id="exampleSelect3" formControlName="rarete">
+            <option>4</option>
+            <option>5</option>
+        </select>
+    </div>
+    <p>
+        Portrait : <input type="file" (change)="loadIcone($event)">
+    </p>
+    <p>
+        Splash Art : <input type="file" (change)="loadImage($event)">
+    </p>
+    <button type="submit">Valider</button>
+</form>

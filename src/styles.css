@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+.star{
+    color:rgba(240, 217, 8, 0.74);
+}
+
+.buttonCreate{
+    font-size: 20px;
+}

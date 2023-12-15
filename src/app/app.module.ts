@@ -19,6 +19,12 @@ import { ProduitsCreateComponent } from './components/produits/produits-create/p
 import { ProduitsDetailsComponent } from './components/produits/produits-details/produits-details.component';
 import { ProduitsListeComponent } from './components/produits/produits-liste/produits-liste.component';
 import { StarPipe } from './shared/pipes/star.pipe';
+import { MateriauxAmeliorationPersonnagesCreateComponent } from './components/materiaux/materiaux-amelioration-personnages/materiaux-amelioration-personnages-create/materiaux-amelioration-personnages-create.component';
+import { MateriauxAmeliorationPersonnagesListeComponent } from './components/materiaux/materiaux-amelioration-personnages/materiaux-amelioration-personnages-liste/materiaux-amelioration-personnages-liste.component';
+import { MateriauxAmeliorationPersonnagesDetailsComponent } from './components/materiaux/materiaux-amelioration-personnages/materiaux-amelioration-personnages-details/materiaux-amelioration-personnages-details.component';
+import { PersonnageCreateComponent } from './components/personnages/personnage-create/personnage-create.component';
+import { PersonnageListeComponent } from './components/personnages/personnage-liste/personnage-liste.component';
+import { PersonnageDetailsComponent } from './components/personnages/personnage-details/personnage-details.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +40,13 @@ import { StarPipe } from './shared/pipes/star.pipe';
     ProduitsCreateComponent,
     ProduitsDetailsComponent,
     ProduitsListeComponent,
-    StarPipe
+    StarPipe,
+    MateriauxAmeliorationPersonnagesCreateComponent,
+    MateriauxAmeliorationPersonnagesListeComponent,
+    MateriauxAmeliorationPersonnagesDetailsComponent,
+    PersonnageCreateComponent,
+    PersonnageListeComponent,
+    PersonnageDetailsComponent
   ],
   imports: [
     BrowserModule,
