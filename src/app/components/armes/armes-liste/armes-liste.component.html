@@ -12,7 +12,7 @@
       <tr *ngFor="let arme of armes; let i = index">
         <th scope="row">{{i+1}}</th>
         <td>{{arme.nom}}</td>
-        <td><img [src]="'data:image/jpeg;base64,' + arme.icone" alt="{{arme.nom}}" width="50" height="50"/></td>
+        <td><img [src]="'data:image/jpeg;base64,' + arme.icone" alt="{{arme.nom}}" width="35" height="34"/></td>
         <td>{{arme.rarete}}</td>
         <td><button (click)="goDetails(arme.nom)" class="btn btn-info">Détails</button></td>
       </tr>

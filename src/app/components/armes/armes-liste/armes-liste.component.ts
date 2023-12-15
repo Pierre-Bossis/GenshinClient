@@ -12,7 +12,11 @@ export class ArmesListeComponent implements OnInit {
   armes:Armes[] = []
   constructor(private armesService:ArmesService, private route:Router){}
   ngOnInit(): void {
-    this.armesService.getAll().subscribe((data)=>this.armes = data) 
+    this.armesService.getAll().subscribe((data)=>{
+      this.armes = data
+      console.log(data);
+      
+    }) 
   }
 
 
