@@ -13,7 +13,7 @@
         <th scope="row">{{i+1}}</th>
         <td>{{materiaux.nom}}</td>
         <td><img [src]="'data:image/jpeg;base64,' + materiaux.icone" alt="{{materiaux.nom}}" width="35" height="34"/></td>
-        <td>{{materiaux.rarete}}</td>
+        <td>{{materiaux.rarete | star }}</td>
         <td>{{materiaux.source}}</td>
       </tr>
     </tbody>

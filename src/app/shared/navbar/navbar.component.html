@@ -15,24 +15,21 @@
             <a class="nav-link" routerLink="materiaux-elevation-armes/liste">Liste des materiaux elevation armes</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="materiaux-elevation-armes/create">Créer des materiaux elevation armes</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="armes/create">Créer une arme</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" routerLink="armes/liste">Liste des armes</a>
           </li>
-          <!-- <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Separated link</a>
-            </div>
-          </li> -->
+          <li class="nav-item">
+            <a class="nav-link" routerLink="produits/liste">Liste des produits</a>
+          </li>
+          <li ngbDropdown class="d-inline-block">
+            <button type="button" class="btn" id="dropdownBasic1" ngbDropdownToggle>
+              Créer
+            </button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+              <button class="dropdown-item" routerLink="materiaux-elevation-armes/create">Créer un materiau elevation armes</button>
+              <button class="dropdown-item" routerLink="armes/create">Créer une arme</button>
+              <button class="dropdown-item" routerLink="produits/create">Créer un produit</button>
+              </div>
+            </li>
         </ul>
         <!-- <form class="d-flex">
           <input class="form-control me-sm-2" type="search" placeholder="Search">

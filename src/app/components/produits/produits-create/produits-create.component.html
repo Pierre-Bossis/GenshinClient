@@ -1,0 +1,23 @@
+<h4>Ajouter un produit</h4>
+<form [formGroup]="produitsFormGroup" (ngSubmit)="onSubmit()">
+  <p>
+    Nom : <input type="text" formControlName="nom">
+  </p>
+  <p>
+    Icone : <input type="file" (change)="loadFile($event)">
+  </p>
+  <p>
+    Source : <input type="text" formControlName="source">
+  </p>
+  <div class="form-group">
+    <label for="exampleSelect" class="form-label mt-4">Rareté</label>
+    <select class="form-select" id="exampleSelect" formControlName="rarete">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+  </div>
+  <button type="submit">Valider</button>
+</form>

@@ -1,6 +1,6 @@
 <div *ngIf="materiaux">
     <p>Nom : {{materiaux.nom}}</p>
     <p>Source : {{materiaux.source}}</p>
-    <p>Rareté : {{materiaux.rarete}}</p>
+    <p>Rareté : {{materiaux.rarete | star }}</p>
     Icone : <img [src]="'data:image/jpeg;base64,' + materiaux.icone" alt="{{materiaux.nom}}"/>
 </div>

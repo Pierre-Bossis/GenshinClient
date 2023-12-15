@@ -6,6 +6,6 @@
     <p>Valeur stat principale : {{arme.valeurStatPrincipale}}</p>
     <p>Passif : {{arme.effetPassif}}</p>
     <p>ATQ de base : {{arme.atqBase}}</p>
-    <p>Rareté : {{arme.rarete}}</p>
+    <p>Rareté : {{arme.rarete | star}}</p>
     Artwork : <img [src]="'data:image/webp;base64,' + arme.image" alt="{{arme.nom}}"/>
 </div>

@@ -1,0 +1,6 @@
+<div *ngIf="produit">
+    <p>Nom : {{produit.nom}}</p>
+    <p>Source : {{produit.source}}</p>
+    <p>Rareté : {{produit.rarete | star }}</p>
+    Icone : <img [src]="'data:image/jpeg;base64,' + produit.icone" alt="{{produit.nom}}"/>
+</div>

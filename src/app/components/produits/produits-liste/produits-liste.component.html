@@ -1,0 +1,20 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Numéro</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Icone</th>
+        <th scope="col">Rareté</th>
+        <th scope="col1">Source</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let produit of produits; let i = index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{produit.nom}}</td>
+        <td><img [src]="'data:image/jpeg;base64,' + produit.icone" alt="{{produit.nom}}" width="35" height="34"/></td>
+        <td>{{produit.rarete | star }}</td>
+        <td>{{produit.source}}</td>
+      </tr>
+    </tbody>
+  </table>

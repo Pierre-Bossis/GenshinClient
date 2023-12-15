@@ -7,16 +7,22 @@ import { HomeComponent } from './components/home/home.component';
 import { MateriauxElevationArmesCreateComponent } from './components/materiaux/materiaux-elevation-armes/materiaux-elevation-armes-create/materiaux-elevation-armes-create.component';
 import { MateriauxElevationArmesDetailsComponent } from './components/materiaux/materiaux-elevation-armes/materiaux-elevation-armes-details/materiaux-elevation-armes-details.component';
 import { MateriauxElevationArmesListeComponent } from './components/materiaux/materiaux-elevation-armes/materiaux-elevation-armes-liste/materiaux-elevation-armes-liste.component';
+import { ProduitsCreateComponent } from './components/produits/produits-create/produits-create.component';
+import { ProduitsDetailsComponent } from './components/produits/produits-details/produits-details.component';
+import { ProduitsListeComponent } from './components/produits/produits-liste/produits-liste.component';
 
 const routes: Routes = [
-  {path:'',redirectTo:'home', pathMatch:'full'},
-  {path: 'home', component: HomeComponent},
+  {path : '', redirectTo : 'home', pathMatch : 'full'},
+  {path : 'home', component : HomeComponent},
   {path : 'materiaux-elevation-armes/create', component : MateriauxElevationArmesCreateComponent},
   {path : 'materiaux-elevation-armes/liste', component : MateriauxElevationArmesListeComponent},
   {path : 'materiaux-elevation-armes/:name', component : MateriauxElevationArmesDetailsComponent},
-  {path: 'armes/create', component : ArmesCreateComponent},
-  {path: 'armes/liste', component : ArmesListeComponent},
-  {path: 'armes/:name', component : ArmesDetailsComponent}
+  {path : 'armes/create', component : ArmesCreateComponent},
+  {path : 'armes/liste', component : ArmesListeComponent},
+  {path : 'armes/:name', component : ArmesDetailsComponent},
+  {path : 'produits/create',component : ProduitsCreateComponent},
+  {path : 'produits/liste', component : ProduitsListeComponent},
+  {path : 'produits/:name', component : ProduitsDetailsComponent}
 ];
 
 @NgModule({
