@@ -25,6 +25,7 @@ import { MateriauxAmeliorationPersonnagesDetailsComponent } from './components/m
 import { PersonnageCreateComponent } from './components/personnages/personnage-create/personnage-create.component';
 import { PersonnageListeComponent } from './components/personnages/personnage-liste/personnage-liste.component';
 import { PersonnageDetailsComponent } from './components/personnages/personnage-details/personnage-details.component';
+import { FooterComponent } from './shared/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { PersonnageDetailsComponent } from './components/personnages/personnage-
     MateriauxAmeliorationPersonnagesDetailsComponent,
     PersonnageCreateComponent,
     PersonnageListeComponent,
-    PersonnageDetailsComponent
+    PersonnageDetailsComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

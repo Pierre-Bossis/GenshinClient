@@ -9,21 +9,17 @@ th,td{
 .fade-in-splash {
     opacity: 0;
     position: relative;
-    animation: fadeIn 1.3s ease-in-out forwards;
+    animation: fadeIn 0.5s ease-in-out forwards;
   }
   
   @keyframes fadeIn {
     from {
       opacity: 0;
-      transform: translateX(-100%);
-    }
-    70%{
-        opacity: 0.5;
-        transform: translateX(10%);
+      /* transform: translateX(-100%); */
     }
     to {
       opacity: 1;
-      transform: translateX(0%);
+      /* transform: translateX(0%); */
     }
   }
 
@@ -31,21 +27,17 @@ th,td{
   .fade-in-tab {
     opacity: 0;
     position: relative;
-    animation: fadeInTab 1.3s ease-in-out forwards;
+    animation: fadeInTab 0.5s ease-in-out forwards;
   }
   
   @keyframes fadeInTab {
     from {
       opacity: 0;
-      transform: translateX(100%);
-    }
-    70%{
-        opacity: 0.5;
-        transform: translateX(-10%);
+      /* transform: translateX(100%); */
     }
     to {
       opacity: 1;
-      transform: translateX(0%);
+      /* transform: translateX(0%); */
     }
   }
 
@@ -53,21 +45,17 @@ th,td{
 .fade-in-trailer {
   opacity: 0;
   position: relative;
-  animation: fadeInTrailer 1.3s ease-in-out forwards;
+  animation: fadeInTrailer 0.5s ease-in-out forwards;
 }
 
 @keyframes fadeInTrailer {
   from {
     opacity: 0;
-    transform: translateY(100%);
-  }
-  70%{
-      opacity: 0.5;
-      transform: translateY(-10%);
+    /* transform: translateY(100%); */
   }
   to {
     opacity: 1;
-    transform: translateY(0%);
+    /* transform: translateY(0%); */
   }
 }
 
@@ -75,18 +63,22 @@ th,td{
   .fade-in-name {
     opacity: 0;
     position: relative;
-    animation: fadeInTrailer 1.3s ease-in-out forwards;
+    animation: fadeInTrailer 0.5s ease-in-out forwards;
   }
   
   @keyframes fadeInTrailer {
     from {
       opacity: 0;
+      position: relative;
+      /* transform: translateY(-100%); */
     }
-    50%{
+    /* 70%{
         opacity: 0.5;
-    }
+         transform: translateY(10%); 
+    } */
     to {
       opacity: 1;
+      /* transform: translateY(0%); */
     }
   }
   

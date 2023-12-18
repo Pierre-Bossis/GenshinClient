@@ -1,16 +1,16 @@
-<div *ngIf="personnage">
-    <h4 class="text-center mb-5 fade-in-name">{{personnage.nom}}</h4>
+<div *ngIf="personnage" class="fade-in-element">
+    <h4 class="text-center mb-5">{{personnage.nom}}</h4>
 
     <div class="row">
         <div class="col-auto">
-            <img class="fade-in-splash" [src]="'data:image/webp;base64,' + personnage.splashArt" alt="{{personnage.nom}}" width="1400"
+            <img [src]="'data:image/webp;base64,' + personnage.splashArt" alt="{{personnage.nom}}" width="1400"
                 height="700" />
         </div>
     </div>
 
     <div class="row">
         <div class="col-auto">
-            <table class="fade-in-tab">
+            <table>
                 <tbody>
                     <tr>
                         <td>Rareté</td>
@@ -54,10 +54,10 @@
     </div>
 </div>
 
-<div class="row fade-in-trailer">
-<div class="col-auto mb-5">
-    <iframe width="1200" height="600" [src]="trailer" title="YouTube video player" frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen></iframe>
-</div>
+<div class="row">
+    <div class="col-auto mb-5">
+        <iframe width="1200" height="600" [src]="trailer" title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+    </div>
 </div>

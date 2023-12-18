@@ -1,11 +1,46 @@
-<div *ngIf="arme">
-    <p>Nom : {{arme.nom}}</p>
-    <p>Type d'arme : {{arme.typeArme}}</p>
-    <p>Description : {{arme.description}}</p>
-    <p>Stat principale : {{arme.nomStatPrincipale}}</p>
-    <p>Valeur stat principale : {{arme.valeurStatPrincipale}}</p>
-    <p>Passif : {{arme.effetPassif}}</p>
-    <p>ATQ de base : {{arme.atqBase}}</p>
-    <p>Rareté : <span class="star">{{arme.rarete | star }}</span></p>
-    Artwork : <img [src]="'data:image/webp;base64,' + arme.image" alt="{{arme.nom}}"/>
+<div *ngIf="arme" class="fade-in-element">
+    <h4 class="text-center mb-5">{{arme.nom}}</h4>
+
+    <div class="row">
+        <div class="text-center">
+            <img [src]="'data:image/webp;base64,' + arme.image" alt="{{arme.nom}}" />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-auto">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>Rareté</td>
+                        <td><span class="star">{{arme.rarete | star }}</span></td>
+                    </tr>
+                    <tr>
+                        <td>Catégorie d'arme</td>
+                        <td>{{arme.typeArme}}</td>
+                    </tr>
+                    <tr>
+                        <td>Description</td>
+                        <td>{{arme.description}}</td>
+                    </tr>
+                    <tr>
+                        <td>Attaque de base</td>
+                        <td>{{arme.atqBase}}</td>
+                    </tr>
+                    <tr>
+                        <td>Stat Principale</td>
+                        <td>{{arme.nomStatPrincipale}}</td>
+                    </tr>
+                    <tr>
+                        <td>Valeur</td>
+                        <td>{{arme.valeurStatPrincipale}}</td>
+                    </tr>
+                    <tr>
+                        <td>Effet passif</td>
+                        <td>{{arme.effetPassif}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>

@@ -1,58 +1,82 @@
-<h4>Ajouter une arme</h4>
+<div class="fade-in-element">
 
-<form [formGroup]="armesFormGroup" (ngSubmit)="onSubmit()">
-  <p>
-    Nom : <input type="text" formControlName="nom">
-  </p>
+  <h4 class="text-center">Ajouter une arme</h4>
+
+  <form class="col-8 offset-2" [formGroup]="armesFormGroup" (ngSubmit)="onSubmit()">
+
     <div class="form-group">
-        <label for="exampleSelect1" class="form-label mt-4">Type d'arme</label>
-        <select class="form-select" id="exampleSelect1" formControlName="typeArme">
-          <option>Epée</option>
-          <option>Claymore</option>
-          <option>Arc</option>
-          <option>Lance</option>
-          <option>Catalyseur</option>
-        </select>
-      </div>
-  <p>
-    Description : <input type="text" formControlName="description">
-  </p>
-  <p>
-    Icone : <input type="file" (change)="loadIcone($event)">
-  </p>
-  <p>
-    Image : <input type="file" (change)="loadImage($event)">
-  </p>
-  <div class="form-group">
-    <label for="exampleSelect2" class="form-label mt-4">Statistique principale</label>
-    <select class="form-select" id="exampleSelect2" formControlName="nomStatPrincipale">
-      <option>ATQ %</option>
-      <option>Defense %</option>
-      <option>Degats physique %</option>
-      <option>Taux Critique %</option>
-      <option>Degats Critique %</option>
-      <option>Recharge Energie %</option>
-      <option>Maitrîse Elementaire</option>
-    </select>
-  </div>
-  <p>
-    Valeur de la stat principale : <input type="number" formControlName="valeurStatPrincipale">
-  </p>
-  <p>
-    Effet passif : <input type="text" formControlName="effetPassif">
-  </p>
-  <p>
-    Attaque de base : <input type="number" formControlName="atqBase">
-  </p>
-  <div class="form-group">
-    <label for="exampleSelect3" class="form-label mt-4">Rareté</label>
-    <select class="form-select" id="exampleSelect3" formControlName="rarete">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </select>
-  </div>
-  <button type="submit">Valider</button>
-</form>
+      <label for="nom" class="form-label mt-4">Nom</label>
+      <input type="text" class="form-control" id="nom" placeholder="Nom" formControlName="nom">
+    </div>
+
+    <div class="form-group">
+      <label for="exampleSelect1" class="form-label mt-4">Type d'arme</label>
+      <select class="form-select" id="exampleSelect1" formControlName="typeArme">
+        <option value="" disabled selected hidden>Type d'arme</option>
+        <option>Epée</option>
+        <option>Claymore</option>
+        <option>Arc</option>
+        <option>Lance</option>
+        <option>Catalyseur</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="desc" class="form-label mt-4">Description</label>
+      <input type="text" class="form-control" id="desc" placeholder="Description" formControlName="description">
+    </div>
+
+    <div class="form-group">
+      <label for="IconeFile" class="form-label mt-4">Icone</label>
+      <input class="form-control" id="IconeFile" type="file" (change)="loadIcone($event)">
+    </div>
+
+    <div class="form-group">
+      <label for="ImageFile" class="form-label mt-4">Image</label>
+      <input type="file" class="form-control" (change)="loadImage($event)">
+    </div>
+
+    <div class="form-group">
+      <label for="exampleSelect2" class="form-label mt-4">Statistique principale</label>
+      <select class="form-select" id="exampleSelect2" formControlName="nomStatPrincipale">
+        <option value="" disabled selected hidden>Statistique principale</option>
+        <option>ATQ %</option>
+        <option>Defense %</option>
+        <option>Degats physique %</option>
+        <option>Taux Critique %</option>
+        <option>Degats Critique %</option>
+        <option>Recharge Energie %</option>
+        <option>Maitrîse Elementaire</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="vsp" class="form-label mt-4">Valeur de la stat principale</label>
+      <input type="number" class="form-control" id="vsp" placeholder="Valeur statistique principale" formControlName="valeurStatPrincipale">
+    </div>
+
+    <div class="form-group">
+      <label for="ep" class="form-label mt-4">Effet passif</label>
+      <input type="text" class="form-control" id="ep" placeholder="Effet passif" formControlName="effetPassif">
+    </div>
+
+    <div class="form-group">
+      <label for="atqbase" class="form-label mt-4">Attaque de base</label>
+      <input type="number" class="form-control" id="atqbase" placeholder="Attaque de base" formControlName="atqBase">
+    </div>
+
+    <div class="form-group">
+      <label for="exampleSelect3" class="form-label mt-4">Rareté</label>
+      <select class="form-select" id="exampleSelect3" formControlName="rarete">
+        <option value="" disabled selected hidden>Rareté</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </div>
+
+    <button type="submit" class="mt-4 btn btn-primary">Valider</button>
+  </form>
+</div>
