@@ -26,6 +26,13 @@ import { PersonnageCreateComponent } from './components/personnages/personnage-c
 import { PersonnageListeComponent } from './components/personnages/personnage-liste/personnage-liste.component';
 import { PersonnageDetailsComponent } from './components/personnages/personnage-details/personnage-details.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { MondstatComponent } from './components/regions/mondstat/mondstat.component';
+import { LiyueComponent } from './components/regions/liyue/liyue.component';
+import { InazumaComponent } from './components/regions/inazuma/inazuma.component';
+import { SumeruComponent } from './components/regions/sumeru/sumeru.component';
+import { FontaineComponent } from './components/regions/fontaine/fontaine.component';
+import { NatlanComponent } from './components/regions/natlan/natlan.component';
+import { SnezhnayaComponent } from './components/regions/snezhnaya/snezhnaya.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +55,14 @@ import { FooterComponent } from './shared/footer/footer.component';
     PersonnageCreateComponent,
     PersonnageListeComponent,
     PersonnageDetailsComponent,
-    FooterComponent
+    FooterComponent,
+    MondstatComponent,
+    LiyueComponent,
+    InazumaComponent,
+    SumeruComponent,
+    FontaineComponent,
+    NatlanComponent,
+    SnezhnayaComponent
   ],
   imports: [
     BrowserModule,
