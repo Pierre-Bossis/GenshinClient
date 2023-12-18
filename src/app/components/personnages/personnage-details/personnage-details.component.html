@@ -1,1 +1,63 @@
-<p>personnage-details works!</p>
+<div *ngIf="personnage">
+    <h4 class="text-center mb-5 fade-in-name">{{personnage.nom}}</h4>
+
+    <div class="row">
+        <div class="col-auto">
+            <img class="fade-in-splash" [src]="'data:image/webp;base64,' + personnage.splashArt" alt="{{personnage.nom}}" width="1400"
+                height="700" />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-auto">
+            <table class="fade-in-tab">
+                <tbody>
+                    <tr>
+                        <td>Rareté</td>
+                        <td><span class="star">{{personnage.rarete | star }}</span></td>
+                    </tr>
+                    <tr>
+                        <td>Oeil Divin</td>
+                        <td>{{personnage.oeilDivin}}</td>
+                    </tr>
+                    <tr>
+                        <td>Type d'arme</td>
+                        <td>{{personnage.typeArme}}</td>
+                    </tr>
+                    <tr>
+                        <td>Lore</td>
+                        <td>{{personnage.lore}}</td>
+                    </tr>
+                    <tr>
+                        <td>Nationalité</td>
+                        <td>{{personnage.nationalite}}</td>
+                    </tr>
+                    <tr>
+                        <td>Date de sortie</td>
+                        <td>{{personnage.dateSortie | date:'d MMMM y'}}</td>
+                    </tr>
+                    <tr *ngIf="personnage.armeId">
+                        <td>Arme signature</td>
+                        <td>{{personnage.armeId}}</td>
+                    </tr>
+                    <tr>
+                        <td>materiaux d'amelioration personnage</td>
+                        <td>{{personnage.materiauxAmeliorationPersonnageId}}</td>
+                    </tr>
+                    <tr>
+                        <td>Produit d'amelioration personnage</td>
+                        <td>{{personnage.produitId}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="row fade-in-trailer">
+<div class="col-auto mb-5">
+    <iframe width="1200" height="600" [src]="trailer" title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+</div>
+</div>
