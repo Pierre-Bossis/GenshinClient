@@ -11,17 +11,16 @@
                     l'odeur des pissenlits se lève depuis les montagnes et traverse les vastes plaines, en passant
                     au-dessus du Lac de Cidre pour apporter la bénédiction de Barbatos, l'Archon Anémo, à Mondstadt
                     qui se trouve en son cœur.</p>
-                <br><br>
+                <br>
                 <h2>Mondstadt - La Cité de la lune</h2>
                 <p>Mondstadt (de l'allemand Mondstadt, « Cité de la lune ») est l'une des sept nations de Teyvat.
                     C'est également dans cette région que débute l'aventure du Voyageur après être parti à la
                     recherche de son Jumeau. C'est dans cette région qu'on adore Barbatos, l'Archon Anémo.</p>
-                <br><br>
+                <br>
                 <p>Avant la complétion de l'acte 1 du Prologue des quêtes d'Archons, Le Voyageur qui attrapa le
                     vent, seules certaines zones de la Vallée Tombétoile, de la Colline sifflante et des Hauts du
                     Mornevent sont accessibles. Le Prologue, Le voyageur qui attrapa le vent, se déroule dans cette
                     région.</p>
-                <br>
                 <hr>
                 <br>
                 <p>« Le dragon qui pendant mille ans a défendu la cité de la liberté a enfin fait face a son dilemme.
@@ -31,14 +30,14 @@
             </div>
         </div>
         <div class="col-5">
-            <img src="../../../../assets/mondstatMap.jfif">
+            <img src="../../../../assets/mondstatMap.jfif" width="900" height="750">
         </div>
     </div>
 
-    <div class="row mt-5" *ngIf="personnages">
+    <div class="row mt-5" *ngIf="personnages.length > 0">
         <h4 class="text-center">Personnages de mondstat</h4>
 
-        <div class="row fade-in-element" *ngIf="personnages">
+        <div class="row fade-in-element">
             <div class="col-auto" *ngFor="let personnage of personnages">
                 <img (click)="goDetails(personnage.nom)" [src]="'data:image/jpeg;base64,' + personnage.portrait"
                     alt="{{personnage.nom}}" width="150" height="150" />

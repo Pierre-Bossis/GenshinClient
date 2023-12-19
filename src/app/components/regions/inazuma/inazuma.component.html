@@ -26,14 +26,14 @@
             </div>
         </div>
         <div class="col-5">
-            <img src="../../../../assets/inazumaMap.png">
+            <img src="../../../../assets/inazumaMap.png" width="900" height="750">
         </div>
     </div>
 
-    <div class="row mt-5" *ngIf="personnages">
+    <div class="row mt-5" *ngIf="personnages.length > 0">
         <h4 class="text-center">Personnages d'Inazuma</h4>
 
-        <div class="row fade-in-element" *ngIf="personnages">
+        <div class="row fade-in-element">
             <div class="col-auto" *ngFor="let personnage of personnages">
                 <img (click)="goDetails(personnage.nom)" [src]="'data:image/jpeg;base64,' + personnage.portrait"
                     alt="{{personnage.nom}}" width="150" height="150" />

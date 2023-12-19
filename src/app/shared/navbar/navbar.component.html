@@ -1,49 +1,41 @@
-<nav class="navbar navbar-expand-lg bg-secondary mb-5" data-bs-theme="dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Genshin</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarColor01">
-        <ul class="navbar-nav me-auto">
-          <li class="nav-item">
-            <a class="nav-link active"routerLink="home">Home
-              <span class="visually-hidden">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="materiaux-elevation-armes/liste">Liste des materiaux elevation armes</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="armes/liste">Liste des armes</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="produits/liste">Liste des produits</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="materiaux-amelioration-personnages/liste">Liste des materiaux amelioration personnages</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="personnages/liste">Liste des personnages</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="regions">Régions</a>
-          </li>
-          <!-- <li ngbDropdown class="d-inline-block">
-            <button type="button" class="btn" id="dropdownBasic1" ngbDropdownToggle>
-              Créer
-            </button>
-            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-              <button class="dropdown-item" routerLink="materiaux-elevation-armes/create">Créer un materiau elevation armes</button>
-              <button class="dropdown-item" routerLink="armes/create">Créer une arme</button>
-              <button class="dropdown-item" routerLink="produits/create">Créer un produit</button>
-              </div>
-            </li> -->
-        </ul>
-        <!-- <form class="d-flex">
-          <input class="form-control me-sm-2" type="search" placeholder="Search">
-          <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-        </form> -->
-      </div>
+<nav class="navbar navbar-expand-lg bg-dark mb-5" data-bs-theme="dark">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav me-auto w-100">
+
+        <li class="nav-item flex-fill">
+          <a class="nav-link" routerLink="home">Home</a>
+        </li>
+
+        <li class="nav-item flex-fill">
+          <a class="nav-link" routerLink="armes/liste">Armes</a>
+        </li>
+        
+        <li class="nav-item flex-fill">
+          <a class="nav-link" routerLink="personnages/liste">Personnages</a>
+        </li>
+
+        <li ngbDropdown class="nav-item dropdown flex-fill">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" ngbDropdownToggle>
+            Liste
+          </a>
+          <div ngbDropdownMenu aria-labelledby="navbarDropdown" class="dropdown-menu">
+            <button class="dropdown-item" routerLink="materiaux-elevation-armes/liste">Liste materiaux elevation armes</button>
+            <button class="dropdown-item" routerLink="produits/liste">Liste produits</button>
+            <button class="dropdown-item" routerLink="materiaux-amelioration-personnages/liste">Liste des matériaux d'amélioration(personnages)</button>
+            <button class="dropdown-item" routerLink="materiaux-elevation-personnages/liste">Liste des matériaux d'elevation(personnages)</button>
+            <button class="dropdown-item" routerLink="livres-aptitude/liste">Liste des livres d'aptitude</button>
+          </div>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="regions">Régions</a>
+        </li>
+
+      </ul>
     </div>
-  </nav>
+  </div>
+</nav>

@@ -21,7 +21,7 @@
       <td>{{arme.nom}}</td>
       <td><img [src]="'data:image/jpeg;base64,' + arme.icone" alt="{{arme.nom}}" width="35" height="34" /></td>
       <td><span class="star">{{arme.rarete | star }}</span></td>
-      <td><button (click)="goDetails(arme.nom)" class="btn btn-info">Détails</button></td>
+      <td><button (click)="goDetails(arme.nom)" class="btn btn-primary">Détails</button></td>
     </tr>
   </tbody>
 </table>

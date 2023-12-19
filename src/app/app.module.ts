@@ -32,6 +32,12 @@ import { InazumaComponent } from './components/regions/inazuma/inazuma.component
 import { SumeruComponent } from './components/regions/sumeru/sumeru.component';
 import { FontaineComponent } from './components/regions/fontaine/fontaine.component';
 import { RegionsComponent } from './components/regions/regions.component';
+import { MateriauxElevationPersonnagesCreateComponent } from './components/materiaux/materiaux-elevation-personnages/materiaux-elevation-personnages-create/materiaux-elevation-personnages-create.component';
+import { MateriauxElevationPersonnagesListeComponent } from './components/materiaux/materiaux-elevation-personnages/materiaux-elevation-personnages-liste/materiaux-elevation-personnages-liste.component';
+import { MateriauxElevationPersonnagesDetailsComponent } from './components/materiaux/materiaux-elevation-personnages/materiaux-elevation-personnages-details/materiaux-elevation-personnages-details.component';
+import { LivresAptitudeCreateComponent } from './components/materiaux/livres-aptitude/livres-aptitude-create/livres-aptitude-create.component';
+import { LivresAptitudeListeComponent } from './components/materiaux/livres-aptitude/livres-aptitude-liste/livres-aptitude-liste.component';
+import { LivresAptitudeDetailsComponent } from './components/materiaux/livres-aptitude/livres-aptitude-details/livres-aptitude-details.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +66,13 @@ import { RegionsComponent } from './components/regions/regions.component';
     InazumaComponent,
     SumeruComponent,
     FontaineComponent,
-    RegionsComponent
+    RegionsComponent,
+    MateriauxElevationPersonnagesCreateComponent,
+    MateriauxElevationPersonnagesListeComponent,
+    MateriauxElevationPersonnagesDetailsComponent,
+    LivresAptitudeCreateComponent,
+    LivresAptitudeListeComponent,
+    LivresAptitudeDetailsComponent
   ],
   imports: [
     BrowserModule,

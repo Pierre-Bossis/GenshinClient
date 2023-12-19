@@ -4,8 +4,17 @@ button:active{
 
 nav{
     z-index: 9999;
-    overflow: hidden;
-    position: fixed;
+    position: relative;
+    top:5vh;
     width: 100%;
-    top:0;
+    border-radius: 20px;
+    border: 1px outset orange;
+}
+
+.nav-link{
+    font-weight: bold;
+}
+
+.nav-link:hover, .nav-link:focus{
+    color: rgb(252, 164, 0);
 }

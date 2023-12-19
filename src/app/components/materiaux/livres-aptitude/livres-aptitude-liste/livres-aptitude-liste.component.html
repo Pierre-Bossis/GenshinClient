@@ -1,0 +1,27 @@
+<div class="row justify-content-end fade-in-element">
+    <h4 class="text-center">Liste des livres d'aptitude</h4>
+    <div class="col-1">
+      <button class="btn btn-outline-primary" routerLink="/livres-aptitude/create">+</button>
+    </div>
+  </div>
+  
+  <table class="table fade-in-element">
+      <thead>
+        <tr>
+          <th scope="col">Numéro</th>
+          <th scope="col">Nom</th>
+          <th scope="col">Icone</th>
+          <th scope="col">Rareté</th>
+          <th scope="col1">Source</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let livre of livres; let i = index">
+          <th scope="row">{{i+1}}</th>
+          <td>{{livre.nom}}</td>
+          <td><img [src]="'data:image/jpeg;base64,' + livre.icone" alt="{{livre.nom}}" width="35" height="34"/></td>
+          <td><span class="star">{{livre.rarete| star}}</span></td>
+          <td>{{livre.source}}</td>
+        </tr>
+      </tbody>
+    </table>

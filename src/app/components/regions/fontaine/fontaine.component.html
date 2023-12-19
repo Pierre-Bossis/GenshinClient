@@ -10,11 +10,11 @@
                 <p>De toutes les nations de Teyvat, Fontaine se vante d'être le centre de la culture et de l'art ; ou, d'après les mots de Francis, 
                     un marchant ambulant originaire de cette nation, « un lieu où la beauté le dispute à l'élégance ». Le journal L'Oiseau de vapeur est le journal 
                     le plus lu du Tribunal de Fontaine ; Mona y tenant une colonne, on peut penser que ses rédacteurs proviennent de tout Teyvat.</p>
-                <br><br>
+                <br>
                 <h2>Fontaine - La cité de la justice de Teyvat</h2>
                     <p>Fontaine est l'une des sept régions de Teyvat. C'est la cité-état qui vénère la Déesse de la Justice, Foçalors.
                          L'idéal de Fontaine est celui de la Justice. Les habitants de Fontaine sont nommés Fontainois ou Fontainoise.</p>
-                <br>
+                
                 <p>Avant la complétion de l'acte 1 du Prologue des quêtes d'Archons, Le Voyageur qui attrapa le
                     vent, seules certaines zones de la Vallée Tombétoile, de la Colline sifflante et des Hauts du
                     Mornevent sont accessibles. Le Prologue, Le voyageur qui attrapa le vent, se déroule dans cette
@@ -27,14 +27,14 @@
             </div>
         </div>
         <div class="col-5">
-            <img src="../../../../assets/fontaineMap.png">
+            <img src="../../../../assets/fontaineMap.png" width="900" height="750">
         </div>
     </div>
 
-    <div class="row mt-5" *ngIf="personnages">
+    <div class="row mt-5" *ngIf="personnages.length > 0">
         <h4 class="text-center">Personnages de Fontaine</h4>
 
-        <div class="row fade-in-element" *ngIf="personnages">
+        <div class="row fade-in-element">
             <div class="col-auto" *ngFor="let personnage of personnages">
                 <img (click)="goDetails(personnage.nom)" [src]="'data:image/jpeg;base64,' + personnage.portrait"
                     alt="{{personnage.nom}}" width="150" height="150" />
