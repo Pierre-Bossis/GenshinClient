@@ -21,6 +21,10 @@ export class ArmesService {
     return this.http.get<Armes>(this.url+"armes/"+name)
   }
 
+  getById(id:number):Observable<Armes>{
+    return this.http.get<Armes>(this.url+"armes/"+id)
+  }
+
   create(icone:File,image:File,arme : ArmesForm){
     const newArme = this.upload.upload(icone,image)
 

@@ -1,4 +1,4 @@
-<div *ngIf="personnage" class="fade-in-element">
+<div *ngIf="personnage && arme && produit && mat" class="fade-in-element">
     <h4 class="text-center mb-5">{{personnage.nom}}</h4>
 
     <div class="row">
@@ -36,17 +36,17 @@
                         <td>Date de sortie</td>
                         <td>{{personnage.dateSortie | date:'d MMMM y'}}</td>
                     </tr>
-                    <tr *ngIf="personnage.armeId">
+                    <tr *ngIf="personnage.arme_Id">
                         <td>Arme signature</td>
-                        <td>{{personnage.armeId}}</td>
+                        <td><img [src]="'data:image/webp;base64,' + arme.image" alt="{{arme.nom}}" width="30" height="50" /><b (click)="goDetails(arme.nom)" class="text-primary">{{arme.nom}}</b></td>
                     </tr>
                     <tr>
                         <td>materiaux d'amelioration personnage</td>
-                        <td>{{personnage.materiauxAmeliorationPersonnageId}}</td>
+                        <td><img [src]="'data:image/webp;base64,' + mat.icone" alt="{{mat.nom}}" width="50" height="50" />{{mat.nom}}</td>
                     </tr>
                     <tr>
                         <td>Produit d'amelioration personnage</td>
-                        <td>{{personnage.produitId}}</td>
+                        <td><img [src]="'data:image/webp;base64,' + produit.icone" alt="{{produit.nom}}" width="50" height="50"/>{{produit.nom}}</td>
                     </tr>
                 </tbody>
             </table>

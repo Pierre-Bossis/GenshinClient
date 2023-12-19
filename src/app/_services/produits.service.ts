@@ -18,7 +18,11 @@ export class ProduitsService {
   }
 
   getByName(name: string): Observable<any> {
-    return this.http.get<any>(this.url + "produits/" + name)
+    return this.http.get<Produits>(this.url + "produits/" + name)
+  }
+
+  getById(id:number): Observable<Produits> {
+    return this.http.get<Produits>(this.url + "produits/" + id)
   }
 
   create(fileToUpload:File,produit: ProduitsForm) {

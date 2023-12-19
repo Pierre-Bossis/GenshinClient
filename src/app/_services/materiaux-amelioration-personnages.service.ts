@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environment';
 import { MateriauxAmeliorationPersonnages, MateriauxAmeliorationPersonnagesForm } from '../_models/materiaux-amelioration-personnages';
+import { Produits } from '../_models/produits';
 import { UploadService } from './upload.service';
 
 @Injectable({
@@ -17,8 +18,12 @@ export class MateriauxAmeliorationPersonnagesService {
     return this.http.get<MateriauxAmeliorationPersonnages[]>(this.url + "materiauxameliorationpersonnages")
   }
 
-  getByName(name: string): Observable<any> {
-    return this.http.get<any>(this.url + "materiauxameliorationpersonnages/" + name)
+  getByName(name: string): Observable<MateriauxAmeliorationPersonnages> {
+    return this.http.get<MateriauxAmeliorationPersonnages>(this.url + "materiauxameliorationpersonnages/" + name)
+  }
+
+  getById(id:number): Observable<MateriauxAmeliorationPersonnages> {
+    return this.http.get<MateriauxAmeliorationPersonnages>(this.url + "materiauxameliorationpersonnages/" + id)
   }
 
   create(fileToUpload:File,mat: MateriauxAmeliorationPersonnagesForm) {

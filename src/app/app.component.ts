@@ -1,6 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { MateriauxElevationArmes } from './_models/materiaux-elevation-armes';
-import { MateriauxElevationArmesService } from './_services/materiaux-elevation-armes.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',

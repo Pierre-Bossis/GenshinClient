@@ -16,6 +16,12 @@ import { PersonnageListeComponent } from './components/personnages/personnage-li
 import { ProduitsCreateComponent } from './components/produits/produits-create/produits-create.component';
 import { ProduitsDetailsComponent } from './components/produits/produits-details/produits-details.component';
 import { ProduitsListeComponent } from './components/produits/produits-liste/produits-liste.component';
+import { FontaineComponent } from './components/regions/fontaine/fontaine.component';
+import { InazumaComponent } from './components/regions/inazuma/inazuma.component';
+import { LiyueComponent } from './components/regions/liyue/liyue.component';
+import { MondstatComponent } from './components/regions/mondstat/mondstat.component';
+import { RegionsComponent } from './components/regions/regions.component';
+import { SumeruComponent } from './components/regions/sumeru/sumeru.component';
 
 const routes: Routes = [
   {path : '', redirectTo : 'home', pathMatch : 'full'},
@@ -34,7 +40,14 @@ const routes: Routes = [
   {path : 'produits/:name', component : ProduitsDetailsComponent},
   {path : 'personnages/create', component : PersonnageCreateComponent},
   {path : 'personnages/liste', component : PersonnageListeComponent},
-  {path : 'personnages/:name', component : PersonnageDetailsComponent}
+  {path : 'personnages/:name', component : PersonnageDetailsComponent},
+
+  {path : 'regions', component : RegionsComponent},
+  {path : 'regions/mondstat', component : MondstatComponent},
+  {path : 'regions/liyue', component : LiyueComponent},
+  {path : 'regions/inazuma', component : InazumaComponent},
+  {path : 'regions/sumeru', component : SumeruComponent},
+  {path : 'regions/fontaine', component : FontaineComponent}
 ];
 
 @NgModule({

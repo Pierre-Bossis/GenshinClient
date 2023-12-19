@@ -1,1 +1,45 @@
-<p>sumeru works!</p>
+<div class="fade-in-element">
+
+    <h4 class="text-center">Sumeru</h4>
+    <div class="text-center"><img src="../../../../assets/dendro.webp" width="100" height="100"></div>
+
+    <div class="row mt-5">
+        <div class="col-7">
+            <div class="text-content">
+                <h2>La nation des érudits de Teyvat</h2>
+                <p>La nation des érudits située au centre-ouest de Teyvat.
+                    Une nation où l'on trouve une forêt tropicale luxuriante et un désert aride. De nombreux fruits de la sagesse s'y épanouissent et y périssent. Que les voyageurs
+                     s'enfoncent la forêt pour se rendre à la cité académique ou qu'ils traversent le désert pour y découvrir des vestiges historiques, ils pourront tous en tirer de précieuses connaissances.</p>
+                <br><br>
+                <h2>Mondstadt - La Cité des érudits</h2>
+                <p>Sumeru est l'une des sept région de Teyvat. C'est dans cette région qu'est adorée la Rani Kusanali, Archon de Sumeru. Les habitants de Sumeru sont nommés Sumérien ou Sumérienne.</p>
+                <br><br>
+                <p>Cette région est connue pour être le centre de la connaissance et accueille la renommée Académie de Sumeru où Lisa a notamment étudié.</p>
+                <p>Le Chapitre III, Vérité du Purana, se déroule dans cette région.</p>
+                <hr>
+                <br>
+                <p>« La sagesse est l'ennemi du Dieu de la sagesse, et l'oasis du savoir n'est que mirage dans le désert de l'ignorance. La cité des érudits semble tomber sous la folie, mais la sagesse n'en a cure. »</p>
+                <br>
+                <p style="text-align: end;"> — Dainsleif dans Les Traces</p>
+            </div>
+        </div>
+        <div class="col-5">
+            <img src="../../../../assets/sumeruMap.webp">
+        </div>
+    </div>
+
+    <div class="row mt-5" *ngIf="personnages">
+        <h4 class="text-center">Personnages de Sumeru</h4>
+
+        <div class="row fade-in-element" *ngIf="personnages">
+            <div class="col-auto" *ngFor="let personnage of personnages">
+                <img (click)="goDetails(personnage.nom)" [src]="'data:image/jpeg;base64,' + personnage.portrait"
+                    alt="{{personnage.nom}}" width="150" height="150" />
+                <div class="text-center">
+                    <span>{{personnage.nom}}</span><br />
+                    <span class="star">{{personnage.rarete | star }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

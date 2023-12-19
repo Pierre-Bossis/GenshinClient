@@ -31,8 +31,7 @@ import { LiyueComponent } from './components/regions/liyue/liyue.component';
 import { InazumaComponent } from './components/regions/inazuma/inazuma.component';
 import { SumeruComponent } from './components/regions/sumeru/sumeru.component';
 import { FontaineComponent } from './components/regions/fontaine/fontaine.component';
-import { NatlanComponent } from './components/regions/natlan/natlan.component';
-import { SnezhnayaComponent } from './components/regions/snezhnaya/snezhnaya.component';
+import { RegionsComponent } from './components/regions/regions.component';
 
 @NgModule({
   declarations: [
@@ -61,8 +60,7 @@ import { SnezhnayaComponent } from './components/regions/snezhnaya/snezhnaya.com
     InazumaComponent,
     SumeruComponent,
     FontaineComponent,
-    NatlanComponent,
-    SnezhnayaComponent
+    RegionsComponent
   ],
   imports: [
     BrowserModule,

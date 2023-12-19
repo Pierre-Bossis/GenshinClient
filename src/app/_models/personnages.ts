@@ -9,9 +9,9 @@ export interface Personnages {
     splashArt:string
     portrait:string
     dateSortie:Date
-    armeId?:number
-    materiauxAmeliorationPersonnageId:number
-    produitId:number
+    arme_Id?:number
+    materiauxAmeliorationPersonnage_Id:number
+    produit_Id:number
     rarete:number
 }
 

@@ -21,6 +21,10 @@ export class PersonnagesService {
     return this.http.get<Personnages>(this.url+"personnages/"+name)
   }
 
+  getByNationalite(nationalite:string):Observable<Personnages[]>{
+    return this.http.get<Personnages[]>(this.url+"personnages/"+nationalite)
+  }
+
   create(icone:File,image:File,personnage : PersonnagesForm){
     const newPersonnage = this.upload.upload(icone,image)
 

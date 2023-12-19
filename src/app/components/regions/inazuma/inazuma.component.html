@@ -1,1 +1,47 @@
-<p>inazuma works!</p>
+<div class="fade-in-element">
+
+    <h4 class="text-center">Inazuma</h4>
+    <div class="text-center"><img src="../../../../assets/electro.png" width="100" height="100"></div>
+
+    <div class="row mt-5">
+        <div class="col-7">
+            <div class="text-content">
+                <h2>Un archipel situé aux confins orientaux de Teyvat</h2>
+                <p>Un archipel situé aux confins orientaux de Teyvat, ceint par les mers et vivant en ostracisme.
+                    Traversez la tempête sans fin, foulez le sol des îles couvertes d'érables et de cerisiers, parcourez des forêts et franchissez des précipices pour être témoin de la quête « d'éternité »
+                     de la toute-puissante Narukami Ogosho.</p>
+                <br><br>
+                <h2>Inazuma - La Cité de la foudre</h2>
+                <p>Inazuma est l'une des sept régions de Teyvat. C'est la région archipélagique qui vénère la Shogun Raiden, l'Archon Électro.
+                     Les habitants d'Inazuma sont nommés Inazumien ou Inazumienne.</p>
+                <br><br>
+                <p>L'accès à Inazuma se déverrouille après avoir atteint le niveau d'aventure 30 et terminé la première partie du Chapitre II : Acte I - Divinité impitoyable et euthymie éternelle.
+                    Le Chapitre II, Omniprésence sur les mortels, se déroule dans cette région.</p>
+                <br>
+                <hr>
+                <br>
+                <p>« Sur les terres recluses de l'immortel shogunat règne le Bakufu, et la Shogun Raiden. Mais que voient les mortelles de l'éternité après laquelle court leur déesse... ? »</p>
+                <br>
+                <p style="text-align: end;"> — Dainsleif dans Les Traces</p>
+            </div>
+        </div>
+        <div class="col-5">
+            <img src="../../../../assets/inazumaMap.png">
+        </div>
+    </div>
+
+    <div class="row mt-5" *ngIf="personnages">
+        <h4 class="text-center">Personnages d'Inazuma</h4>
+
+        <div class="row fade-in-element" *ngIf="personnages">
+            <div class="col-auto" *ngFor="let personnage of personnages">
+                <img (click)="goDetails(personnage.nom)" [src]="'data:image/jpeg;base64,' + personnage.portrait"
+                    alt="{{personnage.nom}}" width="150" height="150" />
+                <div class="text-center">
+                    <span>{{personnage.nom}}</span><br />
+                    <span class="star">{{personnage.rarete | star }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
