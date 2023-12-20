@@ -43,7 +43,7 @@ export class PersonnageDetailsComponent {
         this.personnage = data
         
         if(data.arme_Id){
-          this.armesService.getById(data.arme_Id).subscribe((dataArme) => this.arme = dataArme)
+          this.armesService.getById(data.arme_Id).subscribe((dataArme) => this.arme = dataArme.arme)
         }
 
         if(data.produit_Id){

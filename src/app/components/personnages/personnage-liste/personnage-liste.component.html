@@ -7,11 +7,15 @@
 
 <div class="row fade-in-element" *ngIf="personnages">
   <div class="col-auto" *ngFor="let personnage of personnages">
-    <img (click)="goDetails(personnage.nom)" [src]="'data:image/jpeg;base64,' + personnage.portrait"
-      alt="{{personnage.nom}}" width="150" height="150" />
-    <div class="text-center">
-      <span>{{personnage.nom}}</span><br />
-      <span class="star">{{personnage.rarete | star }}</span>
+    <div class="card text-white bg-dark mb-3" style="max-width: 20rem;">
+      <div class="card-body">
+        <img class="img" (click)="goDetails(personnage.nom)" [src]="'data:image/jpeg;base64,' + personnage.portrait"
+          alt="{{personnage.nom}}" width="190" height="190" />
+        <h4 class="card-title text-center mt-1">{{personnage.nom}}</h4>
+        <p class="card-text text-center"><span class="star">{{personnage.rarete | star }}</span></p>
+        <p class="text-center"><img src="../../../../assets/{{personnage.oeilDivin}}.png" width="50"
+          height="50"></p>
+      </div>
     </div>
   </div>
 

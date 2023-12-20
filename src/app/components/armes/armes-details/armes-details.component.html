@@ -13,7 +13,7 @@
                 <tbody>
                     <tr>
                         <td>Rareté</td>
-                        <td><span class="star">{{arme.rarete | star }}</span></td>
+                        <td class="star">{{arme.rarete | star }}</td>
                     </tr>
                     <tr>
                         <td>Catégorie d'arme</td>
@@ -39,6 +39,30 @@
                         <td>Effet passif</td>
                         <td>{{arme.effetPassif}}</td>
                     </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <h3 class="mt-5">Matériaux d'elevation</h3>
+    <div class="row">
+        <div class="">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Icone</th>
+                        <th>Rareté</th>
+                        <th>Source</th>
+                    </tr>
+                </thead>
+                <tbody>
+                        <tr *ngFor="let mat of materiauxElevationArmes">
+                            <td>{{mat.nom}}</td>
+                            <td><img [src]="'data:image/jpeg;base64,' + mat.icone" alt="{{mat.nom}}" width="35" height="34"/></td>
+                            <td><span class="star">{{mat.rarete | star}}</span></td>
+                            <td>{{mat.source}}</td>
+                        </tr>
                 </tbody>
             </table>
         </div>
