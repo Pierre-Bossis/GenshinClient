@@ -22,4 +22,5 @@ export interface ArmesForm {
     effetPassif:string
     atqBase:number
     rarete:number
+    selectedMats:number[]
 }

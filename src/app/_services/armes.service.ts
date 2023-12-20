@@ -39,6 +39,10 @@ export class ArmesService {
     newArme.append('EffetPassif',arme.effetPassif)
     newArme.append('ATQBase',arme.atqBase.toString())
     newArme.append('Rarete',arme.rarete.toString())
+   
+    arme.selectedMats.forEach((matId: number) => {
+      newArme.append('SelectedMats[]', matId.toString());
+    });
     
     this.http.post(this.url+"armes/create",newArme).subscribe({
       next: () => this.route.navigate(["armes/liste"]),
