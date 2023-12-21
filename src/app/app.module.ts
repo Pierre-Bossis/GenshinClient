@@ -14,7 +14,7 @@ import { MateriauxElevationArmesCreateComponent } from './components/materiaux/m
 import { ArmesCreateComponent } from './components/armes/armes-create/armes-create.component';
 import { ArmesDetailsComponent } from './components/armes/armes-details/armes-details.component';
 import { ArmesListeComponent } from './components/armes/armes-liste/armes-liste.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModalModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProduitsCreateComponent } from './components/produits/produits-create/produits-create.component';
 import { ProduitsDetailsComponent } from './components/produits/produits-details/produits-details.component';
 import { ProduitsListeComponent } from './components/produits/produits-liste/produits-liste.component';
@@ -81,7 +81,8 @@ import { LivresAptitudeDetailsComponent } from './components/materiaux/livres-ap
     ReactiveFormsModule,
     FormsModule,
     BrowserAnimationsModule,
-    NgbModule
+    NgbModule,
+    NgbModalModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -18,11 +18,6 @@ form{
   /* background-color: #0a1d38; */
 }
 
-/* couleur du bloc principal */
-.main{
-  /*background-color: #0a1d38; */
-}
-
 .star{
     color:rgba(240, 217, 8, 0.74);
 }
@@ -36,6 +31,22 @@ form{
     border-radius: 5px 5px 5px 5px;
     font-size: 25px;
     width: 60px;
+}
+
+img{
+  border-radius: 15px;
+}
+
+.modal{
+  z-index: 9999;
+}
+
+.zoom{
+  transition: transform 0.3s ease;
+}
+
+.zoom:hover{
+  transform: scale(1.05);
 }
 
 /* splash art */

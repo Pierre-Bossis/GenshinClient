@@ -6,7 +6,7 @@
 </div>
 
 <div class="row fade-in-element" *ngIf="personnages">
-  <div class="col-auto" *ngFor="let personnage of personnages">
+  <div class="col-auto zoom" *ngFor="let personnage of personnages">
     <div class="card text-white bg-dark mb-3" style="max-width: 20rem;">
       <div class="card-body">
         <img class="img" (click)="goDetails(personnage.nom)" [src]="'data:image/jpeg;base64,' + personnage.portrait"

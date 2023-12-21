@@ -1,10 +1,9 @@
 <div class="fade-in-element">
-
-    <h4 class="text-center">Mondstat</h4>
-    <div class="text-center"><img src="../../../../assets/Anemo.png" width="100" height="100"></div>
+    <h4 class="text-center mt-4">Mondstat</h4>
+    <div class="text-center"><img src="../../../../assets/Anemo.png" width="100" height="100" alt="Anemo"></div>
 
     <div class="row mt-5">
-        <div class="col-7">
+        <div class="col-md-6 mb-4">
             <div class="text-content">
                 <h2>Une cité libre dans Teyvat</h2>
                 <p>Une cité libre située dans le nord-est du continent de Teyvat. La brise de la liberté portant
@@ -26,24 +25,25 @@
                 <p>« Le dragon qui pendant mille ans a défendu la cité de la liberté a enfin fait face a son dilemme.
                     Qu'est ce que la liberté lorsequ'elle n'est que de l'ordre d'un dieu »</p>
                 <br>
-                <p style="text-align: end;"> — Dainsleif dans Les Traces</p>
+                <p class="text-end"> — Dainsleif dans Les Traces</p>
             </div>
         </div>
-        <div class="col-5">
-            <img src="../../../../assets/mondstatMap.jfif" width="900" height="750">
+        <div class="col-md-6">
+            <img src="../../../../assets/mondstatMap.jfif" class="img-fluid rounded zoom" alt="Mondstadt Map">
         </div>
     </div>
 
     <div class="row mt-5" *ngIf="personnages.length > 0">
-        <h4 class="text-center">Personnages de mondstat</h4>
-
-        <div class="row fade-in-element">
+        <h4 class="text-center">Personnages de Mondstat</h4>
+        <div class="row justify-content-center mt-3">
             <div class="col-auto" *ngFor="let personnage of personnages">
-                <img (click)="goDetails(personnage.nom)" [src]="'data:image/jpeg;base64,' + personnage.portrait"
-                    alt="{{personnage.nom}}" width="150" height="150" />
-                <div class="text-center">
-                    <span>{{personnage.nom}}</span><br />
-                    <span class="star">{{personnage.rarete | star }}</span>
+                <div class="text-center mb-3">
+                    <img (click)="goDetails(personnage.nom)" [src]="'data:image/jpeg;base64,' + personnage.portrait"
+                        alt="{{personnage.nom}}" width="150" height="150" class="zoom">
+                    <div>
+                        <span>{{personnage.nom}}</span><br />
+                        <span class="star">{{personnage.rarete | star }}</span>
+                    </div>
                 </div>
             </div>
         </div>

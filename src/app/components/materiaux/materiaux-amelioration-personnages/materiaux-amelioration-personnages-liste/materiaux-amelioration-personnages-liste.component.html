@@ -5,23 +5,26 @@
     </div>
   </div>
   
-  <table class="table fade-in-element">
-      <thead>
-        <tr>
-          <th scope="col">Numéro</th>
-          <th scope="col">Nom</th>
-          <th scope="col">Icone</th>
-          <th scope="col">Rareté</th>
-          <th scope="col">Source</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let materiaux of materiauxListe; let i = index">
-          <th scope="row">{{i+1}}</th>
-          <td>{{materiaux.nom}}</td>
-          <td><img [src]="'data:image/jpeg;base64,' + materiaux.icone" alt="{{materiaux.nom}}" width="35" height="34"/></td>
-          <td><span class="star">{{materiaux.rarete | star }}</span></td>
-          <td>{{materiaux.source}}</td>
-        </tr>
-      </tbody>
+  <div class="table-responsive fade-in-element mt-3">
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Numéro</th>
+                <th scope="col">Nom</th>
+                <th scope="col">Icone</th>
+                <th scope="col">Rareté</th>
+                <th scope="col">Source</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let materiaux of materiauxListe; let i = index">
+                <th scope="row" class="align-middle">{{i+1}}</th>
+                <td class="align-middle">{{materiaux.nom}}</td>
+                <td class="align-middle"><img [src]="'data:image/jpeg;base64,' + materiaux.icone" alt="{{materiaux.nom}}" width="50" height="50" /></td>
+                <td class="align-middle"><span class="star">{{materiaux.rarete | star}}</span></td>
+                <td class="align-middle">{{materiaux.source}}</td>
+            </tr>
+        </tbody>
     </table>
+  </div>
+  

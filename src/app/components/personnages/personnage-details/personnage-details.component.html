@@ -1,63 +1,78 @@
 <div *ngIf="personnage && arme && produit && mat" class="fade-in-element">
-    <h4 class="text-center mb-5">{{personnage.nom}}</h4>
+    <h4 class="text-center mb-5">{{ personnage.nom }}</h4>
 
     <div class="row">
-        <div class="col-auto">
-            <img [src]="'data:image/webp;base64,' + personnage.splashArt" alt="{{personnage.nom}}" width="1400"
-                height="700" />
+        <div class="col-md-auto hover-zoom">
+            <img data-bs-toggle="modal" data-bs-target="#imageModal"
+                [src]="'data:image/webp;base64,' + personnage.splashArt" alt="{{ personnage.nom }}"
+                class="img-fluid rounded" />
         </div>
-    </div>
-
-    <div class="row">
-        <div class="col-auto">
-            <table>
+        <div class="col-md-auto mt-5">
+            <table class="table">
                 <tbody>
                     <tr>
-                        <td>Rareté</td>
+                        <td class="bg-dark">Rareté</td>
                         <td><span class="star">{{personnage.rarete | star }}</span></td>
                     </tr>
                     <tr>
-                        <td>Oeil Divin</td>
+                        <td class="bg-dark">Oeil Divin</td>
                         <td>{{personnage.oeilDivin}}</td>
                     </tr>
                     <tr>
-                        <td>Type d'arme</td>
+                        <td class="bg-dark">Type d'arme</td>
                         <td>{{personnage.typeArme}}</td>
                     </tr>
                     <tr>
-                        <td>Lore</td>
+                        <td class="bg-dark">Lore</td>
                         <td>{{personnage.lore}}</td>
                     </tr>
                     <tr>
-                        <td>Nationalité</td>
+                        <td class="bg-dark">Nationalité</td>
                         <td>{{personnage.nationalite}}</td>
                     </tr>
                     <tr>
-                        <td>Date de sortie</td>
+                        <td class="bg-dark">Date de sortie</td>
                         <td>{{personnage.dateSortie | date:'d MMMM y'}}</td>
                     </tr>
                     <tr *ngIf="personnage.arme_Id">
-                        <td>Arme signature</td>
-                        <td><img [src]="'data:image/webp;base64,' + arme.image" alt="{{arme.nom}}" width="30" height="50" /><b (click)="goDetails(arme.nom)" class="text-primary">{{arme.nom}}</b></td>
+                        <td class="bg-dark">Arme signature</td>
+                        <td><img [src]="'data:image/webp;base64,' + arme.image" alt="{{arme.nom}}" width="30"
+                                height="50" /><b (click)="goDetails(arme.nom)" class="text-primary">{{arme.nom}}</b>
+                        </td>
                     </tr>
                     <tr>
-                        <td>materiaux d'amelioration personnage</td>
-                        <td><img [src]="'data:image/webp;base64,' + mat.icone" alt="{{mat.nom}}" width="50" height="50" />{{mat.nom}}</td>
+                        <td class="bg-dark">materiaux d'amelioration personnage</td>
+                        <td><img [src]="'data:image/webp;base64,' + mat.icone" alt="{{mat.nom}}" width="50"
+                                height="50" />{{mat.nom}}</td>
                     </tr>
                     <tr>
-                        <td>Produit d'amelioration personnage</td>
-                        <td><img [src]="'data:image/webp;base64,' + produit.icone" alt="{{produit.nom}}" width="50" height="50"/>{{produit.nom}}</td>
+                        <td class="bg-dark">Produit d'amelioration personnage</td>
+                        <td><img [src]="'data:image/webp;base64,' + produit.icone" alt="{{produit.nom}}" width="50"
+                                height="50" />{{produit.nom}}</td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
-</div>
 
-<div class="row">
-    <div class="col-auto mb-5">
-        <iframe width="1200" height="600" [src]="trailer" title="YouTube video player" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen></iframe>
+    <div class="row justify-content-center">
+        <div class="col-lg-10 col-xl-8 mb-5">
+            <div style="position: relative; overflow: hidden; padding-top: 56.25%;">
+                <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+                    [src]="trailer"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" style="display: flex; align-items: center; justify-content: center;">
+        <img [src]="'data:image/webp;base64,' + personnage.splashArt" alt="{{ personnage.nom }}" width="2500" height="1250" />
     </div>
 </div>

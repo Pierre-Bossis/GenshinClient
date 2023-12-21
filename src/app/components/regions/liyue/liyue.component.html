@@ -1,15 +1,12 @@
 <div class="fade-in-element">
-
-    <h4 class="text-center">Liyue</h4>
-    <div class="text-center"><img src="../../../../assets/Geo.png" width="100" height="100"></div>
+    <h4 class="text-center mt-4">Liyue</h4>
+    <div class="text-center"><img src="../../../../assets/Geo.png" width="100" height="100" alt="Geo"></div>
 
     <div class="row mt-5">
-        <div class="col-7">
+        <div class="col-md-6">
             <div class="text-content">
                 <h2>Une riche cité portuaire de Teyvat</h2>
-                <p>Une riche cité portuaire situé à l'est de Teyvat.
-                    Liyue possède une topographie variée, constituée de montagnes, de forêts de pierres, de vastes plaines et de plages qui demeurent toutes aussi belles au fil des saisons.
-                     Combien de trésors anciens gracieusement cachés par l'Archon Géo attendent-ils d'être découverts dans ce magnifique paysage ?</p>
+                <p>Une riche cité portuaire située à l'est de Teyvat. Liyue possède une topographie variée, constituée de montagnes, de forêts de pierres, de vastes plaines et de plages qui demeurent toutes aussi belles au fil des saisons. Combien de trésors anciens gracieusement cachés par l'Archon Géo attendent-ils d'être découverts dans ce magnifique paysage ?</p>
                 <br><br>
                 <h2>Liyue - Lune de verre</h2>
                 <p>Liyue est l'une des sept nations de Teyvat. On y adore Morax, l'Archon Géo. Les habitants de Liyue sont nommés Liyuéen ou Liyuéenne.</p>
@@ -18,25 +15,28 @@
                 <br>
                 <p>Le Chapitre 1, Adieu à l'Exuvia, se déroule dans cette région.
                     « Sous le regard horrifié de tous, le Dieu des contrats a été assassiné. À l'instant ultime, il signera le contrat qui mettra fin à tous les contrats. »
-                
-                <p style="text-align: end;"> — Dainsleif dans Les Traces</p>
+                </p>
+                <p class="text-end"> — Dainsleif dans Les Traces</p>
             </div>
         </div>
-        <div class="col-5">
-            <img src="../../../../assets/liyueMap.png">
+        <div class="col-md-6">
+            <img src="../../../../assets/liyueMap.png" class="img-fluid rounded" alt="Liyue Map">
         </div>
     </div>
 
+
+
     <div class="row mt-5" *ngIf="personnages.length > 0">
         <h4 class="text-center">Personnages de Liyue</h4>
-
-        <div class="row fade-in-element">
+        <div class="row justify-content-center mt-3">
             <div class="col-auto" *ngFor="let personnage of personnages">
-                <img (click)="goDetails(personnage.nom)" [src]="'data:image/jpeg;base64,' + personnage.portrait"
-                    alt="{{personnage.nom}}" width="150" height="150" />
-                <div class="text-center">
-                    <span>{{personnage.nom}}</span><br />
-                    <span class="star">{{personnage.rarete | star }}</span>
+                <div class="text-center mb-3">
+                    <img (click)="goDetails(personnage.nom)" [src]="'data:image/jpeg;base64,' + personnage.portrait"
+                        alt="{{personnage.nom}}" width="150" height="150" class="zoom">
+                    <div>
+                        <span>{{personnage.nom}}</span><br />
+                        <span class="star">{{personnage.rarete | star }}</span>
+                    </div>
                 </div>
             </div>
         </div>
