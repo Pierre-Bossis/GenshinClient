@@ -27,4 +27,5 @@ export interface PersonnagesForm{
     materiauxAmeliorationPersonnageId:number
     produitId:number
     rarete:number
+    selectedLivres:number[]
 }

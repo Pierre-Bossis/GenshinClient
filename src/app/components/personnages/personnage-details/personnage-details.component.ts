@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Armes } from 'src/app/_models/armes';
+import { LivresAptitude } from 'src/app/_models/livres-aptitude';
 import { MateriauxAmeliorationPersonnages } from 'src/app/_models/materiaux-amelioration-personnages';
 import { Personnages } from 'src/app/_models/personnages';
 import { Produits } from 'src/app/_models/produits';
@@ -17,9 +18,10 @@ import { ProduitsService } from 'src/app/_services/produits.service';
 })
 export class PersonnageDetailsComponent {
   personnage!:Personnages
-  arme!:Armes
+  arme?:Armes
   produit!:Produits
   mat!:MateriauxAmeliorationPersonnages
+  livresAptitude:LivresAptitude[] = []
 
   personnageName:string | null = null
   trailer!:SafeResourceUrl;
@@ -39,19 +41,20 @@ export class PersonnageDetailsComponent {
   
     if(this.personnageName != null)
     {      
-      this.personnagesService.getByName(this.personnageName).subscribe((data) =>{                        
-        this.personnage = data
+      this.personnagesService.getByName(this.personnageName).subscribe((data) =>{             
+        this.personnage = data.personnage,
+        this.livresAptitude = data.livres
         
-        if(data.arme_Id){
-          this.armesService.getById(data.arme_Id).subscribe((dataArme) => this.arme = dataArme.arme)
+        if(data.personnage.arme_Id){          
+          this.armesService.getById(data.personnage.arme_Id).subscribe((dataArme) => this.arme = dataArme.arme)
         }
 
-        if(data.produit_Id){
-          this.produitsService.getById(data.produit_Id).subscribe((dataProduit) => this.produit = dataProduit)
+        if(data.personnage.produit_Id){
+          this.produitsService.getById(data.personnage.produit_Id).subscribe((dataProduit) => this.produit = dataProduit)
         }
 
-        if(data.materiauxAmeliorationPersonnage_Id){
-          this.materiauxAmeliorationPersonnagesService.getById(data.materiauxAmeliorationPersonnage_Id).subscribe((dataMat) => this.mat = dataMat)
+        if(data.personnage.materiauxAmeliorationPersonnage_Id){
+          this.materiauxAmeliorationPersonnagesService.getById(data.personnage.materiauxAmeliorationPersonnage_Id).subscribe((dataMat) => this.mat = dataMat)
         }
 
         this.trailer = this.sanitizer.bypassSecurityTrustResourceUrl(this.personnage.trailerYT);

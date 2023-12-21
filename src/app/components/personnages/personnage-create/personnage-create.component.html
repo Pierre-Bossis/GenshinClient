@@ -98,6 +98,15 @@
             </select>
         </div>
 
+        <hr>
+
+        <div class="form-group">
+            <label for="livres" class="form-label mt-4">Matériaux elevation d'armes(multiple)</label>
+            <select multiple="" class="form-select" id="livres"  formControlName="selectedLivres">
+              <option *ngFor="let livre of LivresAptitudeListe" [value]="livre.id">{{ livre.nom }}</option>
+            </select>
+          </div>
+
         <div class="form-group">
             <label for="portraitFile" class="form-label mt-4">Portrait</label>
             <input type="file" id="portraitFile" class="form-control" (change)="loadIcone($event)">

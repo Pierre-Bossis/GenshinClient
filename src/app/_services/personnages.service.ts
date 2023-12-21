@@ -17,7 +17,7 @@ export class PersonnagesService {
     return this.http.get<Personnages[]>(this.url+"personnages")
   }
 
-  getByName(name:string):Observable<Personnages>{
+  getByName(name:string):Observable<any>{
     return this.http.get<Personnages>(this.url+"personnages/"+name)
   }
 
@@ -42,6 +42,10 @@ export class PersonnagesService {
     newPersonnage.append('MateriauxAmeliorationPersonnage_Id',personnage.materiauxAmeliorationPersonnageId.toString())
     newPersonnage.append('Produit_Id',personnage.produitId.toString())
     newPersonnage.append('Rarete',personnage.rarete.toString())
+
+    personnage.selectedLivres.forEach((livreId: number) => {
+      newPersonnage.append('SelectedLivres[]', livreId.toString());
+    });
     
     this.http.post(this.url+"personnages/create",newPersonnage).subscribe({
       next: () => this.route.navigate(["personnages/liste"]),

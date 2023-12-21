@@ -2,9 +2,11 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Armes } from 'src/app/_models/armes';
+import { LivresAptitude } from 'src/app/_models/livres-aptitude';
 import { MateriauxAmeliorationPersonnages } from 'src/app/_models/materiaux-amelioration-personnages';
 import { Produits } from 'src/app/_models/produits';
 import { ArmesService } from 'src/app/_services/armes.service';
+import { LivresAptitudeService } from 'src/app/_services/livres-aptitude.service';
 import { MateriauxAmeliorationPersonnagesService } from 'src/app/_services/materiaux-amelioration-personnages.service';
 import { PersonnagesService } from 'src/app/_services/personnages.service';
 import { ProduitsService } from 'src/app/_services/produits.service';
@@ -21,16 +23,19 @@ export class PersonnageCreateComponent {
   armesListe:Armes[] = []
   produitsListe : Produits[] = []
   matAmeliorationPersonnagesListe: MateriauxAmeliorationPersonnages[] = []
+  LivresAptitudeListe: LivresAptitude[] = []
 
   personnagesFormGroup! : FormGroup
 
 
   constructor(private formBuilder:FormBuilder,private personnagesService:PersonnagesService,
-              private produitsService:ProduitsService,private matAmeliorationService:MateriauxAmeliorationPersonnagesService,private armesService:ArmesService,private route:Router){}
+              private produitsService:ProduitsService,private matAmeliorationService:MateriauxAmeliorationPersonnagesService,private armesService:ArmesService,private route:Router,
+              private livresAptitudeService:LivresAptitudeService){}
   ngOnInit() {
     this.armesService.getAll().subscribe((data) => this.armesListe = data)
     this.produitsService.getAll().subscribe((data) => this.produitsListe = data)
     this.matAmeliorationService.getAll().subscribe((data) => this.matAmeliorationPersonnagesListe = data)
+    this.livresAptitudeService.getAll().subscribe((data) => this.LivresAptitudeListe = data)
 
     this.personnagesFormGroup = this.formBuilder.group({
       nom: ['', Validators.required],
@@ -40,10 +45,11 @@ export class PersonnageCreateComponent {
       nationalite: ['', Validators.required],
       trailerYT: ['', Validators.required],
       dateSortie: ['', Validators.required],
-      armeId: ['', Validators.required],
+      armeId: [''],
       materiauxAmeliorationPersonnageId: ['', Validators.required],
       produitId: ['', Validators.required],
-      rarete: ['', Validators.required]
+      rarete: ['', Validators.required],
+      selectedLivres: ['',Validators.required]
     })
   }
 
