@@ -4,10 +4,12 @@ import { Router } from '@angular/router';
 import { Armes } from 'src/app/_models/armes';
 import { LivresAptitude } from 'src/app/_models/livres-aptitude';
 import { MateriauxAmeliorationPersonnages } from 'src/app/_models/materiaux-amelioration-personnages';
+import { MateriauxElevationPersonnages } from 'src/app/_models/materiaux-elevation-personnages';
 import { Produits } from 'src/app/_models/produits';
 import { ArmesService } from 'src/app/_services/armes.service';
 import { LivresAptitudeService } from 'src/app/_services/livres-aptitude.service';
 import { MateriauxAmeliorationPersonnagesService } from 'src/app/_services/materiaux-amelioration-personnages.service';
+import { MateriauxElevationPersonnagesService } from 'src/app/_services/materiaux-elevation-personnages.service';
 import { PersonnagesService } from 'src/app/_services/personnages.service';
 import { ProduitsService } from 'src/app/_services/produits.service';
 
@@ -20,22 +22,25 @@ export class PersonnageCreateComponent {
   icone! : File
   image! : File
 
+  //remplir les select one to many & many to many
   armesListe:Armes[] = []
   produitsListe : Produits[] = []
   matAmeliorationPersonnagesListe: MateriauxAmeliorationPersonnages[] = []
   LivresAptitudeListe: LivresAptitude[] = []
+  matsElevationPersonnages: MateriauxElevationPersonnages[] = []
 
   personnagesFormGroup! : FormGroup
 
 
   constructor(private formBuilder:FormBuilder,private personnagesService:PersonnagesService,
               private produitsService:ProduitsService,private matAmeliorationService:MateriauxAmeliorationPersonnagesService,private armesService:ArmesService,private route:Router,
-              private livresAptitudeService:LivresAptitudeService){}
+              private livresAptitudeService:LivresAptitudeService, private matsElevService:MateriauxElevationPersonnagesService){}
   ngOnInit() {
     this.armesService.getAll().subscribe((data) => this.armesListe = data)
     this.produitsService.getAll().subscribe((data) => this.produitsListe = data)
     this.matAmeliorationService.getAll().subscribe((data) => this.matAmeliorationPersonnagesListe = data)
     this.livresAptitudeService.getAll().subscribe((data) => this.LivresAptitudeListe = data)
+    this.matsElevService.getAll().subscribe((data) => this.matsElevationPersonnages = data)
 
     this.personnagesFormGroup = this.formBuilder.group({
       nom: ['', Validators.required],
@@ -49,7 +54,8 @@ export class PersonnageCreateComponent {
       materiauxAmeliorationPersonnageId: ['', Validators.required],
       produitId: ['', Validators.required],
       rarete: ['', Validators.required],
-      selectedLivres: ['',Validators.required]
+      selectedLivres: ['',Validators.required],
+      selectedMatsElevation: ['',Validators.required]
     })
   }
 

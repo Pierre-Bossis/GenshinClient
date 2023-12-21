@@ -46,6 +46,10 @@ export class PersonnagesService {
     personnage.selectedLivres.forEach((livreId: number) => {
       newPersonnage.append('SelectedLivres[]', livreId.toString());
     });
+
+    personnage.selectedMatsElevation.forEach((matElevId: number) => {
+      newPersonnage.append('SelectedMatsElevation[]', matElevId.toString());
+    });
     
     this.http.post(this.url+"personnages/create",newPersonnage).subscribe({
       next: () => this.route.navigate(["personnages/liste"]),

@@ -28,4 +28,5 @@ export interface PersonnagesForm{
     produitId:number
     rarete:number
     selectedLivres:number[]
+    selectedMatsElevation:number[]
 }

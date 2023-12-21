@@ -101,9 +101,16 @@
         <hr>
 
         <div class="form-group">
-            <label for="livres" class="form-label mt-4">Matériaux elevation d'armes(multiple)</label>
+            <label for="livres" class="form-label mt-4">Livres d'aptitude(multiple)</label>
             <select multiple="" class="form-select" id="livres"  formControlName="selectedLivres">
               <option *ngFor="let livre of LivresAptitudeListe" [value]="livre.id">{{ livre.nom }}</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="matsElev" class="form-label mt-4">Matériaux d'eelevation Personnages(multiple)</label>
+            <select multiple="" class="form-select" id="matsElev"  formControlName="selectedMatsElevation">
+              <option *ngFor="let mat of matsElevationPersonnages" [value]="mat.id">{{ mat.nom }}</option>
             </select>
           </div>
 

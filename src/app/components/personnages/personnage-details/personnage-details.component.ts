@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Armes } from 'src/app/_models/armes';
 import { LivresAptitude } from 'src/app/_models/livres-aptitude';
 import { MateriauxAmeliorationPersonnages } from 'src/app/_models/materiaux-amelioration-personnages';
+import { MateriauxElevationPersonnages } from 'src/app/_models/materiaux-elevation-personnages';
 import { Personnages } from 'src/app/_models/personnages';
 import { Produits } from 'src/app/_models/produits';
 import { ArmesService } from 'src/app/_services/armes.service';
@@ -18,10 +19,15 @@ import { ProduitsService } from 'src/app/_services/produits.service';
 })
 export class PersonnageDetailsComponent {
   personnage!:Personnages
+
+  //many to one
   arme?:Armes
   produit!:Produits
   mat!:MateriauxAmeliorationPersonnages
+
+  //many to many
   livresAptitude:LivresAptitude[] = []
+  materiauxElevation:MateriauxElevationPersonnages[] = []
 
   personnageName:string | null = null
   trailer!:SafeResourceUrl;
@@ -43,7 +49,8 @@ export class PersonnageDetailsComponent {
     {      
       this.personnagesService.getByName(this.personnageName).subscribe((data) =>{             
         this.personnage = data.personnage,
-        this.livresAptitude = data.livres
+        this.livresAptitude = data.livres,
+        this.materiauxElevation = data.matsElevation
         
         if(data.personnage.arme_Id){          
           this.armesService.getById(data.personnage.arme_Id).subscribe((dataArme) => this.arme = dataArme.arme)
