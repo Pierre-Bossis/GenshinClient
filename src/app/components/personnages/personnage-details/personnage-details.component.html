@@ -55,9 +55,25 @@
         </div>
     </div>
 
-    <!-- Livres d'apitude -->
-    <h3 class="mt-3">Livres d'aptitude</h3>
-    <div class="table-responsive fade-in-element mt-3" *ngIf="livresAptitude">
+    <!-- tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item" role="presentation">
+          <a class="nav-link active" data-bs-toggle="tab" href="#livres-aptitude" aria-selected="true" role="tab">Livres d'aptitude</a>
+        </li>
+        <li class="nav-item" role="presentation">
+          <a class="nav-link" data-bs-toggle="tab" href="#materiaux-elevation" aria-selected="false" role="tab" tabindex="-1">Matériaux d'élévation</a>
+        </li>
+        <li class="nav-item" role="presentation">
+          <a class="nav-link" data-bs-toggle="tab" href="#materiaux-amelioration" aria-selected="false" role="tab" tabindex="-1">Matériaux d'amélioration</a>
+        </li>
+      </ul>
+
+ <!-- Contenu des onglets -->
+<div class="tab-content">
+    
+    <!-- Livres d'aptitude -->
+    <div class="tab-pane fade show active" id="livres-aptitude" role="tabpanel">
+      <div class="table-responsive fade-in-element mt-3" *ngIf="livresAptitude">
         <table class="table table-striped table-hover">
             <thead>
                 <tr>
@@ -79,65 +95,68 @@
             </tbody>
         </table>
       </div>
-
-      <!-- Materiaux d'elevation -->
-      <h3 class="mt-3">Materiaux d'elevation</h3>
+    </div>
+  
+    <!-- Matériaux d'élévation -->
+    <div class="tab-pane fade" id="materiaux-elevation" role="tabpanel">
       <div class="table-responsive fade-in-element mt-3" *ngIf="materiauxElevation">
-          <table class="table table-striped table-hover">
-              <thead>
-                  <tr>
-                      <th scope="col">Numéro</th>
-                      <th scope="col">Nom</th>
-                      <th scope="col">Icone</th>
-                      <th scope="col">Rareté</th>
-                      <th scope="col">Source</th>
-                  </tr>
-              </thead>
-              <tbody>
-                  <tr *ngFor="let mat of materiauxElevation; let i = index">
-                      <th scope="row" class="align-middle">{{i+1}}</th>
-                      <td class="align-middle">{{mat.nom}}</td>
-                      <td class="align-middle"><img [src]="'data:image/jpeg;base64,' + mat.icone" alt="{{mat.nom}}" width="50" height="50" /></td>
-                      <td class="align-middle"><span class="star">{{mat.rarete | star}}</span></td>
-                      <td class="align-middle">{{mat.source}}</td>
-                  </tr>
-              </tbody>
-          </table>
-        </div>
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Numéro</th>
+                    <th scope="col">Nom</th>
+                    <th scope="col">Icone</th>
+                    <th scope="col">Rareté</th>
+                    <th scope="col">Source</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let mat of materiauxElevation; let i = index">
+                    <th scope="row" class="align-middle">{{i+1}}</th>
+                    <td class="align-middle">{{mat.nom}}</td>
+                    <td class="align-middle"><img [src]="'data:image/jpeg;base64,' + mat.icone" alt="{{mat.nom}}" width="50" height="50" /></td>
+                    <td class="align-middle"><span class="star">{{mat.rarete | star}}</span></td>
+                    <td class="align-middle">{{mat.source}}</td>
+                </tr>
+            </tbody>
+        </table>
+      </div>
+    </div>
+  
+    <!-- Matériaux d'amélioration -->
+    <div class="tab-pane fade" id="materiaux-amelioration" role="tabpanel">
+      <div class="table-responsive fade-in-element mt-3" *ngIf="materiauxAmelioPersosArmes">
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Numéro</th>
+                    <th scope="col">Nom</th>
+                    <th scope="col">Icone</th>
+                    <th scope="col">Rareté</th>
+                    <th scope="col">Source</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let mat of materiauxAmelioPersosArmes; let i = index">
+                    <th scope="row" class="align-middle">{{i+1}}</th>
+                    <td class="align-middle">{{mat.nom}}</td>
+                    <td class="align-middle"><img [src]="'data:image/jpeg;base64,' + mat.icone" alt="{{mat.nom}}" width="50" height="50" /></td>
+                    <td class="align-middle"><span class="star">{{mat.rarete | star}}</span></td>
+                    <td class="align-middle">{{mat.source}}</td>
+                </tr>
+            </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 
-        <!-- Materieux D'amelioration Personnage et armes  -->
-        <h3 class="mt-3">Materiaux d'amélioration personnages et armes</h3>
-        <div class="table-responsive fade-in-element mt-3" *ngIf="materiauxAmelioPersosArmes">
-            <table class="table table-striped table-hover">
-                <thead>
-                    <tr>
-                        <th scope="col">Numéro</th>
-                        <th scope="col">Nom</th>
-                        <th scope="col">Icone</th>
-                        <th scope="col">Rareté</th>
-                        <th scope="col">Source</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let mat of materiauxAmelioPersosArmes; let i = index">
-                        <th scope="row" class="align-middle">{{i+1}}</th>
-                        <td class="align-middle">{{mat.nom}}</td>
-                        <td class="align-middle"><img [src]="'data:image/jpeg;base64,' + mat.icone" alt="{{mat.nom}}" width="50" height="50" /></td>
-                        <td class="align-middle"><span class="star">{{mat.rarete | star}}</span></td>
-                        <td class="align-middle">{{mat.source}}</td>
-                    </tr>
-                </tbody>
-            </table>
-          </div>
 
-        <!-- Trailer Youtube -->
+    <!-- Trailer Youtube -->
     <div class="row justify-content-center">
         <div class="col-lg-10 col-xl-8 mb-5">
             <div style="position: relative; overflow: hidden; padding-top: 56.25%;">
-                <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-                    [src]="trailer"
-                    title="YouTube video player"
-                    frameborder="0"
+                <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" [src]="trailer"
+                    title="YouTube video player" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen></iframe>
             </div>
@@ -146,9 +165,11 @@
 
 
 
-<!-- Modal -->
-<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-xl" style="display: flex; align-items: center; justify-content: center;">
-        <img [src]="'data:image/webp;base64,' + personnage.splashArt" alt="{{ personnage.nom }}" width="2500" height="1250" />
+    <!-- Modal -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl"
+            style="display: flex; align-items: center; justify-content: center;">
+            <img [src]="'data:image/webp;base64,' + personnage.splashArt" alt="{{ personnage.nom }}" width="2500"
+                height="1250" />
+        </div>
     </div>
-</div>

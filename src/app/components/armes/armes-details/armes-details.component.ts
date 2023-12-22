@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Armes } from 'src/app/_models/armes';
+import { MateriauxAmeliorationPersonnagesEtArmes } from 'src/app/_models/materiaux-amelioration-personnages-et-armes';
 import { MateriauxElevationArmes } from 'src/app/_models/materiaux-elevation-armes';
 import { ArmesService } from 'src/app/_services/armes.service';
 
@@ -12,6 +13,8 @@ import { ArmesService } from 'src/app/_services/armes.service';
 export class ArmesDetailsComponent {
 arme!:Armes
 materiauxElevationArmes:MateriauxElevationArmes[] = []
+materiauxAmeliorationPersosArmes:MateriauxAmeliorationPersonnagesEtArmes[] = []
+
 armeName:string | null = null
 constructor(private armesService:ArmesService, private route:ActivatedRoute){}
 
@@ -25,6 +28,7 @@ ngOnInit(): void {
     this.armesService.getByName(this.armeName).subscribe((data) =>{
       this.arme = data.arme
       this.materiauxElevationArmes = data.matsElevationArmes
+      this.materiauxAmeliorationPersosArmes = data.matsAmelioPersosArmes
           
     })      
   }

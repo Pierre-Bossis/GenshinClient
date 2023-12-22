@@ -23,4 +23,5 @@ export interface ArmesForm {
     atqBase:number
     rarete:number
     selectedMats:number[]
+    selectedMatsAmelio:number[]
 }

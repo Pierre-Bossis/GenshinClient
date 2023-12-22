@@ -43,6 +43,10 @@ export class ArmesService {
     arme.selectedMats.forEach((matId: number) => {
       newArme.append('SelectedMats[]', matId.toString());
     });
+
+    arme.selectedMatsAmelio.forEach((matId: number) => {
+      newArme.append('selectedMatsAmelio[]', matId.toString());
+    });
     
     this.http.post(this.url+"armes/create",newArme).subscribe({
       next: () => this.route.navigate(["armes/liste"]),
