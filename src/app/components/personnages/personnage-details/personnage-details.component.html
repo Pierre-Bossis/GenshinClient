@@ -58,97 +58,134 @@
     <!-- tabs -->
     <ul class="nav nav-tabs" role="tablist">
         <li class="nav-item" role="presentation">
-          <a class="nav-link active" data-bs-toggle="tab" href="#livres-aptitude" aria-selected="true" role="tab">Livres d'aptitude</a>
+            <a class="nav-link active" data-bs-toggle="tab" href="#livres-aptitude" aria-selected="true"
+                role="tab">Livres d'aptitude</a>
         </li>
         <li class="nav-item" role="presentation">
-          <a class="nav-link" data-bs-toggle="tab" href="#materiaux-elevation" aria-selected="false" role="tab" tabindex="-1">Matériaux d'élévation</a>
+            <a class="nav-link" data-bs-toggle="tab" href="#materiaux-elevation" aria-selected="false" role="tab"
+                tabindex="-1">Matériaux d'élévation</a>
         </li>
         <li class="nav-item" role="presentation">
-          <a class="nav-link" data-bs-toggle="tab" href="#materiaux-amelioration" aria-selected="false" role="tab" tabindex="-1">Matériaux d'amélioration</a>
+            <a class="nav-link" data-bs-toggle="tab" href="#materiaux-amelioration" aria-selected="false" role="tab"
+                tabindex="-1">Matériaux d'amélioration</a>
         </li>
-      </ul>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" data-bs-toggle="tab" href="#constellations" aria-selected="false" role="tab"
+                tabindex="-1">Constellations</a>
+        </li>
+    </ul>
 
- <!-- Contenu des onglets -->
-<div class="tab-content">
-    
-    <!-- Livres d'aptitude -->
-    <div class="tab-pane fade show active" id="livres-aptitude" role="tabpanel">
-      <div class="table-responsive fade-in-element mt-3" *ngIf="livresAptitude">
-        <table class="table table-striped table-hover">
-            <thead>
-                <tr>
-                    <th scope="col">Numéro</th>
-                    <th scope="col">Nom</th>
-                    <th scope="col">Icone</th>
-                    <th scope="col">Rareté</th>
-                    <th scope="col">Source</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let livre of livresAptitude; let i = index">
-                    <th scope="row" class="align-middle">{{i+1}}</th>
-                    <td class="align-middle">{{livre.nom}}</td>
-                    <td class="align-middle"><img [src]="'data:image/jpeg;base64,' + livre.icone" alt="{{livre.nom}}" width="50" height="50" /></td>
-                    <td class="align-middle"><span class="star">{{livre.rarete | star}}</span></td>
-                    <td class="align-middle">{{livre.source}}</td>
-                </tr>
-            </tbody>
-        </table>
-      </div>
+    <!-- Contenu des onglets -->
+    <div class="tab-content">
+
+        <!-- Livres d'aptitude -->
+        <div class="tab-pane fade show active" id="livres-aptitude" role="tabpanel">
+            <div class="table-responsive fade-in-element mt-3" *ngIf="livresAptitude">
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Numéro</th>
+                            <th scope="col">Nom</th>
+                            <th scope="col">Icone</th>
+                            <th scope="col">Rareté</th>
+                            <th scope="col">Source</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let livre of livresAptitude; let i = index">
+                            <th scope="row" class="align-middle">{{i+1}}</th>
+                            <td class="align-middle">{{livre.nom}}</td>
+                            <td class="align-middle"><img [src]="'data:image/jpeg;base64,' + livre.icone"
+                                    alt="{{livre.nom}}" width="50" height="50" /></td>
+                            <td class="align-middle"><span class="star">{{livre.rarete | star}}</span></td>
+                            <td class="align-middle">{{livre.source}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Matériaux d'élévation -->
+        <div class="tab-pane fade" id="materiaux-elevation" role="tabpanel">
+            <div class="table-responsive fade-in-element mt-3" *ngIf="materiauxElevation">
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Numéro</th>
+                            <th scope="col">Nom</th>
+                            <th scope="col">Icone</th>
+                            <th scope="col">Rareté</th>
+                            <th scope="col">Source</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let mat of materiauxElevation; let i = index">
+                            <th scope="row" class="align-middle">{{i+1}}</th>
+                            <td class="align-middle">{{mat.nom}}</td>
+                            <td class="align-middle"><img [src]="'data:image/jpeg;base64,' + mat.icone"
+                                    alt="{{mat.nom}}" width="50" height="50" /></td>
+                            <td class="align-middle"><span class="star">{{mat.rarete | star}}</span></td>
+                            <td class="align-middle">{{mat.source}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Matériaux d'amélioration -->
+        <div class="tab-pane fade" id="materiaux-amelioration" role="tabpanel">
+            <div class="table-responsive fade-in-element mt-3" *ngIf="materiauxAmelioPersosArmes">
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Numéro</th>
+                            <th scope="col">Nom</th>
+                            <th scope="col">Icone</th>
+                            <th scope="col">Rareté</th>
+                            <th scope="col">Source</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let mat of materiauxAmelioPersosArmes; let i = index">
+                            <th scope="row" class="align-middle">{{i+1}}</th>
+                            <td class="align-middle">{{mat.nom}}</td>
+                            <td class="align-middle"><img [src]="'data:image/jpeg;base64,' + mat.icone"
+                                    alt="{{mat.nom}}" width="50" height="50" /></td>
+                            <td class="align-middle"><span class="star">{{mat.rarete | star}}</span></td>
+                            <td class="align-middle">{{mat.source}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <!-- constellations -->
+        <div class="tab-pane fade" id="constellations" role="tabpanel">
+        <div *ngIf="constellations.length < 6">
+            <button class="btn btn-primary mt-3" (click)="createConstellation(personnage.id)">+</button>
+        </div>
+        <div class="table-responsive fade-in-element mt-3" *ngIf="constellations.length > 0">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Icone</th>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let constellation of constellations; let i = index">
+                        <td>{{ i + 1 }}</td>
+                        <td><img [src]="'data:image/jpeg;base64,' + constellation.icone" alt="{{ constellation.nom }}" width="50" height="50" /></td>
+                        <td>{{ constellation.nom }}</td>
+                        <td>{{ constellation.description }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
-  
-    <!-- Matériaux d'élévation -->
-    <div class="tab-pane fade" id="materiaux-elevation" role="tabpanel">
-      <div class="table-responsive fade-in-element mt-3" *ngIf="materiauxElevation">
-        <table class="table table-striped table-hover">
-            <thead>
-                <tr>
-                    <th scope="col">Numéro</th>
-                    <th scope="col">Nom</th>
-                    <th scope="col">Icone</th>
-                    <th scope="col">Rareté</th>
-                    <th scope="col">Source</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let mat of materiauxElevation; let i = index">
-                    <th scope="row" class="align-middle">{{i+1}}</th>
-                    <td class="align-middle">{{mat.nom}}</td>
-                    <td class="align-middle"><img [src]="'data:image/jpeg;base64,' + mat.icone" alt="{{mat.nom}}" width="50" height="50" /></td>
-                    <td class="align-middle"><span class="star">{{mat.rarete | star}}</span></td>
-                    <td class="align-middle">{{mat.source}}</td>
-                </tr>
-            </tbody>
-        </table>
-      </div>
-    </div>
-  
-    <!-- Matériaux d'amélioration -->
-    <div class="tab-pane fade" id="materiaux-amelioration" role="tabpanel">
-      <div class="table-responsive fade-in-element mt-3" *ngIf="materiauxAmelioPersosArmes">
-        <table class="table table-striped table-hover">
-            <thead>
-                <tr>
-                    <th scope="col">Numéro</th>
-                    <th scope="col">Nom</th>
-                    <th scope="col">Icone</th>
-                    <th scope="col">Rareté</th>
-                    <th scope="col">Source</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let mat of materiauxAmelioPersosArmes; let i = index">
-                    <th scope="row" class="align-middle">{{i+1}}</th>
-                    <td class="align-middle">{{mat.nom}}</td>
-                    <td class="align-middle"><img [src]="'data:image/jpeg;base64,' + mat.icone" alt="{{mat.nom}}" width="50" height="50" /></td>
-                    <td class="align-middle"><span class="star">{{mat.rarete | star}}</span></td>
-                    <td class="align-middle">{{mat.source}}</td>
-                </tr>
-            </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
+</div>
 
 
     <!-- Trailer Youtube -->

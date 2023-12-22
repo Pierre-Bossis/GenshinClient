@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environment';
+import { Constellations, ConstellationsForm } from '../_models/constellations';
 import { Personnages, PersonnagesForm } from '../_models/personnages';
 import { UploadService } from './upload.service';
 
@@ -60,4 +61,24 @@ export class PersonnagesService {
       error: (err) => console.error('Error creating personnage:', err)
     })
   }
+
+  // -----------------------------Constellations-----------------------------
+  getAllConstellations(id:number):Observable<Constellations[]>{
+    return this.http.get<Constellations[]>(this.url+"personnages/"+id+"/constellations")
+  }
+
+  createConstellation(icone:File,constellation : ConstellationsForm){
+    const newConstellation = this.upload.upload(icone)
+
+    newConstellation.append('Nom',constellation.nom)
+    newConstellation.append('Description',constellation.description)
+
+    newConstellation.append('Personnage_Id',constellation.personnage_Id.toString())
+    
+    this.http.post(this.url+"personnages/create/constellation",newConstellation).subscribe({
+      next: () => this.route.navigate(["personnages/liste"]),
+      error: (err) => console.error('Error creating constellation:', err)
+    })
+  }
+
 }

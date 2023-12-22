@@ -19,6 +19,7 @@ import { MateriauxElevationArmesListeComponent } from './components/materiaux/ma
 import { MateriauxElevationPersonnagesCreateComponent } from './components/materiaux/materiaux-elevation-personnages/materiaux-elevation-personnages-create/materiaux-elevation-personnages-create.component';
 import { MateriauxElevationPersonnagesDetailsComponent } from './components/materiaux/materiaux-elevation-personnages/materiaux-elevation-personnages-details/materiaux-elevation-personnages-details.component';
 import { MateriauxElevationPersonnagesListeComponent } from './components/materiaux/materiaux-elevation-personnages/materiaux-elevation-personnages-liste/materiaux-elevation-personnages-liste.component';
+import { ConstellationsCreateComponent } from './components/personnages/constellations/constellations-create/constellations-create.component';
 import { PersonnageCreateComponent } from './components/personnages/personnage-create/personnage-create.component';
 import { PersonnageDetailsComponent } from './components/personnages/personnage-details/personnage-details.component';
 import { PersonnageListeComponent } from './components/personnages/personnage-liste/personnage-liste.component';
@@ -59,6 +60,7 @@ const routes: Routes = [
   {path : 'personnages/create', component : PersonnageCreateComponent},
   {path : 'personnages/liste', component : PersonnageListeComponent},
   {path : 'personnages/:name', component : PersonnageDetailsComponent},
+  {path : 'personnages/:id/constellations/create', component : ConstellationsCreateComponent},
 
   {path : 'regions', component : RegionsComponent},
   {path : 'regions/mondstat', component : MondstatComponent},

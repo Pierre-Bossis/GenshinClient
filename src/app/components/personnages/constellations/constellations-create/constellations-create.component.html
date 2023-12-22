@@ -1,0 +1,24 @@
+<div class="fade-in-element">
+
+    <h4 class="text-center">Ajouter une constellation</h4>
+  
+    <form [formGroup]="constellationsFormGroup" class="col-8 offset-2" (ngSubmit)="onSubmit()">
+  
+      <div class="form-group">
+        <label for="nom" class="form-label mt-4">Nom</label>
+        <input type="text" class="form-control" id="nom" placeholder="Nom" formControlName="nom">
+      </div>   
+  
+      <div class="form-group">
+        <label for="IconeFile" class="form-label mt-4">Icone</label>
+        <input class="form-control" id="IconeFile" type="file" (change)="loadFile($event)">
+      </div>
+  
+      <div class="form-group">
+        <label for="source" class="form-label mt-4">Description</label>
+        <input type="text" class="form-control" id="source" placeholder="Description" formControlName="description">
+      </div>
+  
+      <button type="submit" class="mt-4 btn btn-primary">Valider</button>
+    </form>
+  </div>
