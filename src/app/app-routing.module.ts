@@ -60,6 +60,7 @@ const routes: Routes = [
   {path : 'personnages/create', component : PersonnageCreateComponent},
   {path : 'personnages/liste', component : PersonnageListeComponent},
   {path : 'personnages/:name', component : PersonnageDetailsComponent},
+  {path : 'personnages/:id', component : PersonnageDetailsComponent},
   {path : 'personnages/:id/constellations/create', component : ConstellationsCreateComponent},
 
   {path : 'regions', component : RegionsComponent},

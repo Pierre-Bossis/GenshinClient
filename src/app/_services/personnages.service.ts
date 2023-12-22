@@ -76,7 +76,7 @@ export class PersonnagesService {
     newConstellation.append('Personnage_Id',constellation.personnage_Id.toString())
     
     this.http.post(this.url+"personnages/create/constellation",newConstellation).subscribe({
-      next: () => this.route.navigate(["personnages/liste"]),
+      next: () => this.route.navigate(["personnages/",constellation.personnage_Id]),
       error: (err) => console.error('Error creating constellation:', err)
     })
   }
