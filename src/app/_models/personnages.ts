@@ -29,4 +29,5 @@ export interface PersonnagesForm{
     rarete:number
     selectedLivres:number[]
     selectedMatsElevation:number[]
+    selectedMatsAmelioPersosArmes:number[]
 }

@@ -4,10 +4,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Armes } from 'src/app/_models/armes';
 import { LivresAptitude } from 'src/app/_models/livres-aptitude';
 import { MateriauxAmeliorationPersonnages } from 'src/app/_models/materiaux-amelioration-personnages';
+import { MateriauxAmeliorationPersonnagesEtArmes } from 'src/app/_models/materiaux-amelioration-personnages-et-armes';
 import { MateriauxElevationPersonnages } from 'src/app/_models/materiaux-elevation-personnages';
 import { Personnages } from 'src/app/_models/personnages';
 import { Produits } from 'src/app/_models/produits';
 import { ArmesService } from 'src/app/_services/armes.service';
+import { MateriauxAmeliorationPersonnagesEtArmesService } from 'src/app/_services/materiaux-amelioration-personnages-et-armes.service';
 import { MateriauxAmeliorationPersonnagesService } from 'src/app/_services/materiaux-amelioration-personnages.service';
 import { PersonnagesService } from 'src/app/_services/personnages.service';
 import { ProduitsService } from 'src/app/_services/produits.service';
@@ -28,6 +30,7 @@ export class PersonnageDetailsComponent {
   //many to many
   livresAptitude:LivresAptitude[] = []
   materiauxElevation:MateriauxElevationPersonnages[] = []
+  materiauxAmelioPersosArmes:MateriauxAmeliorationPersonnagesEtArmes[] = []
 
   personnageName:string | null = null
   trailer!:SafeResourceUrl;
@@ -36,6 +39,7 @@ export class PersonnageDetailsComponent {
               private armesService:ArmesService,
               private produitsService:ProduitsService,
               private materiauxAmeliorationPersonnagesService:MateriauxAmeliorationPersonnagesService,
+              private matsAmelioPersosArmesService:MateriauxAmeliorationPersonnagesEtArmesService,
               private route:ActivatedRoute,
               private sanitizer: DomSanitizer,
               private router:Router ){}
@@ -51,6 +55,7 @@ export class PersonnageDetailsComponent {
         this.personnage = data.personnage,
         this.livresAptitude = data.livres,
         this.materiauxElevation = data.matsElevation
+        this.materiauxAmelioPersosArmes = data.matsAmelioPersosArmes
         
         if(data.personnage.arme_Id){          
           this.armesService.getById(data.personnage.arme_Id).subscribe((dataArme) => this.arme = dataArme.arme)

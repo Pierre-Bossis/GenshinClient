@@ -1,16 +1,33 @@
 <div class="row justify-content-end fade-in-element">
   <h4 class="text-center">Liste des personnages</h4>
+
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <div class="d-flex align-items-center justify-content-center">
+        <span (click)="filter('all')" style="font-size: 70px;">★</span>&nbsp;&nbsp;&nbsp;
+        <img src="../../../../assets/Pyro.png" width="70" height="70" (click)="filter('Pyro')">&nbsp;&nbsp;&nbsp;
+        <img src="../../../../assets/Hydro.png" width="70" height="70" (click)="filter('Hydro')">&nbsp;&nbsp;&nbsp;
+        <img src="../../../../assets/Anemo.png" width="70" height="70" (click)="filter('Anemo')">&nbsp;&nbsp;&nbsp;
+        <img src="../../../../assets/Electro.png" width="70" height="70" (click)="filter('Electro')">&nbsp;&nbsp;&nbsp;
+        <img src="../../../../assets/Dendro.png" width="70" height="70" (click)="filter('Dendro')">&nbsp;&nbsp;&nbsp;
+        <img src="../../../../assets/Cryo.png" width="70" height="70" (click)="filter('Cryo')">&nbsp;&nbsp;&nbsp;
+        <img src="../../../../assets/Geo.png" width="70" height="70" (click)="filter('Geo')">
+      </div>
+    </div>
+  </div>
+  
+
   <div class="col-1">
     <button class="btn btn-outline-primary" routerLink="/personnages/create">+</button>
   </div>
 </div>
 
 <div class="row fade-in-element" *ngIf="personnages">
-  <div class="col-auto zoom" *ngFor="let personnage of personnages">
+  <div class="col-auto zoom" *ngFor="let personnage of personnagesFiltre">
     <div class="card text-white bg-dark mb-3" style="max-width: 20rem;">
-      <div class="card-body">
+      <div class="card-body fade-in-element">
         <img class="img" (click)="goDetails(personnage.nom)" [src]="'data:image/jpeg;base64,' + personnage.portrait"
-          alt="{{personnage.nom}}" width="190" height="190" />
+          alt="{{personnage.nom}}" width="170" height="170" />
         <h4 class="card-title text-center mt-1">{{personnage.nom}}</h4>
         <p class="card-text text-center"><span class="star">{{personnage.rarete | star }}</span></p>
         <p class="text-center"><img src="../../../../assets/{{personnage.oeilDivin}}.png" width="50"

@@ -4,6 +4,9 @@ import { ArmesCreateComponent } from './components/armes/armes-create/armes-crea
 import { ArmesDetailsComponent } from './components/armes/armes-details/armes-details.component';
 import { ArmesListeComponent } from './components/armes/armes-liste/armes-liste.component';
 import { HomeComponent } from './components/home/home.component';
+import { MateriauxAmeliorationPersonnagesEtArmesCreateComponent } from './components/materiaux-amelioration-personnages-et-armes/materiaux-amelioration-personnages-et-armes-create/materiaux-amelioration-personnages-et-armes-create.component';
+import { MateriauxAmeliorationPersonnagesEtArmesDetailsComponent } from './components/materiaux-amelioration-personnages-et-armes/materiaux-amelioration-personnages-et-armes-details/materiaux-amelioration-personnages-et-armes-details.component';
+import { MateriauxAmeliorationPersonnagesEtArmesListeComponent } from './components/materiaux-amelioration-personnages-et-armes/materiaux-amelioration-personnages-et-armes-liste/materiaux-amelioration-personnages-et-armes-liste.component';
 import { LivresAptitudeCreateComponent } from './components/materiaux/livres-aptitude/livres-aptitude-create/livres-aptitude-create.component';
 import { LivresAptitudeDetailsComponent } from './components/materiaux/livres-aptitude/livres-aptitude-details/livres-aptitude-details.component';
 import { LivresAptitudeListeComponent } from './components/materiaux/livres-aptitude/livres-aptitude-liste/livres-aptitude-liste.component';
@@ -35,6 +38,9 @@ const routes: Routes = [
   {path : 'materiaux-elevation-armes/create', component : MateriauxElevationArmesCreateComponent},
   {path : 'materiaux-elevation-armes/liste', component : MateriauxElevationArmesListeComponent},
   {path : 'materiaux-elevation-armes/:name', component : MateriauxElevationArmesDetailsComponent},
+  {path : 'materiaux-amelioration-personnages-et-armes/create', component : MateriauxAmeliorationPersonnagesEtArmesCreateComponent},
+  {path : 'materiaux-amelioration-personnages-et-armes/liste', component : MateriauxAmeliorationPersonnagesEtArmesListeComponent},
+  {path : 'materiaux-amelioration-personnages-et-armes/:name', component : MateriauxAmeliorationPersonnagesEtArmesDetailsComponent},
   {path : 'materiaux-amelioration-personnages/create', component : MateriauxAmeliorationPersonnagesCreateComponent},
   {path : 'materiaux-amelioration-personnages/liste', component : MateriauxAmeliorationPersonnagesListeComponent},
   {path : 'materiaux-amelioration-personnages/:name', component : MateriauxAmeliorationPersonnagesDetailsComponent},

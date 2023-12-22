@@ -50,6 +50,10 @@ export class PersonnagesService {
     personnage.selectedMatsElevation.forEach((matElevId: number) => {
       newPersonnage.append('SelectedMatsElevation[]', matElevId.toString());
     });
+
+    personnage.selectedMatsAmelioPersosArmes.forEach((matAmelioId: number) => {
+      newPersonnage.append('SelectedMatsAmelioPersosArmes[]', matAmelioId.toString());
+    });
     
     this.http.post(this.url+"personnages/create",newPersonnage).subscribe({
       next: () => this.route.navigate(["personnages/liste"]),

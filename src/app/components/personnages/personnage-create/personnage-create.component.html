@@ -108,9 +108,16 @@
           </div>
 
           <div class="form-group">
-            <label for="matsElev" class="form-label mt-4">Matériaux d'eelevation Personnages(multiple)</label>
+            <label for="matsElev" class="form-label mt-4">Matériaux d'elevation Personnages(multiple)</label>
             <select multiple="" class="form-select" id="matsElev"  formControlName="selectedMatsElevation">
               <option *ngFor="let mat of matsElevationPersonnages" [value]="mat.id">{{ mat.nom }}</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="matsAmelio" class="form-label mt-4">Matériaux d'amelioration Personnages et Armes(multiple)</label>
+            <select multiple="" class="form-select" id="matsAmelio"  formControlName="selectedMatsAmelioPersosArmes">
+              <option *ngFor="let mat of matsAmelioPersosArmes" [value]="mat.id">{{ mat.nom }}</option>
             </select>
           </div>
 

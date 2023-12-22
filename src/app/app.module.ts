@@ -38,6 +38,9 @@ import { MateriauxElevationPersonnagesDetailsComponent } from './components/mate
 import { LivresAptitudeCreateComponent } from './components/materiaux/livres-aptitude/livres-aptitude-create/livres-aptitude-create.component';
 import { LivresAptitudeListeComponent } from './components/materiaux/livres-aptitude/livres-aptitude-liste/livres-aptitude-liste.component';
 import { LivresAptitudeDetailsComponent } from './components/materiaux/livres-aptitude/livres-aptitude-details/livres-aptitude-details.component';
+import { MateriauxAmeliorationPersonnagesEtArmesCreateComponent } from './components/materiaux-amelioration-personnages-et-armes/materiaux-amelioration-personnages-et-armes-create/materiaux-amelioration-personnages-et-armes-create.component';
+import { MateriauxAmeliorationPersonnagesEtArmesDetailsComponent } from './components/materiaux-amelioration-personnages-et-armes/materiaux-amelioration-personnages-et-armes-details/materiaux-amelioration-personnages-et-armes-details.component';
+import { MateriauxAmeliorationPersonnagesEtArmesListeComponent } from './components/materiaux-amelioration-personnages-et-armes/materiaux-amelioration-personnages-et-armes-liste/materiaux-amelioration-personnages-et-armes-liste.component';
 
 @NgModule({
   declarations: [
@@ -72,7 +75,10 @@ import { LivresAptitudeDetailsComponent } from './components/materiaux/livres-ap
     MateriauxElevationPersonnagesDetailsComponent,
     LivresAptitudeCreateComponent,
     LivresAptitudeListeComponent,
-    LivresAptitudeDetailsComponent
+    LivresAptitudeDetailsComponent,
+    MateriauxAmeliorationPersonnagesEtArmesCreateComponent,
+    MateriauxAmeliorationPersonnagesEtArmesDetailsComponent,
+    MateriauxAmeliorationPersonnagesEtArmesListeComponent
   ],
   imports: [
     BrowserModule,

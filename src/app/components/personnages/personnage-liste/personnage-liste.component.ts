@@ -10,15 +10,26 @@ import { PersonnagesService } from 'src/app/_services/personnages.service';
 })
 export class PersonnageListeComponent {
   personnages:Personnages[] = []
+  personnagesFiltre:Personnages[] = []
   constructor(private personnagesService:PersonnagesService, private route:Router){}
   ngOnInit(): void {
     this.personnagesService.getAll().subscribe((data)=>{
-      this.personnages = data      
+      this.personnages = data
+      this.personnagesFiltre = data  
     }) 
   }
 
 
   goDetails(nom:string){
     this.route.navigate(["personnages/"+nom])
+  }
+
+  filter(oeilDivin:string){
+    if(oeilDivin == 'all') 
+      this.personnagesFiltre = this.personnages
+    else
+      this.personnagesFiltre = this.personnages.filter(personnage => personnage.oeilDivin == oeilDivin)
+    console.log(this.personnagesFiltre);
+    
   }
 }
