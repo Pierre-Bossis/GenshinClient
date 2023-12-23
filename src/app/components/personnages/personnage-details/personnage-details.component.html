@@ -166,7 +166,10 @@
         <!-- constellations -->
         <div class="tab-pane fade" id="constellations" role="tabpanel">
             <div *ngIf="constellations.length < 6">
-                <button class="btn btn-primary mt-3" (click)="createConstellation(personnage.id)">+</button>
+                <button class="btn btn-primary mt-3" (click)="displayForm(personnage.id)">+</button>
+            </div>
+            <div *ngIf="formDisplay">
+                <app-constellations-create [PersonnageId]="receivedId" (constellationCreated)="refreshConstellationsList()"></app-constellations-create>
             </div>
             <div class="table-responsive fade-in-element mt-3" *ngIf="constellations.length > 0">
                 <table class="table table-striped table-hover">
@@ -194,7 +197,10 @@
         <!-- aptitudes -->
         <div class="tab-pane fade" id="aptitudes" role="tabpanel">
             <div *ngIf="aptitudes.length < 6">
-                <button class="btn btn-primary mt-3" (click)="createAptitude(personnage.id)">+</button>
+                <button class="btn btn-primary mt-3" (click)="displayForm(personnage.id)">+</button>
+            </div>
+            <div *ngIf="formDisplay">
+                <app-aptitudes-create [PersonnageId]="receivedId" (aptitudeCreated)="refreshAptitudesList()"></app-aptitudes-create>
             </div>
             <div class="table-responsive fade-in-element mt-3" *ngIf="aptitudes.length > 0">
                 <table class="table table-striped table-hover">

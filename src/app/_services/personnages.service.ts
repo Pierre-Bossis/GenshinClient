@@ -68,7 +68,7 @@ export class PersonnagesService {
     return this.http.get<Constellations[]>(this.url+"personnages/"+id+"/constellations")
   }
 
-  createConstellation(icone:File,constellation : ConstellationsForm){
+  createConstellation(icone:File,constellation : ConstellationsForm):Observable<any>{
     const newConstellation = this.upload.upload(icone)
 
     newConstellation.append('Nom',constellation.nom)
@@ -76,10 +76,7 @@ export class PersonnagesService {
 
     newConstellation.append('Personnage_Id',constellation.personnage_Id.toString())
     
-    this.http.post(this.url+"personnages/create/constellation",newConstellation).subscribe({
-      next: () => this.route.navigate(["personnages/",constellation.personnage_Id]),
-      error: (err) => console.error('Error creating constellation:', err)
-    })
+    return this.http.post(this.url+"personnages/create/constellation",newConstellation)
   }
 
     // -----------------------------Aptitudes-----------------------------
@@ -87,7 +84,7 @@ export class PersonnagesService {
       return this.http.get<Aptitudes[]>(this.url+"personnages/"+id+"/aptitudes")
     }
   
-    createAptitudes(icone:File,aptitude : AptitudesForm){
+    createAptitudes(icone:File,aptitude : AptitudesForm):Observable<any>{
       const newAptitude = this.upload.upload(icone)
   
       newAptitude.append('Nom',aptitude.nom)
@@ -98,10 +95,7 @@ export class PersonnagesService {
   
       newAptitude.append('Personnage_Id',aptitude.personnage_Id.toString())
       
-      this.http.post(this.url+"personnages/create/aptitude",newAptitude).subscribe({
-        next: () => this.route.navigate(["personnages/",aptitude.personnage_Id]),
-        error: (err) => console.error('Error creating aptitude:', err)
-      })
+      return this.http.post(this.url+"personnages/create/aptitude",newAptitude)
     }
 
 }

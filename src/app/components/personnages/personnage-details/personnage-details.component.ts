@@ -29,12 +29,17 @@ export class PersonnageDetailsComponent {
   produit!: Produits
   mat!: MateriauxAmeliorationPersonnages
   constellations: Constellations[] = []
-  aptitudes:Aptitudes[] = []
+  aptitudes: Aptitudes[] = []
 
   //many to many
   livresAptitude: LivresAptitude[] = []
   materiauxElevation: MateriauxElevationPersonnages[] = []
   materiauxAmelioPersosArmes: MateriauxAmeliorationPersonnagesEtArmes[] = []
+
+  //add
+  receivedId!: number
+  formDisplay: boolean = false
+
 
   personnageName: string | null = null
   trailer!: SafeResourceUrl;
@@ -63,18 +68,13 @@ export class PersonnageDetailsComponent {
           this.armesService.getById(data.personnage.arme_Id).subscribe((dataArme) => this.arme = dataArme.arme)
         }
 
-        if (data.personnage.produit_Id) {
-          this.produitsService.getById(data.personnage.produit_Id).subscribe((dataProduit) => this.produit = dataProduit)
-        }
-
-        if (data.personnage.materiauxAmeliorationPersonnage_Id) {
-          this.materiauxAmeliorationPersonnagesService.getById(data.personnage.materiauxAmeliorationPersonnage_Id).subscribe((dataMat) => this.mat = dataMat)
-        }
+        this.produitsService.getById(data.personnage.produit_Id).subscribe((dataProduit) => this.produit = dataProduit)
+        this.materiauxAmeliorationPersonnagesService.getById(data.personnage.materiauxAmeliorationPersonnage_Id).subscribe((dataMat) => this.mat = dataMat)
 
         this.trailer = this.sanitizer.bypassSecurityTrustResourceUrl(this.personnage.trailerYT);
 
-        this.personnagesService.getAllConstellations(data.personnage.id).subscribe((data) => this.constellations = data)
-        this.personnagesService.getAllAptitudes(data.personnage.id).subscribe((data) => this.aptitudes = data)
+        this.refreshConstellationsList()
+        this.refreshAptitudesList()
       })
     }
   }
@@ -83,11 +83,18 @@ export class PersonnageDetailsComponent {
     this.router.navigate(["armes/" + nom])
   }
 
-  createConstellation(id: number) {
-    this.router.navigate(["personnages/" + id + "/constellations/create"])
+  displayForm(id: number) {
+    this.formDisplay = !this.formDisplay
+    this.receivedId = id;
   }
 
-  createAptitude(id: number) {
-    this.router.navigate(["personnages/" + id + "/aptitudes/create"])
+  refreshAptitudesList() {
+    this.personnagesService.getAllAptitudes(this.personnage.id).subscribe((data) => this.aptitudes = data)
+    this.formDisplay = false
+  }
+
+  refreshConstellationsList() {
+    this.personnagesService.getAllConstellations(this.personnage.id).subscribe((data) => this.constellations = data)
+    this.formDisplay = false
   }
 }

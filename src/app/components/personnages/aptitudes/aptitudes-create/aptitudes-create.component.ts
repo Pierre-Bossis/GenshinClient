@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { PersonnagesService } from 'src/app/_services/personnages.service';
@@ -9,7 +9,9 @@ import { PersonnagesService } from 'src/app/_services/personnages.service';
   styleUrls: ['./aptitudes-create.component.css']
 })
 export class AptitudesCreateComponent {
-  personnageId!:number
+  @Input() PersonnageId!: number
+  @Output() aptitudeCreated: EventEmitter<any> = new EventEmitter();
+  
   myFile? : File
   AptitudesFormGroup! : FormGroup
 
@@ -17,18 +19,11 @@ export class AptitudesCreateComponent {
   constructor(private formBuilder:FormBuilder,private personnagesService:PersonnagesService,private route:ActivatedRoute){}
 
   ngOnInit() {
-    this.route.paramMap.subscribe(params => {
-      const idParam = params.get('id');
-      if (idParam) {
-        this.personnageId = parseInt(idParam, 10);
-      }
-    });
-
     this.AptitudesFormGroup = this.formBuilder.group({
       nom: ['', Validators.required],
       description: ['', Validators.required],
       isAptitudeCombat: [false,Validators.required],
-      personnage_Id: [this.personnageId,Validators.required]
+      personnage_Id: [this.PersonnageId,Validators.required]
     })
     
   }
@@ -39,6 +34,9 @@ export class AptitudesCreateComponent {
 
   onSubmit() {
     if(this.myFile)    
-      this.personnagesService.createAptitudes(this.myFile,this.AptitudesFormGroup.value)
+      this.personnagesService.createAptitudes(this.myFile,this.AptitudesFormGroup.value).subscribe(() => {
+        // Émettre un signal pour indiquer la création d'une nouvelle aptitude
+        this.aptitudeCreated.emit();
+      });
   }
 }
