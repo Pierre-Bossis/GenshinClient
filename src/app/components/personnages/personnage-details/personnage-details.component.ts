@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Aptitudes } from 'src/app/_models/aptitudes';
 import { Armes } from 'src/app/_models/armes';
 import { Constellations } from 'src/app/_models/constellations';
 import { LivresAptitude } from 'src/app/_models/livres-aptitude';
@@ -28,6 +29,7 @@ export class PersonnageDetailsComponent {
   produit!: Produits
   mat!: MateriauxAmeliorationPersonnages
   constellations: Constellations[] = []
+  aptitudes:Aptitudes[] = []
 
   //many to many
   livresAptitude: LivresAptitude[] = []
@@ -41,7 +43,6 @@ export class PersonnageDetailsComponent {
     private armesService: ArmesService,
     private produitsService: ProduitsService,
     private materiauxAmeliorationPersonnagesService: MateriauxAmeliorationPersonnagesService,
-    private matsAmelioPersosArmesService: MateriauxAmeliorationPersonnagesEtArmesService,
     private route: ActivatedRoute,
     private sanitizer: DomSanitizer,
     private router: Router) { }
@@ -71,7 +72,9 @@ export class PersonnageDetailsComponent {
         }
 
         this.trailer = this.sanitizer.bypassSecurityTrustResourceUrl(this.personnage.trailerYT);
+
         this.personnagesService.getAllConstellations(data.personnage.id).subscribe((data) => this.constellations = data)
+        this.personnagesService.getAllAptitudes(data.personnage.id).subscribe((data) => this.aptitudes = data)
       })
     }
   }
@@ -82,5 +85,9 @@ export class PersonnageDetailsComponent {
 
   createConstellation(id: number) {
     this.router.navigate(["personnages/" + id + "/constellations/create"])
+  }
+
+  createAptitude(id: number) {
+    this.router.navigate(["personnages/" + id + "/aptitudes/create"])
   }
 }

@@ -42,6 +42,7 @@ import { MateriauxAmeliorationPersonnagesEtArmesCreateComponent } from './compon
 import { MateriauxAmeliorationPersonnagesEtArmesDetailsComponent } from './components/materiaux-amelioration-personnages-et-armes/materiaux-amelioration-personnages-et-armes-details/materiaux-amelioration-personnages-et-armes-details.component';
 import { MateriauxAmeliorationPersonnagesEtArmesListeComponent } from './components/materiaux-amelioration-personnages-et-armes/materiaux-amelioration-personnages-et-armes-liste/materiaux-amelioration-personnages-et-armes-liste.component';
 import { ConstellationsCreateComponent } from './components/personnages/constellations/constellations-create/constellations-create.component';
+import { AptitudesCreateComponent } from './components/personnages/aptitudes/aptitudes-create/aptitudes-create.component';
 
 @NgModule({
   declarations: [
@@ -80,7 +81,8 @@ import { ConstellationsCreateComponent } from './components/personnages/constell
     MateriauxAmeliorationPersonnagesEtArmesCreateComponent,
     MateriauxAmeliorationPersonnagesEtArmesDetailsComponent,
     MateriauxAmeliorationPersonnagesEtArmesListeComponent,
-    ConstellationsCreateComponent
+    ConstellationsCreateComponent,
+    AptitudesCreateComponent
   ],
   imports: [
     BrowserModule,

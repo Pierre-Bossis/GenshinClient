@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environment';
+import { Aptitudes, AptitudesForm } from '../_models/aptitudes';
 import { Constellations, ConstellationsForm } from '../_models/constellations';
 import { Personnages, PersonnagesForm } from '../_models/personnages';
 import { UploadService } from './upload.service';
@@ -80,5 +81,27 @@ export class PersonnagesService {
       error: (err) => console.error('Error creating constellation:', err)
     })
   }
+
+    // -----------------------------Aptitudes-----------------------------
+    getAllAptitudes(id:number):Observable<Aptitudes[]>{
+      return this.http.get<Aptitudes[]>(this.url+"personnages/"+id+"/aptitudes")
+    }
+  
+    createAptitudes(icone:File,aptitude : AptitudesForm){
+      const newAptitude = this.upload.upload(icone)
+  
+      newAptitude.append('Nom',aptitude.nom)
+      newAptitude.append('Description',aptitude.description)
+
+      const isAptitudeCombatString = aptitude.isAptitudeCombat.toString();
+      newAptitude.append('IsAptitudeCombat',isAptitudeCombatString)
+  
+      newAptitude.append('Personnage_Id',aptitude.personnage_Id.toString())
+      
+      this.http.post(this.url+"personnages/create/aptitude",newAptitude).subscribe({
+        next: () => this.route.navigate(["personnages/",aptitude.personnage_Id]),
+        error: (err) => console.error('Error creating aptitude:', err)
+      })
+    }
 
 }

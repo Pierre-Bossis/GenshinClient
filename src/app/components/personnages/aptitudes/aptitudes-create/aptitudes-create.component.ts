@@ -4,14 +4,14 @@ import { ActivatedRoute } from '@angular/router';
 import { PersonnagesService } from 'src/app/_services/personnages.service';
 
 @Component({
-  selector: 'app-constellations-create',
-  templateUrl: './constellations-create.component.html',
-  styleUrls: ['./constellations-create.component.css']
+  selector: 'app-aptitudes-create',
+  templateUrl: './aptitudes-create.component.html',
+  styleUrls: ['./aptitudes-create.component.css']
 })
-export class ConstellationsCreateComponent {
+export class AptitudesCreateComponent {
   personnageId!:number
   myFile? : File
-  constellationsFormGroup! : FormGroup
+  AptitudesFormGroup! : FormGroup
 
 
   constructor(private formBuilder:FormBuilder,private personnagesService:PersonnagesService,private route:ActivatedRoute){}
@@ -24,9 +24,10 @@ export class ConstellationsCreateComponent {
       }
     });
 
-    this.constellationsFormGroup = this.formBuilder.group({
+    this.AptitudesFormGroup = this.formBuilder.group({
       nom: ['', Validators.required],
       description: ['', Validators.required],
+      isAptitudeCombat: [false,Validators.required],
       personnage_Id: [this.personnageId,Validators.required]
     })
     
@@ -38,6 +39,6 @@ export class ConstellationsCreateComponent {
 
   onSubmit() {
     if(this.myFile)    
-      this.personnagesService.createConstellation(this.myFile,this.constellationsFormGroup.value)
+      this.personnagesService.createAptitudes(this.myFile,this.AptitudesFormGroup.value)
   }
 }
