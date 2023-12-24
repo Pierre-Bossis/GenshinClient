@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NgxPopperjsTriggers,NgxPopperjsPlacements } from 'ngx-popperjs';
 import { Armes } from 'src/app/_models/armes';
 import { ArmesService } from 'src/app/_services/armes.service';
 
@@ -9,11 +10,15 @@ import { ArmesService } from 'src/app/_services/armes.service';
   styleUrls: ['./armes-liste.component.css']
 })
 export class ArmesListeComponent implements OnInit {
+  showTrigger: NgxPopperjsTriggers = NgxPopperjsTriggers.hover;
+  popperPlacement: NgxPopperjsPlacements = NgxPopperjsPlacements.RIGHT
   armes:Armes[] = []
+  armesFiltre:Armes[] = []
   constructor(private armesService:ArmesService, private route:Router){}
   ngOnInit(): void {
     this.armesService.getAll().subscribe((data)=>{
       this.armes = data
+      this.armesFiltre = this.armes
       console.log(data);
       
     }) 
@@ -22,5 +27,12 @@ export class ArmesListeComponent implements OnInit {
 
   goDetails(nom:string){
     this.route.navigate(["armes/"+nom])
+  }
+
+  filter(typeArme:string){
+    if(typeArme == 'all') 
+      this.armesFiltre = this.armes
+    else
+      this.armesFiltre = this.armes.filter(arme => arme.typeArme == typeArme)
   }
 }

@@ -43,6 +43,7 @@ import { MateriauxAmeliorationPersonnagesEtArmesDetailsComponent } from './compo
 import { MateriauxAmeliorationPersonnagesEtArmesListeComponent } from './components/materiaux-amelioration-personnages-et-armes/materiaux-amelioration-personnages-et-armes-liste/materiaux-amelioration-personnages-et-armes-liste.component';
 import { ConstellationsCreateComponent } from './components/personnages/constellations/constellations-create/constellations-create.component';
 import { AptitudesCreateComponent } from './components/personnages/aptitudes/aptitudes-create/aptitudes-create.component';
+import { NgxPopperjsModule } from 'ngx-popperjs';
 
 @NgModule({
   declarations: [
@@ -92,7 +93,8 @@ import { AptitudesCreateComponent } from './components/personnages/aptitudes/apt
     FormsModule,
     BrowserAnimationsModule,
     NgbModule,
-    NgbModalModule
+    NgbModalModule,
+    NgxPopperjsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

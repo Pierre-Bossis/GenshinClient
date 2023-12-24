@@ -1,30 +1,42 @@
 <div class="row justify-content-end fade-in-element">
   <h4 class="text-center">Liste des armes</h4>
+
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <div class="d-flex align-items-center justify-content-center">
+        <span (click)="filter('all')" style="font-size: 70px;">★</span>&nbsp;&nbsp;&nbsp;
+        <img src="../../../../assets/sword.webp" width="70" height="70" (click)="filter('Epée')">&nbsp;&nbsp;&nbsp;
+        <img src="../../../../assets/2hsword.webp" width="70" height="70" (click)="filter('Claymore')">&nbsp;&nbsp;&nbsp;
+        <img src="../../../../assets/spear.webp" width="70" height="70" (click)="filter('Lance')">&nbsp;&nbsp;&nbsp;
+        <img src="../../../../assets/bow.webp" width="70" height="70" (click)="filter('Arc')">&nbsp;&nbsp;&nbsp;
+        <img src="../../../../assets/catalyseur.webp" width="70" height="70" (click)="filter('Catalyseur')">&nbsp;&nbsp;&nbsp;
+      </div>
+    </div>
+  </div>
+
+
   <div class="col-1">
     <button class="btn btn-outline-primary" routerLink="/armes/create">+</button>
   </div>
-</div>
 
-<div class="table-responsive fade-in-element mt-3">
-  <table class="table table-striped table-hover">
-      <thead>
-          <tr>
-              <th scope="col">Numéro</th>
-              <th scope="col">Nom</th>
-              <th scope="col">Icone</th>
-              <th scope="col">Rareté</th>
-              <th scope="col">Détails</th>
-          </tr>
-      </thead>
-      <tbody>
-          <tr *ngFor="let arme of armes; let i = index">
-              <th scope="row" class="align-middle">{{i+1}}</th>
-              <td class="align-middle">{{arme.nom}}</td>
-              <td class="align-middle"><img [src]="'data:image/jpeg;base64,' + arme.icone" alt="{{arme.nom}}" width="50" height="50" /></td>
-              <td class="align-middle"><span class="star">{{arme.rarete | star}}</span></td>
-              <td class="align-middle"><a class="btn btn-primary btn-lg rounded-pill px-3 py-2 fw-bold gradient-bg" style="font-size: 16px;" (click)="goDetails(arme.nom)">Détails</a>
-              </td>
-          </tr>
-      </tbody>
-  </table>
-</div>
+  <div class="row fade-in-element" *ngIf="armes">
+    <div class="col-auto zoom" *ngFor="let arme of armesFiltre">
+      <div class="card text-white bg-dark mb-3" style="width: 13rem; height: 30rem;">
+        <div class="card-body fade-in-element d-flex flex-column justify-content-center align-items-center">
+          <img [popper]="smallDetails" [popperTrigger]="showTrigger" [popperHideOnScroll]="true" [popperDisableStyle]="true" [popperPlacement]="popperPlacement"
+           [ngStyle]="{'width': arme.typeArme === 'Catalyseur' ? '8rem' : '7rem', 'height': arme.typeArme === 'Catalyseur' ? '7rem' : '20rem'}" class="img mx-auto" (click)="goDetails(arme.nom)" [src]="'data:image/jpeg;base64,' + arme.image"
+            alt="{{arme.nom}}" width="100" height="200" />
+
+          <h4 class="card-title text-center mt-1">{{arme.nom}}</h4>
+          <p class="card-text text-center rarete"><span class="star">{{arme.rarete | star }}</span></p>
+        </div>
+      </div>
+      <popper-content #smallDetails>
+        <div class="bold fade-in-element pop">
+          <p><b>Attaque de base</b> : {{arme.atqBase}}</p>
+          <p><b>Stat Principale</b> : {{arme.nomStatPrincipale}}</p>
+          <p><b>Valeur</b> : {{arme.valeurStatPrincipale}}</p>
+        </div>
+      </popper-content>
+    </div>
+  </div>

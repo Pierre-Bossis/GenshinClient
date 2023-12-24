@@ -1,0 +1,31 @@
+.img{
+    cursor: pointer;
+}
+
+.card{
+    border-radius: 15px;
+    overflow: hidden;
+    z-index: -5;
+}
+
+span{
+    cursor: pointer;
+}
+
+.rarete{
+    position: absolute;
+    bottom: 5%;
+    left: 0;
+    width: 100%;
+}
+
+.pop{
+    position: absolute;
+    background-color: #0f2537;
+    border: 1px solid #df6919;
+    padding: 10px;
+    width: 350px;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+}

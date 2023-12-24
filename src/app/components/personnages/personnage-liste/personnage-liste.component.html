@@ -26,7 +26,8 @@
   <div class="col-auto zoom" *ngFor="let personnage of personnagesFiltre">
     <div class="card text-white bg-dark mb-3" style="max-width: 20rem;">
       <div class="card-body fade-in-element">
-        <img class="img" (click)="goDetails(personnage.nom)" [src]="'data:image/jpeg;base64,' + personnage.portrait"
+        <img [popper]="smallDetails" [popperTrigger]="showTrigger" [popperHideOnScroll]="true" [popperDisableStyle]="true" [popperPlacement]="popperPlacement" 
+        class="img" (click)="goDetails(personnage.nom)" [src]="'data:image/jpeg;base64,' + personnage.portrait"
           alt="{{personnage.nom}}" width="170" height="170" />
         <h4 class="card-title text-center mt-1">{{personnage.nom}}</h4>
         <p class="card-text text-center"><span class="star">{{personnage.rarete | star }}</span></p>
@@ -34,6 +35,12 @@
           height="50"></p>
       </div>
     </div>
+    <popper-content #smallDetails>
+      <div class="bold fade-in-element pop">
+        <p><b>Nationalité</b> : {{personnage.nationalite}}</p>
+        <p><b>Type d'arme</b> : {{personnage.typeArme}}</p>
+        <p><b>Date de sortie</b> : {{personnage.dateSortie | date:'d MMMM y'}}</p>
+      </div>
+    </popper-content>
   </div>
-
 </div>
