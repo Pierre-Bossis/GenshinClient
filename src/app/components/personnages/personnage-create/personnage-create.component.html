@@ -131,6 +131,6 @@
             <input type="file" id="splashartFile" class="form-control" (change)="loadImage($event)">
           </div>
 
-        <button type="submit" class="mt-4 btn btn-primary">Valider</button>
+        <button [disabled]="personnagesFormGroup.invalid" type="submit" class="mt-4 btn btn-primary">Valider</button>
     </form>
 </div>

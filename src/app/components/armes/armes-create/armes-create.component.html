@@ -93,6 +93,6 @@
       </select>
     </div>
 
-    <button type="submit" class="mt-4 btn btn-primary">Valider</button>
+    <button [disabled]="armesFormGroup.invalid" type="submit" class="mt-4 btn btn-primary">Valider</button>
   </form>
 </div>

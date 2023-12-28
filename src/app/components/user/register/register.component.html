@@ -1,0 +1,33 @@
+<div class="fade-in-element">
+
+    <h4 class="text-center">Inscription</h4>
+
+    <form [formGroup]="registerFormGroup" class="col-8 offset-2" (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+            <label for="username" class="form-label mt-4">Username</label>
+            <input type="text" class="form-control" id="username" placeholder="Username" formControlName="username">
+        </div>
+        
+        <div class="form-group">
+            <label for="email" class="form-label mt-4">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="Email" formControlName="email">
+        </div>
+
+        <div class="form-group">
+            <label for="password" class="form-label mt-4">Mot de passe</label>
+            <input type="password" class="form-control" id="password" placeholder="Mot de passe"
+                formControlName="motDePasse">
+        </div>
+
+        <div class="form-group">
+            <label for="confirmation" class="form-label mt-4">Confirmation</label>
+            <input type="password" class="form-control" id="confirmation" placeholder="Confirmation"
+                formControlName="confirmMdp">
+        </div>
+
+        <div class="text-center">
+            <button [disabled]="registerFormGroup.invalid" type="submit" class="mt-4 btn btn-primary">Login</button>
+        </div>
+    </form>
+</div>

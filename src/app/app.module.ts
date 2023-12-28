@@ -44,6 +44,8 @@ import { MateriauxAmeliorationPersonnagesEtArmesListeComponent } from './compone
 import { ConstellationsCreateComponent } from './components/personnages/constellations/constellations-create/constellations-create.component';
 import { AptitudesCreateComponent } from './components/personnages/aptitudes/aptitudes-create/aptitudes-create.component';
 import { NgxPopperjsModule } from 'ngx-popperjs';
+import { LoginComponent } from './components/user/login/login.component';
+import { RegisterComponent } from './components/user/register/register.component';
 
 @NgModule({
   declarations: [
@@ -83,7 +85,9 @@ import { NgxPopperjsModule } from 'ngx-popperjs';
     MateriauxAmeliorationPersonnagesEtArmesDetailsComponent,
     MateriauxAmeliorationPersonnagesEtArmesListeComponent,
     ConstellationsCreateComponent,
-    AptitudesCreateComponent
+    AptitudesCreateComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

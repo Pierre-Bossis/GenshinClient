@@ -33,6 +33,8 @@ import { LiyueComponent } from './components/regions/liyue/liyue.component';
 import { MondstatComponent } from './components/regions/mondstat/mondstat.component';
 import { RegionsComponent } from './components/regions/regions.component';
 import { SumeruComponent } from './components/regions/sumeru/sumeru.component';
+import { LoginComponent } from './components/user/login/login.component';
+import { RegisterComponent } from './components/user/register/register.component';
 
 const routes: Routes = [
   {path : '', redirectTo : 'home', pathMatch : 'full'},
@@ -64,6 +66,8 @@ const routes: Routes = [
   {path : 'personnages/:id', component : PersonnageDetailsComponent},
   {path : 'personnages/:id/constellations/create', component : ConstellationsCreateComponent},
   {path : 'personnages/:id/aptitudes/create', component : AptitudesCreateComponent},
+  {path : 'login', component : LoginComponent},
+  {path : 'register', component : RegisterComponent},
 
   {path : 'regions', component : RegionsComponent},
   {path : 'regions/mondstat', component : MondstatComponent},
