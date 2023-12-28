@@ -17,7 +17,7 @@ export class ArmesService {
     return this.http.get<Armes[]>(this.url+"armes")
   }
 
-  getByName(name:string):Observable<any>{
+  getByName(name:string):Observable<any>{    
     return this.http.get<Armes>(this.url+"armes/"+name)
   }
 

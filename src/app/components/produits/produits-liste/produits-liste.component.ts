@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Produits } from 'src/app/_models/produits';
 import { ProduitsService } from 'src/app/_services/produits.service';
+import { AuthService } from '../../../_services/auth.service';
 
 @Component({
   selector: 'app-produits-liste',
@@ -9,9 +10,12 @@ import { ProduitsService } from 'src/app/_services/produits.service';
   styleUrls: ['./produits-liste.component.css']
 })
 export class ProduitsListeComponent {
+  role!:string | undefined
   produits:Produits[] = []
-  constructor(private produitsService:ProduitsService, private route:Router){}
+  constructor(private produitsService:ProduitsService, private route:Router,private authService:AuthService){}
   ngOnInit(): void {
+    this.role = this.authService.connectedUser?.role
+    
     this.produitsService.getAll().subscribe((data)=>{
       this.produits = data
       console.log(data);

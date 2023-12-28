@@ -11,6 +11,7 @@ import { MateriauxElevationPersonnages } from 'src/app/_models/materiaux-elevati
 import { Personnages } from 'src/app/_models/personnages';
 import { Produits } from 'src/app/_models/produits';
 import { ArmesService } from 'src/app/_services/armes.service';
+import { AuthService } from 'src/app/_services/auth.service';
 import { MateriauxAmeliorationPersonnagesEtArmesService } from 'src/app/_services/materiaux-amelioration-personnages-et-armes.service';
 import { MateriauxAmeliorationPersonnagesService } from 'src/app/_services/materiaux-amelioration-personnages.service';
 import { PersonnagesService } from 'src/app/_services/personnages.service';
@@ -22,6 +23,7 @@ import { ProduitsService } from 'src/app/_services/produits.service';
   styleUrls: ['./personnage-details.component.css']
 })
 export class PersonnageDetailsComponent {
+  role!:string | undefined
   personnage!: Personnages
 
   //many to one
@@ -50,9 +52,12 @@ export class PersonnageDetailsComponent {
     private materiauxAmeliorationPersonnagesService: MateriauxAmeliorationPersonnagesService,
     private route: ActivatedRoute,
     private sanitizer: DomSanitizer,
-    private router: Router) { }
+    private router: Router,
+    private authService:AuthService) { }
 
   ngOnInit(): void {
+    this.role = this.authService.connectedUser?.role
+
     this.route.paramMap.subscribe(params => {
       this.personnageName = params.get('name');
     });

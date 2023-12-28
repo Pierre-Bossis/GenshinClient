@@ -7,6 +7,7 @@ export interface RegisterForm {
   export interface ConnectedUser {
     id : string
     username : string
+    email:string
     role : string
     avatar_Id:number
   }

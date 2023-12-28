@@ -26,8 +26,12 @@ nav{
     list-style: none;
   }
 
-  .login-register-container > a {
+  .login-register-container > span > a {
     color: inherit;
+    text-decoration: none;
+  }
+  .login-register-container > span > a:hover{
+    color: rgb(252, 164, 0);
   }
   .login-register-container > a:hover{
     color: rgb(252, 164, 0);

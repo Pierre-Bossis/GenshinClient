@@ -165,7 +165,7 @@
 
         <!-- constellations -->
         <div class="tab-pane fade" id="constellations" role="tabpanel">
-            <div *ngIf="constellations.length < 6">
+            <div *ngIf="constellations.length < 6 && role == 'Admin'">
                 <button class="btn btn-primary mt-3" (click)="displayForm(personnage.id)">+</button>
             </div>
             <div *ngIf="formDisplay">
@@ -196,7 +196,7 @@
 
         <!-- aptitudes -->
         <div class="tab-pane fade" id="aptitudes" role="tabpanel">
-            <div *ngIf="aptitudes.length < 6">
+            <div *ngIf="constellations.length < 6 && role == 'Admin'">
                 <button class="btn btn-primary mt-3" (click)="displayForm(personnage.id)">+</button>
             </div>
             <div *ngIf="formDisplay">

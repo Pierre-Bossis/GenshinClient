@@ -1,6 +1,12 @@
 <div class="login-register-container">
-  <a routerLink="login">Login</a>&nbsp;
-  <a routerLink="register">Register</a>
+   <span *ngIf="!connectedUser; else not">
+    <a routerLink="register">Créer un compte</a>&nbsp;
+    <a routerLink="login">Connexion</a>
+  </span>
+  <ng-template #not>
+    <span>[avatar] Hello, {{connectedUser?.username}} !</span>&nbsp;&nbsp;
+    <a style="cursor: pointer;" (click)="logout()">Déconnexion</a>
+  </ng-template>
 </div>
 
 <div class="text-center">

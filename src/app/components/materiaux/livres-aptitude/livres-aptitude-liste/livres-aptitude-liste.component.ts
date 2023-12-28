@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { LivresAptitude } from 'src/app/_models/livres-aptitude';
+import { AuthService } from 'src/app/_services/auth.service';
 import { LivresAptitudeService } from 'src/app/_services/livres-aptitude.service';
 
 @Component({
@@ -9,9 +10,12 @@ import { LivresAptitudeService } from 'src/app/_services/livres-aptitude.service
   styleUrls: ['./livres-aptitude-liste.component.css']
 })
 export class LivresAptitudeListeComponent {
+  role!:string | undefined
   livres:LivresAptitude[] = []
-  constructor(private livresService:LivresAptitudeService, private route:Router){}
+  constructor(private livresService:LivresAptitudeService, private route:Router,private authService:AuthService){}
   ngOnInit(): void {
+    this.role = this.authService.connectedUser?.role
+
     this.livresService.getAll().subscribe((data)=>{
       this.livres = data      
     }) 

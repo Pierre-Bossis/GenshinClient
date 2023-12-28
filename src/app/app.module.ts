@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -46,6 +46,7 @@ import { AptitudesCreateComponent } from './components/personnages/aptitudes/apt
 import { NgxPopperjsModule } from 'ngx-popperjs';
 import { LoginComponent } from './components/user/login/login.component';
 import { RegisterComponent } from './components/user/register/register.component';
+import { TokenInterceptor } from './shared/token.interceptor';
 
 @NgModule({
   declarations: [
@@ -100,7 +101,9 @@ import { RegisterComponent } from './components/user/register/register.component
     NgbModalModule,
     NgxPopperjsModule
   ],
-  providers: [],
+  providers: [
+    {provide : HTTP_INTERCEPTORS, useClass : TokenInterceptor, multi : true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
