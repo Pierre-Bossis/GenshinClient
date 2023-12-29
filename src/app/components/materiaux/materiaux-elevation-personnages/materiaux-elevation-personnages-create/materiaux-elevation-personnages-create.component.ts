@@ -16,7 +16,7 @@ export class MateriauxElevationPersonnagesCreateComponent {
 
   ngOnInit() {
     this.matElevationPersoFormGroup = this.formBuilder.group({
-      nom: ['', Validators.required],
+      nom: ['', [Validators.required,Validators.minLength(2),Validators.maxLength(100)]],
       source: ['', Validators.required],
       rarete: ['', Validators.required]
     })

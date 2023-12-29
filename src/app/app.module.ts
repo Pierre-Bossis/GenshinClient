@@ -47,6 +47,8 @@ import { NgxPopperjsModule } from 'ngx-popperjs';
 import { LoginComponent } from './components/user/login/login.component';
 import { RegisterComponent } from './components/user/register/register.component';
 import { TokenInterceptor } from './shared/token.interceptor';
+import { ErrorComponent } from './shared/error/error.component';
+import { InputValidationDirective } from './shared/directives/input-validation.directive';
 
 @NgModule({
   declarations: [
@@ -88,7 +90,9 @@ import { TokenInterceptor } from './shared/token.interceptor';
     ConstellationsCreateComponent,
     AptitudesCreateComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ErrorComponent,
+    InputValidationDirective
   ],
   imports: [
     BrowserModule,

@@ -2,16 +2,18 @@
 
   <h4 class="text-center">Ajouter une arme</h4>
 
-  <form class="col-8 offset-2" [formGroup]="armesFormGroup" (ngSubmit)="onSubmit()">
+  <form class="col-8 offset-2" [formGroup]="armesFormGroup" (ngSubmit)="onSubmit()" autocomplete="off">
 
     <div class="form-group">
       <label for="nom" class="form-label mt-4">Nom</label>
-      <input type="text" class="form-control" id="nom" placeholder="Nom" formControlName="nom">
+      <input inputValidation type="text" class="form-control" id="nom" placeholder="Nom" formControlName="nom">
+      <div class="invalid-feedback"></div>
+      <div class="valid-feedback"></div>
     </div>
 
     <div class="form-group">
       <label for="exampleSelect1" class="form-label mt-4">Type d'arme</label>
-      <select class="form-select" id="exampleSelect1" formControlName="typeArme">
+      <select inputValidation class="form-select" id="exampleSelect1" formControlName="typeArme">
         <option value="" disabled selected hidden>Type d'arme</option>
         <option>Epée</option>
         <option>Claymore</option>
@@ -19,11 +21,15 @@
         <option>Lance</option>
         <option>Catalyseur</option>
       </select>
+      <div class="invalid-feedback"></div>
+      <div class="valid-feedback"></div>
     </div>
 
     <div class="form-group">
       <label for="desc" class="form-label mt-4">Description</label>
-      <input type="text" class="form-control" id="desc" placeholder="Description" formControlName="description">
+      <input inputValidation type="text" class="form-control" id="desc" placeholder="Description" formControlName="description">
+      <div class="invalid-feedback"></div>
+      <div class="valid-feedback"></div>
     </div>
 
     <div class="form-group">
@@ -38,7 +44,7 @@
 
     <div class="form-group">
       <label for="exampleSelect2" class="form-label mt-4">Statistique principale</label>
-      <select class="form-select" id="exampleSelect2" formControlName="nomStatPrincipale">
+      <select inputValidation class="form-select" id="exampleSelect2" formControlName="nomStatPrincipale">
         <option value="" disabled selected hidden>Statistique principale</option>
         <option>ATQ %</option>
         <option>Defense %</option>
@@ -48,26 +54,34 @@
         <option>Recharge Energie %</option>
         <option>Maitrîse Elementaire</option>
       </select>
+      <div class="invalid-feedback"></div>
+      <div class="valid-feedback"></div>
     </div>
 
     <div class="form-group">
       <label for="vsp" class="form-label mt-4">Valeur de la stat principale</label>
-      <input type="number" class="form-control" id="vsp" placeholder="Valeur statistique principale" formControlName="valeurStatPrincipale">
+      <input inputValidation type="number" class="form-control" id="vsp" placeholder="Valeur statistique principale" formControlName="valeurStatPrincipale">
+      <div class="invalid-feedback"></div>
+      <div class="valid-feedback"></div>
     </div>
 
     <div class="form-group">
       <label for="ep" class="form-label mt-4">Effet passif</label>
-      <input type="text" class="form-control" id="ep" placeholder="Effet passif" formControlName="effetPassif">
+      <input inputValidation type="text" class="form-control" id="ep" placeholder="Effet passif" formControlName="effetPassif">
+      <div class="invalid-feedback"></div>
+      <div class="valid-feedback"></div>
     </div>
 
     <div class="form-group">
       <label for="atqbase" class="form-label mt-4">Attaque de base</label>
-      <input type="number" class="form-control" id="atqbase" placeholder="Attaque de base" formControlName="atqBase">
+      <input inputValidation type="number" class="form-control" id="atqbase" placeholder="Attaque de base" formControlName="atqBase">
+      <div class="invalid-feedback"></div>
+      <div class="valid-feedback"></div>
     </div>
 
     <div class="form-group">
       <label for="exampleSelect3" class="form-label mt-4">Rareté</label>
-      <select class="form-select" id="exampleSelect3" formControlName="rarete">
+      <select inputValidation class="form-select" id="exampleSelect3" formControlName="rarete">
         <option value="" disabled selected hidden>Rareté</option>
         <option>1</option>
         <option>2</option>
@@ -75,22 +89,28 @@
         <option>4</option>
         <option>5</option>
       </select>
+      <div class="invalid-feedback"></div>
+      <div class="valid-feedback"></div>
     </div>
 
     <hr>
 
     <div class="form-group">
       <label for="mats" class="form-label mt-4">Matériaux elevation d'armes(multiple)</label>
-      <select multiple="" class="form-select" id="mats"  formControlName="selectedMats">
+      <select inputValidation multiple="" class="form-select" id="mats"  formControlName="selectedMats">
         <option *ngFor="let mat of matListe" [value]="mat.id">{{ mat.nom }}</option>
       </select>
+      <div class="invalid-feedback"></div>
+      <div class="valid-feedback"></div>
     </div>
 
     <div class="form-group">
       <label for="mats" class="form-label mt-4">Matériaux amelioration personnages et armes(multiple)</label>
-      <select multiple="" class="form-select" id="mats"  formControlName="selectedMatsAmelio">
+      <select inputValidation multiple="" class="form-select" id="mats"  formControlName="selectedMatsAmelio">
         <option *ngFor="let mat of matAmelioListe" [value]="mat.id">{{ mat.nom }}</option>
       </select>
+      <div class="invalid-feedback"></div>
+      <div class="valid-feedback"></div>
     </div>
 
     <button [disabled]="armesFormGroup.invalid" type="submit" class="mt-4 btn btn-primary">Valider</button>

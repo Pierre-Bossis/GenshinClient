@@ -2,11 +2,13 @@
 
   <h4 class="text-center">Ajouter un matériaux d'elevation d'armes</h4>
 
-  <form [formGroup]="myFormGroup" class="col-8 offset-2" (ngSubmit)="onSubmit()">
+  <form [formGroup]="myFormGroup" class="col-8 offset-2" (ngSubmit)="onSubmit()" autocomplete="off">
 
     <div class="form-group">
       <label for="nom" class="form-label mt-4">Nom</label>
-      <input type="text" class="form-control" id="nom" placeholder="Nom" formControlName="nom">
+      <input inputValidation type="text" class="form-control" id="nom" placeholder="Nom" formControlName="nom">
+      <div class="invalid-feedback"></div>
+      <div class="valid-feedback"></div>
     </div>  
 
     <div class="form-group">
@@ -16,12 +18,14 @@
 
     <div class="form-group">
       <label for="source" class="form-label mt-4">Source</label>
-      <input type="text" class="form-control" id="source" placeholder="Source" formControlName="source">
+      <input inputValidation type="text" class="form-control" id="source" placeholder="Source" formControlName="source">
+      <div class="invalid-feedback"></div>
+      <div class="valid-feedback"></div>
     </div>
 
     <div class="form-group">
       <label for="exampleSelect3" class="form-label mt-4">Rareté</label>
-      <select class="form-select" id="exampleSelect3" formControlName="rarete">
+      <select inputValidation class="form-select" id="exampleSelect3" formControlName="rarete">
         <option value="" disabled selected hidden>Rareté</option>
         <option>1</option>
         <option>2</option>
@@ -29,6 +33,8 @@
         <option>4</option>
         <option>5</option>
       </select>
+      <div class="invalid-feedback"></div>
+      <div class="valid-feedback"></div>
     </div>
     
     <button [disabled]="myFormGroup.invalid" type="submit" class="mt-4 btn btn-primary">Valider</button>

@@ -48,7 +48,7 @@ export class PersonnageCreateComponent {
     this.matsAmelioService.getAll().subscribe((data) => this.matsAmelioPersosArmes = data)
 
     this.personnagesFormGroup = this.formBuilder.group({
-      nom: ['', Validators.required],
+      nom: ['', [Validators.required,Validators.minLength(2)]],
       oeilDivin: ['', Validators.required],
       typeArme: ['',Validators.required],
       lore: ['', Validators.required],

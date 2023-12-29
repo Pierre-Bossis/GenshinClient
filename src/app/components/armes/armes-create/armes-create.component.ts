@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, MinLengthValidator, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MateriauxAmeliorationPersonnagesEtArmes } from 'src/app/_models/materiaux-amelioration-personnages-et-armes';
 import { MateriauxElevationArmes } from 'src/app/_models/materiaux-elevation-armes';
@@ -28,13 +28,13 @@ export class ArmesCreateComponent {
     this.matAmeliorationService.getAll().subscribe((data) => this.matAmelioListe = data)
 
     this.armesFormGroup = this.formBuilder.group({
-      nom: ['', Validators.required],
+      nom: ['', [Validators.required,Validators.minLength(2)]],
       typeArme: ['', Validators.required],
       description: ['', Validators.required],
       nomStatPrincipale: ['', Validators.required],
-      valeurStatPrincipale: ['', Validators.required],
+      valeurStatPrincipale: ['', [Validators.required,Validators.min(1)]],
       effetPassif: ['', Validators.required],
-      atqBase: ['', Validators.required],
+      atqBase: ['', [Validators.required,Validators.min(1)]],
       rarete: ['', Validators.required],
       selectedMats: ['',Validators.required],
       selectedMatsAmelio: ['', Validators.required]

@@ -35,6 +35,7 @@ import { RegionsComponent } from './components/regions/regions.component';
 import { SumeruComponent } from './components/regions/sumeru/sumeru.component';
 import { LoginComponent } from './components/user/login/login.component';
 import { RegisterComponent } from './components/user/register/register.component';
+import { ErrorComponent } from './shared/error/error.component';
 import { adminGuard } from './shared/guard/admin.guard';
 
 const routes: Routes = [
@@ -69,13 +70,14 @@ const routes: Routes = [
   {path : 'personnages/:id/aptitudes/create', canActivate : [adminGuard], component : AptitudesCreateComponent},
   {path : 'login', component : LoginComponent},
   {path : 'register', component : RegisterComponent},
-
   {path : 'regions', component : RegionsComponent},
   {path : 'regions/mondstat', component : MondstatComponent},
   {path : 'regions/liyue', component : LiyueComponent},
   {path : 'regions/inazuma', component : InazumaComponent},
   {path : 'regions/sumeru', component : SumeruComponent},
-  {path : 'regions/fontaine', component : FontaineComponent}
+  {path : 'regions/fontaine', component : FontaineComponent},
+  {path : 'error', component : ErrorComponent},
+  {path: '**', redirectTo: '/error'}
 ];
 
 @NgModule({

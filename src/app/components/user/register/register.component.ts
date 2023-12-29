@@ -14,10 +14,10 @@ export class RegisterComponent {
 
   ngOnInit() {
     this.registerFormGroup = this.formBuilder.group({
-      username: ['',Validators.required],
-      email: ['', Validators.required],
-      motDePasse: ['', Validators.required],
-      confirmMdp : [null, Validators.required]
+      username: ['',[Validators.required,Validators.minLength(2)]],
+      email: ['', [Validators.required,Validators.maxLength(50)]],
+      motDePasse: ['', [Validators.required,Validators.minLength(4),Validators.maxLength(20)]],
+      confirmMdp : [null, [Validators.required,Validators.minLength(4),Validators.maxLength(20)]]
     }, {
       validators: this.passwordMatchValidator
     });

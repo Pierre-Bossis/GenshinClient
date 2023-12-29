@@ -20,7 +20,7 @@ export class ConstellationsCreateComponent {
 
   ngOnInit() {
     this.constellationsFormGroup = this.formBuilder.group({
-      nom: ['', Validators.required],
+      nom: ['', [Validators.required,Validators.minLength(2)]],
       description: ['', Validators.required],
       personnage_Id: [this.PersonnageId,Validators.required]
     })

@@ -2,15 +2,17 @@
 
     <h4 class="text-center">Ajouter un personnage</h4>
 
-    <form [formGroup]="personnagesFormGroup" class="col-8 offset-2" (ngSubmit)="onSubmit()">
+    <form [formGroup]="personnagesFormGroup" class="col-8 offset-2" (ngSubmit)="onSubmit()" autocomplete="off">
         <div class="form-group">
             <label for="nom" class="form-label mt-4">Nom</label>
-            <input type="text" class="form-control" id="nom" placeholder="Nom" formControlName="nom">
+            <input inputValidation type="text" class="form-control" id="nom" placeholder="Nom" formControlName="nom">
+            <div class="invalid-feedback"></div>
+            <div class="valid-feedback"></div>
           </div>
 
         <div class="form-group">
             <label for="oeilDivin" class="form-label mt-4">Oeil Divin</label>
-            <select class="form-select" id="oeilDivin" formControlName="oeilDivin">
+            <select inputValidation class="form-select" id="oeilDivin" formControlName="oeilDivin">
                 <option value="" disabled selected hidden>Oeil Divin</option>
                 <option>Pyro</option>
                 <option>Anemo</option>
@@ -20,11 +22,13 @@
                 <option>Cryo</option>
                 <option>Geo</option>
             </select>
+            <div class="invalid-feedback"></div>
+            <div class="valid-feedback"></div>
         </div>
 
         <div class="form-group">
             <label for="exampleSelect1" class="form-label mt-4">Type d'arme</label>
-            <select class="form-select" id="exampleSelect1" formControlName="typeArme">
+            <select inputValidation class="form-select" id="exampleSelect1" formControlName="typeArme">
                 <option value="" disabled selected hidden>Type d'arme</option>
                 <option>Epée</option>
                 <option>Claymore</option>
@@ -32,16 +36,20 @@
                 <option>Lance</option>
                 <option>Catalyseur</option>
             </select>
+            <div class="invalid-feedback"></div>
+            <div class="valid-feedback"></div>
         </div>
 
         <div class="form-group">
             <label for="lore" class="form-label mt-4">Lore</label>
-            <input type="text" class="form-control" id="lore" placeholder="Lore" formControlName="lore">
+            <input inputValidation type="text" class="form-control" id="lore" placeholder="Lore" formControlName="lore">
+            <div class="invalid-feedback"></div>
+            <div class="valid-feedback"></div>
           </div>
 
         <div class="form-group">
             <label for="nationalite" class="form-label mt-4">Nationalité</label>
-            <select class="form-select" id="nationalite" formControlName="nationalite">
+            <select inputValidation class="form-select" id="nationalite" formControlName="nationalite">
                 <option value="" disabled selected hidden>Nationalité</option>
                 <option>Mondstat</option>
                 <option>Liyue</option>
@@ -51,16 +59,22 @@
                 <option>Natlan</option>
                 <option>Snezhnaya</option>
             </select>
+            <div class="invalid-feedback"></div>
+            <div class="valid-feedback"></div>
         </div>
 
         <div class="form-group">
             <label for="traileryt" class="form-label mt-4">Trailer Youtube</label>
-            <input type="text" class="form-control" id="traileryt" placeholder="Trailer Youtube" formControlName="trailerYT">
+            <input inputValidation type="text" class="form-control" id="traileryt" placeholder="Trailer Youtube" formControlName="trailerYT">
+            <div class="invalid-feedback"></div>
+            <div class="valid-feedback"></div>
           </div>
 
           <div class="form-group">
             <label for="date" class="form-label mt-4">Date de sortie</label>
-            <input class="form-control" type="date" id="date" formControlName="dateSortie">
+            <input inputValidation class="form-control" type="date" id="date" formControlName="dateSortie">
+            <div class="invalid-feedback"></div>
+            <div class="valid-feedback"></div>
             </div>
         
         <div class="form-group">
@@ -74,51 +88,63 @@
         <div class="form-group">
             <label for="materiauxAmeliorationPersonnageId" class="form-label mt-4">Materiaux d'amélioration
                 Personnage</label>
-            <select class="form-select" id="materiauxAmeliorationPersonnageId"
+            <select inputValidation class="form-select" id="materiauxAmeliorationPersonnageId"
                 formControlName="materiauxAmeliorationPersonnageId">
                 <option value="" disabled selected hidden>Materiaux d'amélioration</option>
                 <option *ngFor="let mat of matAmeliorationPersonnagesListe" [value]="mat.id">{{ mat.nom }}</option>
             </select>
+            <div class="invalid-feedback"></div>
+            <div class="valid-feedback"></div>
         </div>
 
         <div class="form-group">
             <label for="produitId" class="form-label mt-4">Produits d'elevation</label>
-            <select class="form-select" id="produitId" formControlName="produitId">
+            <select inputValidation class="form-select" id="produitId" formControlName="produitId">
                 <option value="" disabled selected hidden>Produits d'elevation</option>
                 <option *ngFor="let produit of produitsListe" [value]="produit.id">{{ produit.nom }}</option>
             </select>
+            <div class="invalid-feedback"></div>
+            <div class="valid-feedback"></div>
         </div>
 
         <div class="form-group">
             <label for="rarete" class="form-label mt-4">Rareté</label>
-            <select class="form-select" id="rarete" formControlName="rarete">
+            <select inputValidation class="form-select" id="rarete" formControlName="rarete">
                 <option value="" disabled selected hidden>Rareté</option>
                 <option>4</option>
                 <option>5</option>
             </select>
+            <div class="invalid-feedback"></div>
+            <div class="valid-feedback"></div>
         </div>
 
         <hr>
 
         <div class="form-group">
             <label for="livres" class="form-label mt-4">Livres d'aptitude(multiple)</label>
-            <select multiple="" class="form-select" id="livres"  formControlName="selectedLivres">
+            <select inputValidation multiple="" class="form-select" id="livres"  formControlName="selectedLivres">
               <option *ngFor="let livre of LivresAptitudeListe" [value]="livre.id">{{ livre.nom }}</option>
             </select>
+            <div class="invalid-feedback"></div>
+            <div class="valid-feedback"></div>
           </div>
 
           <div class="form-group">
             <label for="matsElev" class="form-label mt-4">Matériaux d'elevation Personnages(multiple)</label>
-            <select multiple="" class="form-select" id="matsElev"  formControlName="selectedMatsElevation">
+            <select inputValidation multiple="" class="form-select" id="matsElev"  formControlName="selectedMatsElevation">
               <option *ngFor="let mat of matsElevationPersonnages" [value]="mat.id">{{ mat.nom }}</option>
             </select>
+            <div class="invalid-feedback"></div>
+            <div class="valid-feedback"></div>
           </div>
 
           <div class="form-group">
             <label for="matsAmelio" class="form-label mt-4">Matériaux d'amelioration Personnages et Armes(multiple)</label>
-            <select multiple="" class="form-select" id="matsAmelio"  formControlName="selectedMatsAmelioPersosArmes">
+            <select inputValidation multiple="" class="form-select" id="matsAmelio"  formControlName="selectedMatsAmelioPersosArmes">
               <option *ngFor="let mat of matsAmelioPersosArmes" [value]="mat.id">{{ mat.nom }}</option>
             </select>
+            <div class="invalid-feedback"></div>
+            <div class="valid-feedback"></div>
           </div>
 
         <div class="form-group">

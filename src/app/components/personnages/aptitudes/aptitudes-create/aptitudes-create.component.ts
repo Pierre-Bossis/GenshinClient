@@ -20,7 +20,7 @@ export class AptitudesCreateComponent {
 
   ngOnInit() {
     this.AptitudesFormGroup = this.formBuilder.group({
-      nom: ['', Validators.required],
+      nom: ['', [Validators.required,Validators.minLength(2)]],
       description: ['', Validators.required],
       isAptitudeCombat: [false,Validators.required],
       personnage_Id: [this.PersonnageId,Validators.required]

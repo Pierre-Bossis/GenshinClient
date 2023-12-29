@@ -14,8 +14,8 @@ export class LoginComponent {
 
   ngOnInit() {
     this.loginFormGroup = this.formBuilder.group({
-      email: ['', Validators.required],
-      motDePasse: ['', Validators.required],
+      email: ['', [Validators.required,Validators.maxLength(50)]],
+      motDePasse: ['', [Validators.required,Validators.minLength(4),Validators.maxLength(20)]],
     })
   }
 

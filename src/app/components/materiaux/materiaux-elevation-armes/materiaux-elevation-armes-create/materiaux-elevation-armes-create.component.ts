@@ -1,5 +1,5 @@
   import { Component } from '@angular/core';
-  import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+  import { FormBuilder, FormGroup, MinLengthValidator, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
   import { MateriauxElevationArmesService } from 'src/app/_services/materiaux-elevation-armes.service';
@@ -17,7 +17,7 @@ import { Observable } from 'rxjs';
 
     ngOnInit() {
       this.myFormGroup = this.formBuilder.group({
-        nom: ['', Validators.required],
+        nom: ['', [Validators.required,Validators.minLength(2),Validators.maxLength(100)]],
         source: ['', Validators.required],
         rarete: ['', Validators.required]
       })
