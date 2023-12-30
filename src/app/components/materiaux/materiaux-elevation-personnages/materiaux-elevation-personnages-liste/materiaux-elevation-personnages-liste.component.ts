@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { MateriauxElevationPersonnages } from 'src/app/_models/materiaux-elevation-personnages';
 import { AuthService } from 'src/app/_services/auth.service';
 import { MateriauxElevationPersonnagesService } from 'src/app/_services/materiaux-elevation-personnages.service';
@@ -12,11 +11,28 @@ import { MateriauxElevationPersonnagesService } from 'src/app/_services/materiau
 export class MateriauxElevationPersonnagesListeComponent {
   role!:string | undefined
   materiauxListe:MateriauxElevationPersonnages[] = []
-  constructor(private matService:MateriauxElevationPersonnagesService,private route:Router,private authService:AuthService){}
+  materiauxListeFiltre:MateriauxElevationPersonnages[] = []
+
+  constructor(private matService:MateriauxElevationPersonnagesService,private authService:AuthService){}
 
   ngOnInit(): void {
     this.role = this.authService.connectedUser?.role
 
-    this.matService.getAll().subscribe((data) => this.materiauxListe = data)
+    this.matService.getAll().subscribe((data) => {
+      this.materiauxListe = data
+      this.materiauxListeFiltre = this.materiauxListe
+    })
+  }
+
+  filtre(search: string) {    
+    search = search?.trim() ?? null;
+
+    if (search !== null && search !== '') {
+      this.materiauxListeFiltre = this.materiauxListe.filter((materiaux: MateriauxElevationPersonnages) =>
+        materiaux.nom.toLowerCase().includes(search!.toLowerCase())
+      );      
+    }
+    else
+      this.materiauxListeFiltre = this.materiauxListe
   }
 }

@@ -12,10 +12,27 @@ import { MateriauxAmeliorationPersonnagesEtArmesService } from 'src/app/_service
 export class MateriauxAmeliorationPersonnagesEtArmesListeComponent {
   role!:string | undefined
   materiauxListe:MateriauxAmeliorationPersonnagesEtArmes[] = []
+  materiauxListeFiltre:MateriauxAmeliorationPersonnagesEtArmes[] = []
+
   constructor(private matService:MateriauxAmeliorationPersonnagesEtArmesService,private route:Router,private authService:AuthService){}
 
   ngOnInit(): void {
     this.role = this.authService.connectedUser?.role
-    this.matService.getAll().subscribe((data) => this.materiauxListe = data)
+    this.matService.getAll().subscribe((data) => {
+      this.materiauxListe = data
+      this.materiauxListeFiltre = this.materiauxListe
+    })
+  }
+
+  filtre(search: string) {    
+    search = search?.trim() ?? null;
+
+    if (search !== null && search !== '') {
+      this.materiauxListeFiltre = this.materiauxListe.filter((materiaux: MateriauxAmeliorationPersonnagesEtArmes) =>
+        materiaux.nom.toLowerCase().includes(search!.toLowerCase())
+      );      
+    }
+    else
+      this.materiauxListeFiltre = this.materiauxListe
   }
 }

@@ -10,20 +10,35 @@ import { AuthService } from '../../../_services/auth.service';
   styleUrls: ['./produits-liste.component.css']
 })
 export class ProduitsListeComponent {
-  role!:string | undefined
-  produits:Produits[] = []
-  constructor(private produitsService:ProduitsService, private route:Router,private authService:AuthService){}
+  role!: string | undefined
+  produits: Produits[] = []
+  produitsFiltre: Produits[] = []
+
+  constructor(private produitsService: ProduitsService, private route: Router, private authService: AuthService) { }
   ngOnInit(): void {
     this.role = this.authService.connectedUser?.role
-    
-    this.produitsService.getAll().subscribe((data)=>{
+
+    this.produitsService.getAll().subscribe((data) => {
       this.produits = data
-      console.log(data);
-      
-    }) 
+      this.produitsFiltre = this.produits
+
+    })
   }
+
+  goDetails(nom: string) {
+    this.route.navigate(["produits/" + nom])
+  }
+
   
-  goDetails(nom:string){
-    this.route.navigate(["produits/"+nom])
+  filtre(search: string) {
+    search = search?.trim() ?? null;
+
+    if (search !== null && search !== '') {
+      this.produitsFiltre = this.produits.filter((produit: Produits) =>
+        produit.nom.toLowerCase().includes(search!.toLowerCase())
+      );
+    }
+    else
+      this.produitsFiltre = this.produits
   }
 }

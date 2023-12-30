@@ -12,16 +12,30 @@ import { LivresAptitudeService } from 'src/app/_services/livres-aptitude.service
 export class LivresAptitudeListeComponent {
   role!:string | undefined
   livres:LivresAptitude[] = []
+  livresFiltre:LivresAptitude[] = []
   constructor(private livresService:LivresAptitudeService, private route:Router,private authService:AuthService){}
   ngOnInit(): void {
     this.role = this.authService.connectedUser?.role
 
     this.livresService.getAll().subscribe((data)=>{
-      this.livres = data      
+      this.livres = data
+      this.livresFiltre = this.livres   
     }) 
   }
   
   goDetails(nom:string){
     this.route.navigate(["livres-aptitude/"+nom])
+  }
+
+  filtre(search: string) {    
+    search = search?.trim() ?? null;
+
+    if (search !== null && search !== '') {
+      this.livresFiltre = this.livres.filter((livre: LivresAptitude) =>
+        livre.nom.toLowerCase().includes(search!.toLowerCase())
+      );      
+    }
+    else
+      this.livresFiltre = this.livres
   }
 }

@@ -5,7 +5,7 @@
   </span>
   <ng-template #not>
     <img *ngIf="avatarUser" data-bs-toggle="modal" data-bs-target="#avatarsModal" src="../../../assets/avatars/{{avatarUser}}.png" style="cursor: pointer;"
-      width="70" height="70">{{connectedUser?.username}}&nbsp;&nbsp;&nbsp;&nbsp;
+      width="70" height="70">&nbsp;&nbsp;&nbsp;&nbsp;{{connectedUser?.username}}&nbsp;&nbsp;&nbsp;&nbsp;
     <a style="cursor: pointer;" (click)="logout()">Déconnexion</a>
   </ng-template>
 </div>

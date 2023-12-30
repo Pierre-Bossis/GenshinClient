@@ -6,6 +6,10 @@
   </div>
   
   <div class="table-responsive fade-in-element mt-3">
+    <div class="col-4 offset-4 mb-5">
+        <input class="form-control me-sm-2" type="search" #searchInput placeholder="Recherchez un livre" (input)="filtre(searchInput.value)">
+      </div>
+
     <table class="table table-striped table-hover">
         <thead>
             <tr>
@@ -17,7 +21,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let livre of livres; let i = index">
+            <tr *ngFor="let livre of livresFiltre; let i = index">
                 <th scope="row" class="align-middle">{{i+1}}</th>
                 <td class="align-middle">{{livre.nom}}</td>
                 <td class="align-middle"><img [src]="'data:image/jpeg;base64,' + livre.icone" alt="{{livre.nom}}" width="50" height="50" /></td>
