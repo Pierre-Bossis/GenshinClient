@@ -21,7 +21,7 @@ export class ProduitsListeComponent {
     this.produitsService.getAll().subscribe((data) => {
       this.produits = data
       this.produitsFiltre = this.produits
-
+      this.totalItems = this.produits.length;
     })
   }
 
@@ -29,16 +29,26 @@ export class ProduitsListeComponent {
     this.route.navigate(["produits/" + nom])
   }
 
-  
-  filtre(search: string) {
-    search = search?.trim() ?? null;
 
-    if (search !== null && search !== '') {
+  filtre(search: string) {
+    this.currentPage = 1;
+  
+    search = search?.trim().toLowerCase() ?? '';
+  
+    if (search === '') {
+      this.produitsFiltre = this.produits;
+    } else {
       this.produitsFiltre = this.produits.filter((produit: Produits) =>
-        produit.nom.toLowerCase().includes(search!.toLowerCase())
+        produit.nom.toLowerCase().includes(search)
       );
     }
-    else
-      this.produitsFiltre = this.produits
+  }
+
+  //-------------- Pagination --------------
+  pageSize = 10;
+  currentPage = 1;
+  totalItems!: number
+  onPageChange(pageNumber: number) {
+    this.currentPage = pageNumber;
   }
 }

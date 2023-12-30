@@ -49,6 +49,8 @@ import { RegisterComponent } from './components/user/register/register.component
 import { TokenInterceptor } from './shared/token.interceptor';
 import { ErrorComponent } from './shared/error/error.component';
 import { InputValidationDirective } from './shared/directives/input-validation.directive';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { PaginationComponent } from './shared/pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -92,7 +94,8 @@ import { InputValidationDirective } from './shared/directives/input-validation.d
     LoginComponent,
     RegisterComponent,
     ErrorComponent,
-    InputValidationDirective
+    InputValidationDirective,
+    PaginationComponent
   ],
   imports: [
     BrowserModule,
@@ -103,7 +106,8 @@ import { InputValidationDirective } from './shared/directives/input-validation.d
     BrowserAnimationsModule,
     NgbModule,
     NgbModalModule,
-    NgxPopperjsModule
+    NgxPopperjsModule,
+    NgxPaginationModule
   ],
   providers: [
     {provide : HTTP_INTERCEPTORS, useClass : TokenInterceptor, multi : true}

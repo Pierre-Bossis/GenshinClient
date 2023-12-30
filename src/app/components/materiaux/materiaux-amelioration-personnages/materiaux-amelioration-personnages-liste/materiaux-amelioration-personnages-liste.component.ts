@@ -10,10 +10,10 @@ import { MateriauxAmeliorationPersonnagesService } from 'src/app/_services/mater
   styleUrls: ['./materiaux-amelioration-personnages-liste.component.css']
 })
 export class MateriauxAmeliorationPersonnagesListeComponent {
-  role!:string | undefined
-  materiauxListe:MateriauxAmeliorationPersonnages[] = []
-  materiauxListeFiltre:MateriauxAmeliorationPersonnages[] = []
-  constructor(private matService:MateriauxAmeliorationPersonnagesService,private route:Router,private authService:AuthService){}
+  role!: string | undefined
+  materiauxListe: MateriauxAmeliorationPersonnages[] = []
+  materiauxListeFiltre: MateriauxAmeliorationPersonnages[] = []
+  constructor(private matService: MateriauxAmeliorationPersonnagesService, private route: Router, private authService: AuthService) { }
 
   ngOnInit(): void {
     this.role = this.authService.connectedUser?.role
@@ -21,18 +21,29 @@ export class MateriauxAmeliorationPersonnagesListeComponent {
     this.matService.getAll().subscribe((data) => {
       this.materiauxListe = data
       this.materiauxListeFiltre = this.materiauxListe
+      this.totalItems = this.materiauxListe.length
     })
   }
 
-  filtre(search: string) {    
-    search = search?.trim() ?? null;
+  filtre(search: string) {
+    this.currentPage = 1;
 
-    if (search !== null && search !== '') {
-      this.materiauxListeFiltre = this.materiauxListe.filter((materiaux: MateriauxAmeliorationPersonnages) =>
-        materiaux.nom.toLowerCase().includes(search!.toLowerCase())
-      );      
+    search = search?.trim().toLowerCase() ?? '';
+
+    if (search === '') {
+      this.materiauxListeFiltre = this.materiauxListe;
+    } else {
+      this.materiauxListeFiltre = this.materiauxListe.filter((produit: MateriauxAmeliorationPersonnages) =>
+        produit.nom.toLowerCase().includes(search)
+      );
     }
-    else
-      this.materiauxListeFiltre = this.materiauxListe
+  }
+
+  //-------------- Pagination --------------
+  pageSize = 10;
+  currentPage = 1;
+  totalItems!: number
+  onPageChange(pageNumber: number) {
+    this.currentPage = pageNumber;
   }
 }

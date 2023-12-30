@@ -19,7 +19,8 @@ export class LivresAptitudeListeComponent {
 
     this.livresService.getAll().subscribe((data)=>{
       this.livres = data
-      this.livresFiltre = this.livres   
+      this.livresFiltre = this.livres
+      this.totalItems = this.livres.length
     }) 
   }
   
@@ -27,15 +28,25 @@ export class LivresAptitudeListeComponent {
     this.route.navigate(["livres-aptitude/"+nom])
   }
 
-  filtre(search: string) {    
-    search = search?.trim() ?? null;
-
-    if (search !== null && search !== '') {
-      this.livresFiltre = this.livres.filter((livre: LivresAptitude) =>
-        livre.nom.toLowerCase().includes(search!.toLowerCase())
-      );      
+  filtre(search: string) {
+    this.currentPage = 1;
+  
+    search = search?.trim().toLowerCase() ?? '';
+  
+    if (search === '') {
+      this.livresFiltre = this.livres;
+    } else {
+      this.livresFiltre = this.livres.filter((produit: LivresAptitude) =>
+        produit.nom.toLowerCase().includes(search)
+      );
     }
-    else
-      this.livresFiltre = this.livres
+  }
+
+  //-------------- Pagination --------------
+  pageSize = 10;
+  currentPage = 1;
+  totalItems!: number
+  onPageChange(pageNumber: number) {
+    this.currentPage = pageNumber;
   }
 }
