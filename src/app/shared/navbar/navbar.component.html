@@ -1,10 +1,11 @@
 <div class="login-register-container">
-   <span *ngIf="!connectedUser; else not">
+  <span *ngIf="!connectedUser; else not">
     <a routerLink="register">Créer un compte</a>&nbsp;
     <a routerLink="login">Connexion</a>
   </span>
   <ng-template #not>
-    <span>[avatar] Hello, {{connectedUser?.username}} !</span>&nbsp;&nbsp;
+    <img *ngIf="avatarUser" data-bs-toggle="modal" data-bs-target="#avatarsModal" src="../../../assets/avatars/{{avatarUser}}.png" style="cursor: pointer;"
+      width="70" height="70">{{connectedUser?.username}}&nbsp;&nbsp;&nbsp;&nbsp;
     <a style="cursor: pointer;" (click)="logout()">Déconnexion</a>
   </ng-template>
 </div>
@@ -40,7 +41,7 @@
 
         <li ngbDropdown class="nav-item dropdown flex-fill">
           <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" ngbDropdownToggle>
-            Liste
+            Ressources
           </a>
           <div ngbDropdownMenu aria-labelledby="navbarDropdown" class="dropdown-menu">
             <button class="dropdown-item" routerLink="materiaux-elevation-armes/liste">Liste materiaux elevation
@@ -51,7 +52,8 @@
             <button class="dropdown-item" routerLink="materiaux-elevation-personnages/liste">Liste des matériaux
               d'elevation(personnages)</button>
             <button class="dropdown-item" routerLink="livres-aptitude/liste">Liste des livres d'aptitude</button>
-            <button class="dropdown-item" routerLink="materiaux-amelioration-personnages-et-armes/liste">Liste des materiaux d'amelioration(perso/armes)</button>
+            <button class="dropdown-item" routerLink="materiaux-amelioration-personnages-et-armes/liste">Liste des
+              materiaux d'amelioration(perso/armes)</button>
           </div>
         </li>
 
@@ -63,3 +65,25 @@
     </div>
   </div>
 </nav>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="avatarsModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-dark text-light">
+        <h5 class="modal-title">Sélectionner un Avatar</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fermer"></button>
+      </div>
+      <div class="modal-body bg-dark">
+        <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 g-3">
+          <div class="col" *ngFor="let avatar of avatarsListe">
+            <img data-bs-dismiss="modal" (click)="changeAvatar(avatar.id,avatar.nom)" src="../../../assets/avatars/{{avatar.nom}}.png" class="img-thumbnail" alt="{{avatar.nom}}" style="cursor: pointer;">
+            <p class="text-center text-light">{{avatar.nom}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
