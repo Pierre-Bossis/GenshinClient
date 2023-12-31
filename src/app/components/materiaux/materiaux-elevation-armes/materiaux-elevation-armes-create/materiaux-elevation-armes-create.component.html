@@ -2,7 +2,7 @@
 
   <h4 class="text-center">Ajouter un matériaux d'elevation d'armes</h4>
 
-  <form [formGroup]="myFormGroup" class="col-8 offset-2" (ngSubmit)="onSubmit()" autocomplete="off">
+  <form [formGroup]="myFormGroup" class="col-8 offset-2 transparent-form" (ngSubmit)="onSubmit()" autocomplete="off">
 
     <div class="form-group">
       <label for="nom" class="form-label mt-4">Nom</label>
@@ -37,6 +37,8 @@
       <div class="valid-feedback"></div>
     </div>
     
-    <button [disabled]="myFormGroup.invalid" type="submit" class="mt-4 btn btn-primary">Valider</button>
+    <div class="text-center">
+      <button [disabled]="myFormGroup.invalid" type="submit" class="mt-4 btn btn-primary">Valider</button>
+    </div>
   </form>
 </div>

@@ -2,7 +2,7 @@
 
   <h4 class="text-center">Ajouter un produit</h4>
 
-  <form [formGroup]="produitsFormGroup" class="col-8 offset-2" (ngSubmit)="onSubmit()" autocomplete="off">
+  <form [formGroup]="produitsFormGroup" class="col-8 offset-2 transparent-form" (ngSubmit)="onSubmit()" autocomplete="off">
 
     <div class="form-group">
       <label for="nom" class="form-label mt-4">Nom</label>
@@ -40,6 +40,8 @@
       <div class="valid-feedback"></div>
     </div>
 
-    <button [disabled]="produitsFormGroup.invalid" type="submit" class="mt-4 btn btn-primary">Valider</button>
+    <div class="text-center">
+      <button [disabled]="produitsFormGroup.invalid" type="submit" class="mt-4 btn btn-primary">Valider</button>
+    </div>
   </form>
 </div>

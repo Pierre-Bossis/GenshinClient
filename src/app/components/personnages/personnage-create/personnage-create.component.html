@@ -2,7 +2,7 @@
 
     <h4 class="text-center">Ajouter un personnage</h4>
 
-    <form [formGroup]="personnagesFormGroup" class="col-8 offset-2" (ngSubmit)="onSubmit()" autocomplete="off">
+    <form [formGroup]="personnagesFormGroup" class="col-8 offset-2 transparent-form" (ngSubmit)="onSubmit()" autocomplete="off">
         <div class="form-group">
             <label for="nom" class="form-label mt-4">Nom</label>
             <input inputValidation type="text" class="form-control" id="nom" placeholder="Nom" formControlName="nom">

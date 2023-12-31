@@ -4,6 +4,7 @@ import { ArmesCreateComponent } from './components/armes/armes-create/armes-crea
 import { ArmesDetailsComponent } from './components/armes/armes-details/armes-details.component';
 import { ArmesListeComponent } from './components/armes/armes-liste/armes-liste.component';
 import { HomeComponent } from './components/home/home.component';
+import { JukeboxComponent } from './components/jukebox/jukebox.component';
 import { MateriauxAmeliorationPersonnagesEtArmesCreateComponent } from './components/materiaux-amelioration-personnages-et-armes/materiaux-amelioration-personnages-et-armes-create/materiaux-amelioration-personnages-et-armes-create.component';
 import { MateriauxAmeliorationPersonnagesEtArmesDetailsComponent } from './components/materiaux-amelioration-personnages-et-armes/materiaux-amelioration-personnages-et-armes-details/materiaux-amelioration-personnages-et-armes-details.component';
 import { MateriauxAmeliorationPersonnagesEtArmesListeComponent } from './components/materiaux-amelioration-personnages-et-armes/materiaux-amelioration-personnages-et-armes-liste/materiaux-amelioration-personnages-et-armes-liste.component';
@@ -76,6 +77,7 @@ const routes: Routes = [
   {path : 'regions/inazuma', component : InazumaComponent},
   {path : 'regions/sumeru', component : SumeruComponent},
   {path : 'regions/fontaine', component : FontaineComponent},
+  {path: 'jukebox', component : JukeboxComponent},
   {path : 'error', component : ErrorComponent},
   {path: '**', redirectTo: '/error'}
 ];

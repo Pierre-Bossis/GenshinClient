@@ -1,0 +1,6 @@
+.transparent-form {
+    background-color: rgba(255, 255, 255, 0.1); /* Couleur blanche avec 50% de transparence */
+    padding: 20px;
+    border-radius: 10px;
+    margin: 0 auto;
+  }

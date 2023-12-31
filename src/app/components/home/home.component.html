@@ -1,24 +1,61 @@
-<div class="fade-in-element">
-    <div class="text-center" style="margin-top: -50px;"></div>
-
-    <div class="row text-center">
-        <div class="col-12">
+<div class="container fade-in-element">
+    <div class="row">
+        <div class="col-12 text-center">
             <p>Version actuelle du jeu : 4.3</p>
-            <img class="img-fluid zoom" src="../../../assets/4-3.png" alt="Version 4.3" width="900" height="500">
-            <hr>Bannières en cours jusqu'au 31 Janvier 2024.
+            <img data-bs-toggle="modal" data-bs-target="#majModal" class="img-fluid zoom" src="../../../assets/4-3.png"
+                alt="Version 4.3" width="900" height="500">
+            <hr>
+            <h3>Bannières en cours jusqu'au 31 Janvier 2024.</h3>
         </div>
     </div>
-    <div class="row mt-2">
-        <div class="col-md-6 mb-4 zoom">
-            <img class="img-fluid" src="../../../assets/Banniere-4.2-1.jpeg" alt="Banniere 4.2-1" width="600" height="350">
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <p>Bannière Temporaire 1</p>
+            <img data-bs-toggle="modal" data-bs-target="#ban1Modal" class="img-fluid zoom" src="../../../assets/Banniere-4.2-1.jpeg" alt="Banniere 4.2-1" width="600"
+                height="350">
         </div>
-        <div class="col-md-6 mb-4 zoom">
-            <img class="img-fluid" src="../../../assets/Banniere-4.3-2.jpeg" alt="Banniere 4.3-2" width="600" height="350">
+        <div class="col-md-4">
+            <p>Bannière Temporaire 2</p>
+            <img data-bs-toggle="modal" data-bs-target="#ban2Modal" class="img-fluid zoom" src="../../../assets/Banniere-4.3-2.jpeg" alt="Banniere 4.3-2" width="600"
+                height="350">
+        </div>
+        <div class="col-md-4">
+            <p>Bannière Arme</p>
+            <img data-bs-toggle="modal" data-bs-target="#ban3Modal" class="img-fluid zoom" src="../../../assets/Banniere-4.3-3.jpeg" alt="Banniere 4.3-3" width="600"
+                height="350">
         </div>
     </div>
-    <div class="row mt-2 mb-5">
-        <div class="col-6 offset-3 zoom">
-            <img class="img-fluid" src="../../../assets/Banniere-4.3-3.jpeg" alt="Banniere 4.3-3" width="600" height="350">
-        </div>
+</div>
+
+
+<!-- Modal 4.3 -->
+<div class="modal fade" id="majModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl"
+        style="display: flex; align-items: center; justify-content: center;">
+        <img src="../../../assets/4-3.png" />
+    </div>
+</div>
+
+<!-- Modal bannière 1 -->
+<div class="modal fade" id="ban1Modal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl"
+        style="display: flex; align-items: center; justify-content: center;">
+        <img src="../../../assets/Banniere-4.2-1.jpeg" />
+    </div>
+</div>
+
+<!-- Modal bannière 2 -->
+<div class="modal fade" id="ban2Modal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl"
+        style="display: flex; align-items: center; justify-content: center;">
+        <img src="../../../assets/Banniere-4.3-2.jpeg" />
+    </div>
+</div>
+
+<!-- Modal bannière armes -->
+<div class="modal fade" id="ban3Modal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl"
+        style="display: flex; align-items: center; justify-content: center;">
+        <img src="../../../assets/Banniere-4.3-3.jpeg" />
     </div>
 </div>

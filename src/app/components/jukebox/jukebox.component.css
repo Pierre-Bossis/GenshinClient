@@ -1,0 +1,8 @@
+.jukebox {
+    height: 100%;
+    background-color: #f0f0f0; /* Couleur de fond pour la démo */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }

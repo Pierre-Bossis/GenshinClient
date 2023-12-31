@@ -51,6 +51,7 @@ import { ErrorComponent } from './shared/error/error.component';
 import { InputValidationDirective } from './shared/directives/input-validation.directive';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { PaginationComponent } from './shared/pagination/pagination.component';
+import { JukeboxComponent } from './components/jukebox/jukebox.component';
 
 @NgModule({
   declarations: [
@@ -95,7 +96,8 @@ import { PaginationComponent } from './shared/pagination/pagination.component';
     RegisterComponent,
     ErrorComponent,
     InputValidationDirective,
-    PaginationComponent
+    PaginationComponent,
+    JukeboxComponent
   ],
   imports: [
     BrowserModule,

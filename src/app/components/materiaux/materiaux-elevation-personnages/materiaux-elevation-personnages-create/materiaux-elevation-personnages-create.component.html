@@ -2,7 +2,7 @@
 
     <h4 class="text-center">Ajouter un matériaux d'elevation personnages</h4>
   
-    <form [formGroup]="matElevationPersoFormGroup" class="col-8 offset-2" (ngSubmit)="onSubmit()" autocomplete="off">
+    <form [formGroup]="matElevationPersoFormGroup" class="col-8 offset-2 transparent-form" (ngSubmit)="onSubmit()" autocomplete="off">
   
       <div class="form-group">
         <label for="nom" class="form-label mt-4">Nom</label>
@@ -35,7 +35,8 @@
         <div class="invalid-feedback"></div>
         <div class="valid-feedback"></div>
       </div>
-  
-      <button [disabled]="matElevationPersoFormGroup.invalid" type="submit" class="mt-4 btn btn-primary">Valider</button>
+      <div class="text-center">
+        <button [disabled]="matElevationPersoFormGroup.invalid" type="submit" class="mt-4 btn btn-primary">Valider</button>
+      </div>
     </form>
   </div>
