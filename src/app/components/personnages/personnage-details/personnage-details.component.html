@@ -1,13 +1,15 @@
 <div *ngIf="personnage && produit && mat" class="fade-in-element">
-    <h4 class="text-center mb-5">{{ personnage.nom }}</h4>
+    <h4 class="text-center mb-3">{{ personnage.nom }}</h4>
 
-    <div class="row">
-        <div class="col-md-auto hover-zoom">
+    <div class="col-md-auto hover-zoom" style="height: 55vh; display: flex; justify-content: center; align-items: center; overflow: hidden;">
+        <div class="image-container">
             <img data-bs-toggle="modal" data-bs-target="#imageModal"
                 [src]="'data:image/webp;base64,' + personnage.splashArt" alt="{{ personnage.nom }}"
-                class="img-fluid rounded" />
+                class="img-fluid rounded img-fit" />
         </div>
-        <div class="col-md-auto mt-5">
+
+        </div>
+        <div class="col-md-auto mt-3">
             <table class="table">
                 <tbody>
                     <tr>
