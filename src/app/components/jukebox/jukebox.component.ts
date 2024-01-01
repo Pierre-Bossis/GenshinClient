@@ -18,7 +18,10 @@ export class JukeboxComponent {
     {id:'NLEqRNhv6gs', titre:'Polumnia Omnia'},
     {id:'F_S8EeiJjPE', titre:'Le Souvenir avec le crepuscule'},
     {id:'khHAaErEqTQ', titre:'Virelai des marees'},
-    {id:'y9n984n_dAQ', titre:'Before Dawn, at the Winery'}
+    {id:'y9n984n_dAQ', titre:'Before Dawn, at the Winery'},
+    {id:'7b4obknFj4c', titre:'Moonlike Smile'},
+    {id:'3CV4yrXm9qI', titre:'Lovers\' Oath'},
+    {id:'OccVHia2I7c', titre:'Where All Waters Converge (Day)'}
   ]
   currentTrack = this.audioLinks[0].id
   nameCurrentTrack:string = this.audioLinks[0].titre

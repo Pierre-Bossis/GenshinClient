@@ -1,6 +1,5 @@
 .jukebox {
   padding: 20px;
-  background-color: #292929;
   border-radius: 12px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
@@ -21,7 +20,6 @@ h2 {
   padding: 12px 24px;
   font-size: 16px;
   border: none;
-  background-color: #5e5e5e;
   color: #fff;
   border-radius: 8px;
   cursor: pointer;
@@ -30,11 +28,10 @@ h2 {
 }
 
 .track-button:hover {
-  background-color: #777;
+  background-color: rgb(43, 170, 229);
 }
 .track-button.active {
   background-color: rgb(43, 170, 229);
-  color: white;
 }
 
 .youtube-player {
@@ -82,4 +79,8 @@ h2 {
 
 img{
   z-index: 50;
+}
+
+.controls:hover{
+  background-color: rgb(43, 170, 229);
 }

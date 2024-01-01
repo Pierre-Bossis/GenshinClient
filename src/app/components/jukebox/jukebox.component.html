@@ -1,17 +1,17 @@
-<div class="row justify-content-center">
+<div class="row justify-content-center fade-in-element">
   <div class="col-md-10 offset-md-1">
-    <div class="jukebox text-center">
-      <h2>Jukebox</h2>
+    <div class="jukebox text-center bg-dark">
+      <h1>Jukebox</h1>
       <div class="d-md-flex justify-content-center">
         <div class="mr-md-auto">
           <img src="../../../assets/music-venti.png" width="200" height="200" class="img-fluid">
         </div>
         <div class="align-self-center mx-md-3">
-          <button (click)="previous()" class="navigation-button mb-md-2">Précédent</button>
-          <button (click)="next()" class="navigation-button mb-md-2">Suivant</button>
-          <button (click)="seekBackward()" class="navigation-button mb-md-2">⏪</button>
-          <button (click)="pause()" class="navigation-button mb-md-2">⏯</button>
-          <button (click)="seekForward()" class="navigation-button mb-md-2">⏩</button>
+          <button (click)="previous()" class="navigation-button mb-md-2 controls">Précédent</button>
+          <button (click)="next()" class="navigation-button mb-md-2 controls">Suivant</button>
+          <button (click)="seekBackward()" class="navigation-button mb-md-2 controls">⏪</button>
+          <button (click)="pause()" class="navigation-button mb-md-2 controls">⏯</button>
+          <button (click)="seekForward()" class="navigation-button mb-md-2 controls">⏩</button>
         </div>
         <div class="ml-md-auto">
           <img src="../../../assets/music-beidou.png" width="200" height="200" class="img-fluid">
@@ -33,7 +33,7 @@
           <div class="row">
             <ng-container *ngFor="let track of audioLinks">
               <div class="col-md-6 mb-3">
-                <button (click)="changeTrack(track.id)" class="track-button btn-block"
+                <button (click)="changeTrack(track.id)" class="track-button btn-block btn-secondary"
                   [ngClass]="{'active': currentTrack === track.id}">{{ track.titre }}</button>
               </div>
             </ng-container>
