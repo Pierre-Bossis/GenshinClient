@@ -1,6 +1,46 @@
-<div class="jukebox">
-    <h1>Jukebox</h1>
-    <button (click)="play()">Play</button>
-    <button (click)="nextTrack()">Next</button>
-    <button (click)="previousTrack()">Previous</button>
+<div class="row">
+  <div class="col-md-10 offset-md-1">
+    <div class="jukebox">
+      <h2 class="text-center">Jukebox</h2>
+      <div class="track-list">
+        <div class="navigation-buttons">
+          <button (click)="previous()" class="navigation-button">Précédent</button>
+          <button (click)="next()" class="navigation-button">Suivant</button>
+        </div>
+        <div class="navigation-buttons">
+          <button (click)="seekBackward()" class="navigation-button">⏪</button>
+          <button (click)="pause()" class="navigation-button">⏸</button>
+          <button (click)="seekForward()" class="navigation-button">⏩</button>
+        </div>
+        <hr>
+        <div class="navigation-buttons">
+          <p>{{ currentTime }}</p>/<p>{{ getTotalDuration() }}</p>
+        </div>
+        <div class="navigation-buttons">
+          <div class="progress-bar">
+            <div class="progress bg-info progress-bar-striped" [style.width.%]="progress" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div>
+        <button (click)="changeTrack(0)" class="track-button" [ngClass]="{'active': currentTrack === 0}">Main theme</button>
+        <button (click)="changeTrack(1)" class="track-button" [ngClass]="{'active': currentTrack === 1}">Rage Beneath the Mountains</button>
+        <button (click)="changeTrack(2)" class="track-button" [ngClass]="{'active': currentTrack === 2}">Symphony of Boreal Wind</button>
+        <button (click)="changeTrack(3)" class="track-button" [ngClass]="{'active': currentTrack === 3}">Fontaine</button>
+        <button (click)="changeTrack(4)" class="track-button" [ngClass]="{'active': currentTrack === 4}">Pluie sur la ville</button>
+        <button (click)="changeTrack(5)" class="track-button" [ngClass]="{'active': currentTrack === 5}">Caelestinum Finale Termini</button>
+        <button (click)="changeTrack(6)" class="track-button" [ngClass]="{'active': currentTrack === 6}">Rondeau des fleurs et des rapieres</button>
+        <button (click)="changeTrack(7)" class="track-button" [ngClass]="{'active': currentTrack === 7}">Polumnia Omnia</button>
+        <button (click)="changeTrack(8)" class="track-button" [ngClass]="{'active': currentTrack === 8}">Le Souvenir avec le crepuscule</button>
+        <button (click)="changeTrack(9)" class="track-button" [ngClass]="{'active': currentTrack === 9}">Virelai des marees</button>
+      </div>
+    </div>
+  </div>
 </div>
+
+
+  <div class="col-md-8 offset-md-2">
+    <div class="jukebox" style="display: none;">
+      <h2>Jukebox</h2>
+      <youtube-player #player [videoId]="audioLinks[currentTrack]" [height]="0" [width]="0"
+        suggestedQuality="highres"></youtube-player>
+    </div>
+  </div>

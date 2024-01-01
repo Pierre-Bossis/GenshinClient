@@ -247,7 +247,7 @@
 
 
     <!-- Modal -->
-    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+    <div  *ngIf="personnage" class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-xl"
             style="display: flex; align-items: center; justify-content: center;">
             <img [src]="'data:image/webp;base64,' + personnage.splashArt" alt="{{ personnage.nom }}" width="2500"

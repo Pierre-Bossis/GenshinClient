@@ -52,6 +52,7 @@ import { InputValidationDirective } from './shared/directives/input-validation.d
 import { NgxPaginationModule } from 'ngx-pagination';
 import { PaginationComponent } from './shared/pagination/pagination.component';
 import { JukeboxComponent } from './components/jukebox/jukebox.component';
+import { YouTubePlayerModule } from '@angular/youtube-player';
 
 @NgModule({
   declarations: [
@@ -109,7 +110,8 @@ import { JukeboxComponent } from './components/jukebox/jukebox.component';
     NgbModule,
     NgbModalModule,
     NgxPopperjsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    YouTubePlayerModule
   ],
   providers: [
     {provide : HTTP_INTERCEPTORS, useClass : TokenInterceptor, multi : true}

@@ -22,9 +22,7 @@ export class ArmesListeComponent implements OnInit {
     
     this.armesService.getAll().subscribe((data)=>{
       this.armes = data
-      this.armesFiltre = this.armes
-      console.log(data);
-      
+      this.armesFiltre = this.armes      
     }) 
   }
 
