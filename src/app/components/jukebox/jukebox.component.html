@@ -1,46 +1,54 @@
-<div class="row">
+<div class="row justify-content-center">
   <div class="col-md-10 offset-md-1">
-    <div class="jukebox">
-      <h2 class="text-center">Jukebox</h2>
-      <div class="track-list">
-        <div class="navigation-buttons">
-          <button (click)="previous()" class="navigation-button">Précédent</button>
-          <button (click)="next()" class="navigation-button">Suivant</button>
+    <div class="jukebox text-center">
+      <h2>Jukebox</h2>
+      <div class="d-md-flex justify-content-center">
+        <div class="mr-md-auto">
+          <img src="../../../assets/music-venti.png" width="200" height="200" class="img-fluid">
         </div>
-        <div class="navigation-buttons">
-          <button (click)="seekBackward()" class="navigation-button">⏪</button>
-          <button (click)="pause()" class="navigation-button">⏸</button>
-          <button (click)="seekForward()" class="navigation-button">⏩</button>
+        <div class="align-self-center mx-md-3">
+          <button (click)="previous()" class="navigation-button mb-md-2">Précédent</button>
+          <button (click)="next()" class="navigation-button mb-md-2">Suivant</button>
+          <button (click)="seekBackward()" class="navigation-button mb-md-2">⏪</button>
+          <button (click)="pause()" class="navigation-button mb-md-2">⏯</button>
+          <button (click)="seekForward()" class="navigation-button mb-md-2">⏩</button>
         </div>
-        <hr>
-        <div class="navigation-buttons">
-          <p>{{ currentTime }}</p>/<p>{{ getTotalDuration() }}</p>
+        <div class="ml-md-auto">
+          <img src="../../../assets/music-beidou.png" width="200" height="200" class="img-fluid">
         </div>
-        <div class="navigation-buttons">
-          <div class="progress-bar">
-            <div class="progress bg-info progress-bar-striped" [style.width.%]="progress" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+      {{nameCurrentTrack}}
+      <div class="navigation-buttons text-center">
+        <p>{{ currentTime }}</p>/<p>{{ getTotalDuration() }}</p>
+      </div>
+      <div class="navigation-buttons d-flex justify-content-center">
+        <div class="progress-bar">
+          <div class="progress bg-info progress-bar-striped" [style.width.%]="progress" role="progressbar" aria-valuenow="50"
+            aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+      </div>
+      <hr>
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="row">
+            <ng-container *ngFor="let track of audioLinks">
+              <div class="col-md-6 mb-3">
+                <button (click)="changeTrack(track.id)" class="track-button btn-block"
+                  [ngClass]="{'active': currentTrack === track.id}">{{ track.titre }}</button>
+              </div>
+            </ng-container>
           </div>
         </div>
-        <button (click)="changeTrack(0)" class="track-button" [ngClass]="{'active': currentTrack === 0}">Main theme</button>
-        <button (click)="changeTrack(1)" class="track-button" [ngClass]="{'active': currentTrack === 1}">Rage Beneath the Mountains</button>
-        <button (click)="changeTrack(2)" class="track-button" [ngClass]="{'active': currentTrack === 2}">Symphony of Boreal Wind</button>
-        <button (click)="changeTrack(3)" class="track-button" [ngClass]="{'active': currentTrack === 3}">Fontaine</button>
-        <button (click)="changeTrack(4)" class="track-button" [ngClass]="{'active': currentTrack === 4}">Pluie sur la ville</button>
-        <button (click)="changeTrack(5)" class="track-button" [ngClass]="{'active': currentTrack === 5}">Caelestinum Finale Termini</button>
-        <button (click)="changeTrack(6)" class="track-button" [ngClass]="{'active': currentTrack === 6}">Rondeau des fleurs et des rapieres</button>
-        <button (click)="changeTrack(7)" class="track-button" [ngClass]="{'active': currentTrack === 7}">Polumnia Omnia</button>
-        <button (click)="changeTrack(8)" class="track-button" [ngClass]="{'active': currentTrack === 8}">Le Souvenir avec le crepuscule</button>
-        <button (click)="changeTrack(9)" class="track-button" [ngClass]="{'active': currentTrack === 9}">Virelai des marees</button>
       </div>
     </div>
   </div>
 </div>
 
 
-  <div class="col-md-8 offset-md-2">
-    <div class="jukebox" style="display: none;">
-      <h2>Jukebox</h2>
-      <youtube-player #player [videoId]="audioLinks[currentTrack]" [height]="0" [width]="0"
-        suggestedQuality="highres"></youtube-player>
-    </div>
+<div class="col-md-8 offset-md-2">
+  <div class="jukebox" style="display: none;">
+    <h2>Jukebox</h2>
+    <youtube-player #player [videoId]="currentTrack" [height]="0" [width]="0"
+      suggestedQuality="highres"></youtube-player>
   </div>
+</div>

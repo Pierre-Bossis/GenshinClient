@@ -6,30 +6,35 @@ import { Component, ViewChild } from '@angular/core';
   styleUrls: ['./jukebox.component.css']
 })
 export class JukeboxComponent {
-  currentTrack = 0;
-  isPaused = false;
-  progress: number = 0;
-  currentTime: string = '0:00';
-  totalTime: string = '0:00';
-  @ViewChild('player') player: any;
-  audioLinks = [
-    'Mcz3yZSUVI8',
-    'tIq41I2WT70',
-    'QFSunKPD-Zc',
-    'tiulg9ySfR8',
-    'osuoqNILLXo',
-    'VqtScyk2C5A',
-    'lsSz0to5MnA',
-    'NLEqRNhv6gs',
-    'F_S8EeiJjPE',
-    'khHAaErEqTQ'
-  ];
   
+  audioLinks: any[] = [
+    {id:'Mcz3yZSUVI8', titre:'Main theme'},
+    {id:'tIq41I2WT70', titre:'Rage Beneath the Mountains'},
+    {id:'QFSunKPD-Zc', titre:'Symphony of Boreal Wind'},
+    {id:'tiulg9ySfR8', titre:'Fontaine'},
+    {id:'osuoqNILLXo', titre:'Pluie sur la ville'},
+    {id:'VqtScyk2C5A', titre:'Caelestinum Finale Termini'},
+    {id:'lsSz0to5MnA', titre:'Rondeau des fleurs et des rapieres'},
+    {id:'NLEqRNhv6gs', titre:'Polumnia Omnia'},
+    {id:'F_S8EeiJjPE', titre:'Le Souvenir avec le crepuscule'},
+    {id:'khHAaErEqTQ', titre:'Virelai des marees'},
+    {id:'y9n984n_dAQ', titre:'Before Dawn, at the Winery'}
+  ]
+  currentTrack = this.audioLinks[0].id
+  nameCurrentTrack:string = this.audioLinks[0].titre
+  index:number= 0
+  isPaused = false;
+  progress: number = 0
+  currentTime: string = '0:00'
+  totalTime: string = '0:00'
+  @ViewChild('player') player: any; 
   
   //changer de piste
-  changeTrack(track:number){    
-    this.currentTrack = track
-    this.playAuto()
+  changeTrack(trackId: string) {    
+    this.currentTrack = trackId;
+    this.playAuto();
+    this.index = this.audioLinks.findIndex(item => item.id === trackId);
+    this.nameCurrentTrack = this.audioLinks[this.index].titre
   }
 
 
@@ -85,19 +90,25 @@ export class JukeboxComponent {
     return '0:00';
   }
 
-  //piste suivante
-  next(){
-    if(this.currentTrack < this.audioLinks.length -1)
-      this.currentTrack += 1
-      this.playAuto()
+// Avancer vers la piste suivante
+next() {
+  if (this.index < this.audioLinks.length - 1) {
+    this.index++
+    this.currentTrack = this.audioLinks[this.index].id
+    this.nameCurrentTrack = this.audioLinks[this.index].titre
+    this.playAuto();
   }
+}
 
-  //piste précédente
-  previous(){
-    if(this.currentTrack > 0)
-      this.currentTrack -= 1
-      this.playAuto()
+// Revenir à la piste précédente
+previous() {
+  if (this.index > 0) {
+    this.index--;
+    this.currentTrack = this.audioLinks[this.index].id
+    this.nameCurrentTrack = this.audioLinks[this.index].titre
+    this.playAuto();
   }
+}
   
   //pause ou reprendre
   pause() {
