@@ -53,6 +53,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { PaginationComponent } from './shared/pagination/pagination.component';
 import { JukeboxComponent } from './components/jukebox/jukebox.component';
 import { YouTubePlayerModule } from '@angular/youtube-player';
+import { ErrorsInterceptor } from './shared/errors.interceptor';
 
 @NgModule({
   declarations: [
@@ -114,7 +115,8 @@ import { YouTubePlayerModule } from '@angular/youtube-player';
     YouTubePlayerModule
   ],
   providers: [
-    {provide : HTTP_INTERCEPTORS, useClass : TokenInterceptor, multi : true}
+    {provide : HTTP_INTERCEPTORS, useClass : TokenInterceptor, multi : true},
+    {provide : HTTP_INTERCEPTORS, useClass : ErrorsInterceptor, multi : true}
   ],
   bootstrap: [AppComponent]
 })
