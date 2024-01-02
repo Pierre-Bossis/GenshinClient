@@ -122,7 +122,7 @@
 
         <div class="form-group">
             <label for="livres" class="form-label mt-4">Livres d'aptitude(multiple)</label>
-            <select inputValidation multiple="" class="form-select" id="livres"  formControlName="selectedLivres">
+            <select style="height:200px" inputValidation multiple="" class="form-select" id="livres"  formControlName="selectedLivres">
               <option *ngFor="let livre of LivresAptitudeListe" [value]="livre.id">{{ livre.nom }}</option>
             </select>
             <div class="invalid-feedback"></div>
@@ -131,7 +131,7 @@
 
           <div class="form-group">
             <label for="matsElev" class="form-label mt-4">Matériaux d'elevation Personnages(multiple)</label>
-            <select inputValidation multiple="" class="form-select" id="matsElev"  formControlName="selectedMatsElevation">
+            <select style="height:200px" inputValidation multiple="" class="form-select" id="matsElev"  formControlName="selectedMatsElevation">
               <option *ngFor="let mat of matsElevationPersonnages" [value]="mat.id">{{ mat.nom }}</option>
             </select>
             <div class="invalid-feedback"></div>
@@ -140,7 +140,7 @@
 
           <div class="form-group">
             <label for="matsAmelio" class="form-label mt-4">Matériaux d'amelioration Personnages et Armes(multiple)</label>
-            <select inputValidation multiple="" class="form-select" id="matsAmelio"  formControlName="selectedMatsAmelioPersosArmes">
+            <select style="height:200px" inputValidation multiple="" class="form-select" id="matsAmelio"  formControlName="selectedMatsAmelioPersosArmes">
               <option *ngFor="let mat of matsAmelioPersosArmes" [value]="mat.id">{{ mat.nom }}</option>
             </select>
             <div class="invalid-feedback"></div>

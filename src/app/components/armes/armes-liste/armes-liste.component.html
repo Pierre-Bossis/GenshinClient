@@ -24,10 +24,10 @@
       <div class="card text-white bg-dark mb-3" style="width: 13rem; height: 30rem;">
         <div class="card-body fade-in-element d-flex flex-column justify-content-center align-items-center">
           <img [popper]="smallDetails" [popperTrigger]="showTrigger" [popperHideOnScroll]="true" [popperDisableStyle]="true" [popperPlacement]="popperPlacement"
-           [ngStyle]="{'width': arme.typeArme === 'Catalyseur' ? '8rem' : '7rem', 'height': arme.typeArme === 'Catalyseur' ? '7rem' : '20rem'}" class="img mx-auto" (click)="goDetails(arme.nom)" [src]="'data:image/jpeg;base64,' + arme.image"
+           [ngStyle]="{'width': arme.typeArme === 'Catalyseur' ? '8rem' : '7rem', 'height': arme.typeArme === 'Catalyseur' ? '7rem' : '20rem'}" class="img mx-auto mb-5" (click)="goDetails(arme.nom)" [src]="'data:image/jpeg;base64,' + arme.image"
             alt="{{arme.nom}}" width="100" height="200" />
 
-          <h4 class="card-title text-center mt-1">{{arme.nom}}</h4>
+          <h4 class="card-title text-center nom">{{arme.nom}}</h4>
           <p class="card-text text-center rarete"><span class="star">{{arme.rarete | star }}</span></p>
         </div>
       </div>

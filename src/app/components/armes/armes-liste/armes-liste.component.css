@@ -12,6 +12,12 @@ span{
     cursor: pointer;
 }
 
+.nom{
+    position: absolute;
+    bottom: 8%;
+    left: 0;
+    width: 100%;
+}
 .rarete{
     position: absolute;
     bottom: 5%;

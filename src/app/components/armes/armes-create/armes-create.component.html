@@ -97,7 +97,7 @@
 
     <div class="form-group">
       <label for="mats" class="form-label mt-4">Matériaux elevation d'armes(multiple)</label>
-      <select inputValidation multiple="" class="form-select" id="mats"  formControlName="selectedMats">
+      <select style="height:200px" inputValidation multiple="" class="form-select" id="mats"  formControlName="selectedMats">
         <option *ngFor="let mat of matListe" [value]="mat.id">{{ mat.nom }}</option>
       </select>
       <div class="invalid-feedback"></div>
@@ -106,7 +106,7 @@
 
     <div class="form-group">
       <label for="mats" class="form-label mt-4">Matériaux amelioration personnages et armes(multiple)</label>
-      <select inputValidation multiple="" class="form-select" id="mats"  formControlName="selectedMatsAmelio">
+      <select style="height:200px" inputValidation multiple="" class="form-select" id="mats"  formControlName="selectedMatsAmelio">
         <option *ngFor="let mat of matAmelioListe" [value]="mat.id">{{ mat.nom }}</option>
       </select>
       <div class="invalid-feedback"></div>
