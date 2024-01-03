@@ -1,19 +1,19 @@
-import { Component, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-jukebox',
   templateUrl: './jukebox.component.html',
   styleUrls: ['./jukebox.component.css']
 })
-export class JukeboxComponent {
+export class JukeboxComponent{
   
   audioLinks: any[] = [
     {id:'Mcz3yZSUVI8', titre:'Main theme'},
     {id:'tIq41I2WT70', titre:'Rage Beneath the Mountains'},
     {id:'QFSunKPD-Zc', titre:'Symphony of Boreal Wind'},
+    {id:'VqtScyk2C5A', titre:'Caelestinum Finale Termini'},
     {id:'tiulg9ySfR8', titre:'Fontaine'},
     {id:'osuoqNILLXo', titre:'Pluie sur la ville'},
-    {id:'VqtScyk2C5A', titre:'Caelestinum Finale Termini'},
     {id:'lsSz0to5MnA', titre:'Rondeau des fleurs et des rapieres'},
     {id:'NLEqRNhv6gs', titre:'Polumnia Omnia'},
     {id:'F_S8EeiJjPE', titre:'Le Souvenir avec le crepuscule'},
@@ -38,6 +38,7 @@ export class JukeboxComponent {
     this.playAuto();
     this.index = this.audioLinks.findIndex(item => item.id === trackId);
     this.nameCurrentTrack = this.audioLinks[this.index].titre
+    this.isPaused = false
   }
 
 
@@ -46,6 +47,7 @@ export class JukeboxComponent {
     setInterval(() => {
       this.updateProgress();
     }, 1000);
+    this.isPaused = true
   }
 
   startTimeInterval() {
@@ -100,6 +102,7 @@ next() {
     this.currentTrack = this.audioLinks[this.index].id
     this.nameCurrentTrack = this.audioLinks[this.index].titre
     this.playAuto();
+    this.isPaused = false
   }
 }
 
@@ -110,6 +113,7 @@ previous() {
     this.currentTrack = this.audioLinks[this.index].id
     this.nameCurrentTrack = this.audioLinks[this.index].titre
     this.playAuto();
+    this.isPaused = false
   }
 }
   
@@ -139,6 +143,7 @@ previous() {
       if (this.player && this.player.playVideo) {
         this.player.playVideo();
       }
-    }, 100);
+    }, 200);
   }
+
 }

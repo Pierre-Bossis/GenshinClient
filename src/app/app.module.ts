@@ -54,6 +54,10 @@ import { PaginationComponent } from './shared/pagination/pagination.component';
 import { JukeboxComponent } from './components/jukebox/jukebox.component';
 import { YouTubePlayerModule } from '@angular/youtube-player';
 import { ErrorsInterceptor } from './shared/errors.interceptor';
+import { ArtefactsCreateComponent } from './components/artefacts/artefacts-create/artefacts-create.component';
+import { ArtefactsListeComponent } from './components/artefacts/artefacts-liste/artefacts-liste.component';
+import { ArtefactsDetailsComponent } from './components/artefacts/artefacts-details/artefacts-details.component';
+import { InterractiveMapComponent } from './components/interractive-map/interractive-map.component';
 
 @NgModule({
   declarations: [
@@ -99,7 +103,11 @@ import { ErrorsInterceptor } from './shared/errors.interceptor';
     ErrorComponent,
     InputValidationDirective,
     PaginationComponent,
-    JukeboxComponent
+    JukeboxComponent,
+    ArtefactsCreateComponent,
+    ArtefactsListeComponent,
+    ArtefactsDetailsComponent,
+    InterractiveMapComponent
   ],
   imports: [
     BrowserModule,

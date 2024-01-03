@@ -1,0 +1,25 @@
+<div class="row justify-content-end fade-in-element">
+  <h4 class="text-center">Liste des Sets d'artefacts</h4>
+  <div class="col-1" *ngIf="role == 'Admin'">
+    <button class="btn btn-outline-primary" routerLink="../../artefacts/create">+</button>
+  </div>
+</div>
+
+<div class="row fade-in-element mt-3"></div>
+
+  <div class="row justify-content-center">
+    <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-4" *ngFor="let artefact of artefactsListe">
+
+      <img [popper]="Details" [popperTrigger]="showTrigger" [popperHideOnScroll]="true" [popperDisableStyle]="true" [popperPlacement]="popperPlacement"
+      (click)="goDetails(artefact.nomSet)" [src]="'data:image/webp;base64,' + artefact.imagePath"
+        class="zoom custom-img bg-dark" alt="{{ artefact.nom }}" style="max-width: 80%;max-height: 80%;">
+      <div class="card-body">
+        <p class="card-text text-center">{{ artefact.nomSet }}</p>
+      </div>
+      <popper-content #Details>
+        <div class="bold fade-in-element pop">
+          <p><b>Source</b> : {{artefact.source}}</p>
+        </div>
+      </popper-content>
+    </div>
+  </div>

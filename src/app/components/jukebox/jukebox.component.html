@@ -8,9 +8,10 @@
         </div>
         <div class="align-self-center mx-md-3">
           <button (click)="previous()" class="navigation-button mb-md-2 controls">Précédent</button>
-          <button (click)="next()" class="navigation-button mb-md-2 controls">Suivant</button>
+          <button (click)="next()" class="navigation-button mb-md-2 controls">Suivant</button><br/><br/>
           <button (click)="seekBackward()" class="navigation-button mb-md-2 controls">⏪</button>
-          <button (click)="pause()" class="navigation-button mb-md-2 controls">⏯</button>
+          <button (click)="pause()" *ngIf="!isPaused" class="navigation-button mb-md-2 controls">❚❚</button>
+          <button (click)="pause()" *ngIf="isPaused" class="navigation-button mb-md-2 controls">⏵</button>
           <button (click)="seekForward()" class="navigation-button mb-md-2 controls">⏩</button>
         </div>
         <div class="ml-md-auto">

@@ -1,9 +1,13 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ArmesCreateComponent } from './components/armes/armes-create/armes-create.component';
 import { ArmesDetailsComponent } from './components/armes/armes-details/armes-details.component';
 import { ArmesListeComponent } from './components/armes/armes-liste/armes-liste.component';
+import { ArtefactsCreateComponent } from './components/artefacts/artefacts-create/artefacts-create.component';
+import { ArtefactsDetailsComponent } from './components/artefacts/artefacts-details/artefacts-details.component';
+import { ArtefactsListeComponent } from './components/artefacts/artefacts-liste/artefacts-liste.component';
 import { HomeComponent } from './components/home/home.component';
+import { InterractiveMapComponent } from './components/interractive-map/interractive-map.component';
 import { JukeboxComponent } from './components/jukebox/jukebox.component';
 import { MateriauxAmeliorationPersonnagesEtArmesCreateComponent } from './components/materiaux-amelioration-personnages-et-armes/materiaux-amelioration-personnages-et-armes-create/materiaux-amelioration-personnages-et-armes-create.component';
 import { MateriauxAmeliorationPersonnagesEtArmesDetailsComponent } from './components/materiaux-amelioration-personnages-et-armes/materiaux-amelioration-personnages-et-armes-details/materiaux-amelioration-personnages-et-armes-details.component';
@@ -78,6 +82,10 @@ const routes: Routes = [
   {path : 'regions/sumeru', component : SumeruComponent},
   {path : 'regions/fontaine', component : FontaineComponent},
   {path: 'jukebox', component : JukeboxComponent},
+  {path: 'artefacts/create', component : ArtefactsCreateComponent},
+  {path: 'artefacts/liste', component : ArtefactsListeComponent},
+  {path: 'artefacts/:name', component : ArtefactsDetailsComponent},
+  {path: 'map', component : InterractiveMapComponent},
   {path : 'error', component : ErrorComponent},
   {path: '**', redirectTo: '/error'}
 ];

@@ -1,0 +1,20 @@
+.custom-img {
+    max-width: 100%;
+    height: auto;
+    padding: 20px;
+    border-radius: 50%; /* Pour que l'image soit également un cercle */
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+  }
+
+  .pop{
+    position: absolute;
+    background-color: #0f2537;
+    border: 1px solid #df6919;
+    padding: 10px;
+    width: 350px;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+}

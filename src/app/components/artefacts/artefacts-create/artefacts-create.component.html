@@ -1,0 +1,66 @@
+<div class="fade-in-element">
+
+    <h4 class="text-center">Ajouter un Artefact</h4>
+  
+    <form [formGroup]="artefactsFormGroup" class="col-8 offset-2 transparent-form" (ngSubmit)="onSubmit()" autocomplete="off">
+  
+      <div class="form-group">
+        <label for="nom" class="form-label mt-4">Nom</label>
+        <input inputValidation type="text" class="form-control" id="nom" placeholder="Nom" formControlName="nom">
+        <div class="invalid-feedback"></div>
+        <div class="valid-feedback"></div>
+      </div>   
+
+      <div class="form-group">
+        <label for="nomSet" class="form-label mt-4">Nom du set</label>
+        <input inputValidation type="text" class="form-control" id="nomSet" placeholder="Nom du set" formControlName="nomSet">
+        <div class="invalid-feedback"></div>
+        <div class="valid-feedback"></div>
+      </div>  
+  
+      
+      <div class="form-group">
+        <label for="artefactType" class="form-label mt-4">Type</label>
+        <select inputValidation class="form-select" id="artefactType" formControlName="type">
+          <option value="" disabled selected hidden>Type</option>
+          <option>Fleur</option>
+          <option>Plume</option>
+          <option>Couronne</option>
+          <option>Sablier</option>
+          <option>Coupe</option>
+        </select>
+        <div class="invalid-feedback"></div>
+        <div class="valid-feedback"></div>
+      </div>
+    
+    <div class="form-group">
+        <label for="bonus2pieces" class="form-label mt-4">Bonus 2 Pieces</label>
+        <input inputValidation type="text" class="form-control" id="bonus2pieces" placeholder="Bonus 2 Pieces" formControlName="bonus2pieces">
+        <div class="invalid-feedback"></div>
+        <div class="valid-feedback"></div>
+      </div>
+      
+      <div class="form-group">
+          <label for="bonus4pieces" class="form-label mt-4">Bonus 4 Pieces</label>
+        <input inputValidation type="text" class="form-control" id="bonus4pieces" placeholder="Bonus 4 Pieces" formControlName="bonus4pieces">
+        <div class="invalid-feedback"></div>
+        <div class="valid-feedback"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="source" class="form-label mt-4">Source</label>
+      <input inputValidation type="text" class="form-control" id="source" placeholder="Source" formControlName="source">
+      <div class="invalid-feedback"></div>
+      <div class="valid-feedback"></div>
+    </div>
+      
+      <div class="form-group">
+        <label for="IconeFile" class="form-label mt-4">Image</label>
+        <input class="form-control" id="IconeFile" type="file" (change)="loadFile($event)">
+      </div>
+
+      <div class="text-center">
+        <button [disabled]="artefactsFormGroup.invalid" type="submit" class="mt-4 btn btn-primary">Valider</button>
+      </div>
+    </form>
+  </div>
