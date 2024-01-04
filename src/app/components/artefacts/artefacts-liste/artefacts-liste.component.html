@@ -9,13 +9,10 @@
 
   <div class="row justify-content-center">
     <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-4" *ngFor="let artefact of artefactsListe">
-
       <img [popper]="Details" [popperTrigger]="showTrigger" [popperHideOnScroll]="true" [popperDisableStyle]="true" [popperPlacement]="popperPlacement"
       (click)="goDetails(artefact.nomSet)" [src]="'data:image/webp;base64,' + artefact.imagePath"
         class="zoom custom-img bg-dark" alt="{{ artefact.nom }}" style="max-width: 80%;max-height: 80%;">
-      <div class="card-body">
-        <p class="card-text text-center">{{ artefact.nomSet }}</p>
-      </div>
+        <p class=" text-center mt-1">{{ artefact.nomSet }}</p>
       <popper-content #Details>
         <div class="bold fade-in-element pop">
           <p><b>Source</b> : {{artefact.source}}</p>

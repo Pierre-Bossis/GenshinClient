@@ -18,8 +18,8 @@ export class ArtefactsCreateComponent {
       nom: ['', [Validators.required,Validators.minLength(2),Validators.maxLength(100)]],
       nomSet: ['', [Validators.required,Validators.minLength(2),Validators.maxLength(100)]],
       type: ['', [Validators.required,Validators.minLength(2),Validators.maxLength(100)]],
-      bonus2pieces: ['', [Validators.required,Validators.minLength(2)]],
-      bonus4pieces: ['', [Validators.required,Validators.minLength(2)]],
+      bonus2Pieces: ['', [Validators.required,Validators.minLength(2)]],
+      bonus4Pieces: ['', [Validators.required,Validators.minLength(2)]],
       source: ['',[Validators.required,Validators.minLength(2)]]
     })
   }

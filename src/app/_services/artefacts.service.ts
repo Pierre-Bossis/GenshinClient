@@ -23,7 +23,7 @@ export class ArtefactsService {
 
   create(fileToUpload:File,artefact: ArtefactsForm) {
     const newArtefact = this.upload.upload(fileToUpload)
-
+    
     newArtefact.append('Nom',artefact.nom)
     newArtefact.append('NomSet',artefact.nomSet)
     newArtefact.append('Type',artefact.type)

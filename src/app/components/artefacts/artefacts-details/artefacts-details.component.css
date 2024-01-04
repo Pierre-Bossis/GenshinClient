@@ -1,8 +1,12 @@
- .custom-img {
-    max-width: 100%;
-    height: auto;
-    padding: 20px;
-    border-radius: 50%; /* Pour que l'image soit également un cercle */
-    display: block;
-    margin: 0 auto;
-  }
+.custom-img {
+  max-width: 100%;
+  height: auto;
+  padding: 20px;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+  width: 200px;
+  height: 150px;
+  border: solid 2px #0f2537;
+  overflow: visible;
+}
