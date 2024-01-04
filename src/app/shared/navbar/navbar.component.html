@@ -3,14 +3,27 @@
     <a routerLink="register">Créer un compte</a>&nbsp;
     <a routerLink="login">Connexion</a>
   </span>
-  <ng-template #not>
-    <img *ngIf="avatarUser" data-bs-toggle="modal" data-bs-target="#avatarsModal" src="../../../assets/avatars/{{avatarUser}}.png" style="cursor: pointer;"
-      width="70" height="70">&nbsp;&nbsp;&nbsp;&nbsp;{{connectedUser?.username}}&nbsp;&nbsp;&nbsp;&nbsp;
-    <a style="cursor: pointer;" (click)="logout()">Déconnexion</a>
-  </ng-template>
+  <div class="login-register-container">
+    <ng-template #not>
+        <div>
+            <img *ngIf="avatarUser" 
+                 data-bs-toggle="modal" 
+                 data-bs-target="#avatarsModal" 
+                 src="../../../assets/avatars/{{avatarUser}}.png" 
+                 style="cursor: pointer;" 
+                 width="90" 
+                 height="90">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                 <a style="cursor: pointer;" (click)="logout()">Déconnexion</a>
+                </div>
+                <div>
+          <div style="margin-left: 20px;">{{connectedUser?.username}}</div>
+        </div>
+    </ng-template>
 </div>
 
-<div class="text-center">
+</div>
+
+<div class="text-center" style="display: flex; align-items: center; justify-content: center;">
   <img src="../../../assets/primogem.webp" class="img-fluid" alt="Primogem" width="120" height="120">
   <a routerLink="home">
     <img src="../../../assets/gi.png" class="img-fluid" alt="GI" width="100%" style="max-width: 500px; height: auto;">
