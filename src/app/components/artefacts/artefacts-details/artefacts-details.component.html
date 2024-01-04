@@ -1,9 +1,8 @@
-<div class="container">
-    <div *ngIf="artefactsListe" class="row fade-in-element">
+<div *ngIf="artefactsListe && artefactFlower" class="row fade-in-element">
         <h2 class="text-center">{{ nomSet }}</h2>
         <div *ngIf="artefactFlower" class="row justify-content-center mt-4">
-            <div class="col-md-12 mb-5">
-                <table class="table">
+            <div class="col-md-11 mb-5 justify-content-center">
+                <table class="table mx-auto text-center align-middle">
                     <tbody>
                         <tr>
                             <td class="bg-dark">Bonus 2 pièces</td>
@@ -22,7 +21,7 @@
             </div>
         </div>
     </div>
-    <div class="row justify-content-center">
+    <div class="row justify-content-center fade-in-element">
         <div class="col-lg-2 col-md-3 col-sm-4 col-6" *ngFor="let artefact of artefactsListe">
             <p class="text-center">{{ artefact.type }}</p>
             <img [src]="'data:image/webp;base64,' + artefact.imagePath" class="card-img-top custom-img bg-dark"
@@ -30,4 +29,3 @@
             <p class="text-center mb-3">{{ artefact.nom }}</p>
         </div>
     </div>
-</div>
