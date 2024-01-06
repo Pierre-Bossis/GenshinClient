@@ -31,7 +31,7 @@ export class ProduitsService {
     newProduit.append('Nom',produit.nom)
     newProduit.append('Source',produit.source)
     newProduit.append('Rarete',produit.rarete.toString())
-    
+
     this.http.post(this.url+'produits/create', newProduit).subscribe({
       next: () => this.route.navigate(["produits/liste"]),
       error: (err) => console.error('Error creating produit:', err)
