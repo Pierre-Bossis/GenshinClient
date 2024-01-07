@@ -46,15 +46,15 @@ export class PersonnagesService {
     newPersonnage.append('Rarete',personnage.rarete.toString())
 
     personnage.selectedLivres.forEach((livreId: number) => {
-      newPersonnage.append('SelectedLivres[]', livreId.toString());
+      newPersonnage.append('SelectedLivres', livreId.toString());
     });
 
     personnage.selectedMatsElevation.forEach((matElevId: number) => {
-      newPersonnage.append('SelectedMatsElevation[]', matElevId.toString());
+      newPersonnage.append('SelectedMatsElevation', matElevId.toString());
     });
 
     personnage.selectedMatsAmelioPersosArmes.forEach((matAmelioId: number) => {
-      newPersonnage.append('SelectedMatsAmelioPersosArmes[]', matAmelioId.toString());
+      newPersonnage.append('SelectedMatsAmelioPersosArmes', matAmelioId.toString());
     });
     
     this.http.post(this.url+"personnages/create",newPersonnage).subscribe({

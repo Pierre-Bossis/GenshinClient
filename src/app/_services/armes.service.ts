@@ -41,11 +41,11 @@ export class ArmesService {
     newArme.append('Rarete',arme.rarete.toString())
    
     arme.selectedMats.forEach((matId: number) => {
-      newArme.append('SelectedMats[]', matId.toString());
+      newArme.append('SelectedMats', matId.toString());
     });
 
     arme.selectedMatsAmelio.forEach((matId: number) => {
-      newArme.append('selectedMatsAmelio[]', matId.toString());
+      newArme.append('selectedMatsAmelio', matId.toString());
     });
     
     this.http.post(this.url+"armes/create",newArme).subscribe({
